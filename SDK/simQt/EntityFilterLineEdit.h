@@ -74,7 +74,7 @@ private Q_SLOTS:
 
 protected:
   /// Displays the right mouse click menu
-  virtual void contextMenuEvent(QContextMenuEvent* event);
+  void contextMenuEvent(QContextMenuEvent* event) override;
 
   Qt::CaseSensitivity caseSensitive_ = Qt::CaseSensitive; ///< current case sensitivity
   RegExpImpl::PatternSyntax expression_ = RegExpImpl::RegExp; ///< how the pattern is interpreted

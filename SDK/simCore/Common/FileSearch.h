@@ -73,7 +73,7 @@ namespace simCore
     NoSearchFileSearch() {}
     virtual ~NoSearchFileSearch() {}
 
-    virtual std::string findFile(const std::string& filename, SearchFileType type)
+    std::string findFile(const std::string& filename, SearchFileType type) override
     {
       // Attempt to load the file as-is
       std::fstream ifs(simCore::streamFixUtf8(filename), std::ios::in);

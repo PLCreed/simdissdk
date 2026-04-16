@@ -225,7 +225,7 @@ namespace simCore
     * This method overrides the () operator to generate a normal(Gaussian) distribution
     * @return normal(Gaussian) distribution
     */
-    double operator()();
+    double operator()() override;
 
     /**
     * This method sets the mean value for the distribution
@@ -276,7 +276,7 @@ namespace simCore
     * This method overrides the () operator to generate a complex(Gaussian) distribution
     * @return complex(Gaussian) distribution
     */
-    Complex operator()();
+    Complex operator()() override;
 
     /**
     * This method sets the mean value for the distribution
@@ -324,7 +324,7 @@ namespace simCore
     * This method overrides the () operator to generate a uniform distribution
     * @return uniform distribution
     */
-    double operator()();
+    double operator()() override;
 
     /**
     * This method sets the min and max values of the uniform distribution
@@ -370,7 +370,7 @@ namespace simCore
     * This method overrides the () operator to generate an exponential distribution
     * @return exponential distribution
     */
-    double operator()();
+    double operator()() override;
 
     /**
     * This method sets the mean value for the distribution
@@ -439,7 +439,7 @@ namespace simCore
     * This method overrides the () operator to generate a Poisson distribution
     * @return Poisson distribution
     */
-    int operator()();
+    int operator()() override;
 
     /**
     * This method sets the mean value for the distribution
@@ -475,7 +475,7 @@ namespace simCore
     * This method overrides the () operator to generate an Geometric distribution
     * @return Geometric distribution
     */
-    int operator()();
+    int operator()() override;
 
     /**
     * This method sets the beta value for the distribution
@@ -514,7 +514,7 @@ namespace simCore
     * This method overrides the () operator to generate an binomial distribution
     * @return binomial distribution
     */
-    int operator()();
+    int operator()() override;
 
     /**
     * This method sets the number of trials and probability for the binomial distribution
@@ -561,7 +561,7 @@ namespace simCore
     * This method overrides the () operator to generate a discrete uniform distribution
     * @return discrete uniform distribution
     */
-    int operator()();
+    int operator()() override;
 
     /**
     * This method sets the min and max values of the discrete uniform distribution

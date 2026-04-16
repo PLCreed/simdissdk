@@ -375,7 +375,7 @@ class SDKCORE_EXPORT OutlinedShape : public GogShape
 {
 public:
   /// Always returns false
-  virtual bool canRotate() const override;
+  bool canRotate() const override;
 
   /**
   * Get outlined state flag; if value is not set, default value is returned.
@@ -388,7 +388,7 @@ public:
 protected:
   OutlinedShape();
   /// Serialize the shape's specific implementation attributes to the stream
-  virtual void serializeToStream_(std::ostream& gogOutputStream) const;
+  void serializeToStream_(std::ostream& gogOutputStream) const override;
 
 private:
   std::optional<bool> outlined_; ///< outlined state of the shape
@@ -400,10 +400,10 @@ class SDKCORE_EXPORT Points : public OutlinedShape
 public:
   explicit Points(bool relative);
 
-  virtual ShapeType shapeType() const;
+  ShapeType shapeType() const override;
 
   /// Returns true if the shape is relative
-  virtual bool canRotate() const override;
+  bool canRotate() const override;
 
   /// Get the positions of points in the shape; in lla radians if absolute or xyz meters if relative
   const std::vector<simCore::Vec3>& points() const;
@@ -430,7 +430,7 @@ public:
 
 protected:
   /// Serialize the shape's specific implementation attributes to the stream
-  virtual void serializeToStream_(std::ostream& gogOutputStream) const;
+  void serializeToStream_(std::ostream& gogOutputStream) const override;
 
 public:
   std::optional<int> pointSize_; ///< pixels
@@ -485,7 +485,7 @@ public:
 protected:
   FillableShape();
   /// Serialize the shape's specific implementation attributes to the stream
-  virtual void serializeToStream_(std::ostream& gogOutputStream) const;
+  void serializeToStream_(std::ostream& gogOutputStream) const override;
 
 private:
 
@@ -501,7 +501,7 @@ class SDKCORE_EXPORT PointBasedShape : public FillableShape
 {
 public:
   /// Returns true if the shape is relative
-  virtual bool canRotate() const override;
+  bool canRotate() const override;
 
   /// Get the positions of points in the shape; in lla radians if absolute or xyz meters if relative
   const std::vector<simCore::Vec3>& points() const;
@@ -521,7 +521,7 @@ public:
 protected:
   explicit PointBasedShape(bool relative);
   /// Serialize the shape's specific implementation attributes to the stream
-  virtual void serializeToStream_(std::ostream& gogOutputStream) const;
+  void serializeToStream_(std::ostream& gogOutputStream) const override;
 
 private:
   std::optional<TessellationStyle> tessellation_; ///< defines calculation used for tessellation
@@ -534,7 +534,7 @@ class SDKCORE_EXPORT Line : public PointBasedShape
 public:
   explicit Line(bool relative);
 
-  virtual ShapeType shapeType() const;
+  ShapeType shapeType() const override;
 };
 
 /// Line segments shape implementation; point pairs represent lines, in the order they are added to the shape
@@ -543,7 +543,7 @@ class SDKCORE_EXPORT LineSegs : public PointBasedShape
 public:
   explicit LineSegs(bool relative);
 
-  virtual ShapeType shapeType() const;
+  ShapeType shapeType() const override;
 };
 
 /// Polygon shape implementation
@@ -552,7 +552,7 @@ class SDKCORE_EXPORT Polygon : public PointBasedShape
 public:
   explicit Polygon(bool relative);
 
-  virtual ShapeType shapeType() const;
+  ShapeType shapeType() const override;
 };
 
 /// Shape that supports a radius and center position
@@ -560,7 +560,7 @@ class SDKCORE_EXPORT CircularShape : public FillableShape
 {
 public:
   /// Always returns true
-  virtual bool canRotate() const override;
+  bool canRotate() const override;
 
   /**
   * Get the shape's center position in lla radians if absolute or xyz meters if relative; if value is not set, default value is returned.
@@ -581,7 +581,7 @@ public:
 protected:
   CircularShape();
   /// Serialize the shape's specific implementation attributes to the stream
-  virtual void serializeToStream_(std::ostream& gogOutputStream) const;
+  void serializeToStream_(std::ostream& gogOutputStream) const override;
 
 private:
   std::optional<simCore::Vec3> center_; ///< lla radians if absolute, xyz meters if relative
@@ -594,7 +594,7 @@ class SDKCORE_EXPORT Circle : public CircularShape
 public:
   explicit Circle(bool relative);
 
-  virtual ShapeType shapeType() const;
+  ShapeType shapeType() const override;
 };
 
 /// 3D Sphere shape implementation
@@ -603,7 +603,7 @@ class SDKCORE_EXPORT Sphere : public CircularShape
 public:
   explicit Sphere(bool relative);
 
-  virtual ShapeType shapeType() const;
+  ShapeType shapeType() const override;
 };
 
 /// 3D Hemisphere shape implementation
@@ -612,7 +612,7 @@ class SDKCORE_EXPORT Hemisphere : public CircularShape
 public:
   explicit Hemisphere(bool relative);
 
-  virtual ShapeType shapeType() const;
+  ShapeType shapeType() const override;
 };
 
 /// Orbit shape implementation
@@ -621,7 +621,7 @@ class SDKCORE_EXPORT Orbit : public CircularShape
 public:
   explicit Orbit(bool relative);
 
-  virtual ShapeType shapeType() const;
+  ShapeType shapeType() const override;
 
   /// Get the orbit's second center position; in lla radians if absolute, xyz meters if relative
   simCore::Vec3 centerPosition2() const;
@@ -646,7 +646,7 @@ public:
 
 private:
   /// Serialize the shape's specific implementation attributes to the stream
-  virtual void serializeToStream_(std::ostream& gogOutputStream) const;
+  void serializeToStream_(std::ostream& gogOutputStream) const override;
 
   simCore::Vec3 center2_; ///< lla radians if absolute, xyz meters if relative
 };
@@ -690,7 +690,7 @@ public:
 protected:
   EllipticalShape();
   /// Serialize the shape's specific implementation attributes to the stream
-  virtual void serializeToStream_(std::ostream& gogOutputStream) const;
+  void serializeToStream_(std::ostream& gogOutputStream) const override;
 
 private:
   std::optional<double> angleStart_; ///< radians
@@ -705,7 +705,7 @@ class SDKCORE_EXPORT Arc : public EllipticalShape
 public:
   explicit Arc(bool relative);
 
-  virtual ShapeType shapeType() const;
+  ShapeType shapeType() const override;
 
   /**
  * Get the shape's inner radius in meters; if value is not set, default value is returned.
@@ -717,7 +717,7 @@ public:
 
 private:
   /// Serialize the shape's specific implementation attributes to the stream
-  virtual void serializeToStream_(std::ostream& gogOutputStream) const;
+  void serializeToStream_(std::ostream& gogOutputStream) const override;
 
   std::optional<double> innerRadius_; ///< meters
 
@@ -729,7 +729,7 @@ class SDKCORE_EXPORT Ellipse : public EllipticalShape
 public:
   explicit Ellipse(bool relative);
 
-  virtual ShapeType shapeType() const;
+  ShapeType shapeType() const override;
 };
 
 /// Cylinder shape implementation, supports elliptical cylinders and wedges
@@ -738,7 +738,7 @@ class SDKCORE_EXPORT Cylinder : public EllipticalShape
 public:
   explicit Cylinder(bool relative);
 
-  virtual ShapeType shapeType() const;
+  ShapeType shapeType() const override;
 
   /**
   * Get the shape's height in meters; if value is not set, default value is returned.
@@ -750,7 +750,7 @@ public:
 
 private:
   /// Serialize the shape's specific implementation attributes to the stream
-  virtual void serializeToStream_(std::ostream& gogOutputStream) const;
+  void serializeToStream_(std::ostream& gogOutputStream) const override;
 
   std::optional<double> height_; ///< meters
 };
@@ -770,7 +770,7 @@ public:
 protected:
   CircularHeightShape();
   /// Serialize the shape's specific implementation attributes to the stream
-  virtual void serializeToStream_(std::ostream& gogOutputStream) const;
+  void serializeToStream_(std::ostream& gogOutputStream) const override;
 
 private:
   std::optional<double> height_; ///< meters
@@ -782,7 +782,7 @@ class SDKCORE_EXPORT Cone : public CircularHeightShape
 public:
   explicit Cone(bool relative);
 
-  virtual ShapeType shapeType() const;
+  ShapeType shapeType() const override;
 };
 
 /// 3D Ellipsoid shape implementation
@@ -791,7 +791,7 @@ class SDKCORE_EXPORT Ellipsoid : public CircularHeightShape
 public:
   explicit Ellipsoid(bool relative);
 
-  virtual ShapeType shapeType() const;
+  ShapeType shapeType() const override;
 
   /**
   * Get the shape's major axis in meters; if value is not set, default value is returned.
@@ -811,7 +811,7 @@ public:
 
 private:
   /// Serialize the shape's specific implementation attributes to the stream
-  virtual void serializeToStream_(std::ostream& gogOutputStream) const;
+  void serializeToStream_(std::ostream& gogOutputStream) const override;
 
   std::optional<double> majorAxis_; ///< meters
   std::optional<double> minorAxis_; ///< meters
@@ -824,10 +824,10 @@ public:
   explicit Annotation(bool relative);
 
   /// Always returns false
-  virtual bool canRotate() const override;
-  virtual ShapeType shapeType() const override;
+  bool canRotate() const override;
+  ShapeType shapeType() const override;
   /// Return text as name value if it exists and no name is defined
-  virtual int getName(std::string& name) const override;
+  int getName(std::string& name) const override;
 
   /// Get the display text of the annotation
   std::string text() const;
@@ -900,7 +900,7 @@ public:
 
 private:
   /// Serialize the shape's specific implementation attributes to the stream
-  virtual void serializeToStream_(std::ostream& gogOutputStream) const;
+  void serializeToStream_(std::ostream& gogOutputStream) const override;
 
   std::string text_; ///< display text
   std::optional<simCore::Vec3> position_; ///< lla radians if absolute, xyz meters if relative
@@ -919,7 +919,7 @@ class SDKCORE_EXPORT LatLonAltBox : public FillableShape
 public:
   LatLonAltBox();
 
-  virtual ShapeType shapeType() const;
+  ShapeType shapeType() const override;
 
   /// Box north corner latitude in radians
   double north() const;
@@ -947,7 +947,7 @@ public:
 
 private:
   /// Serialize the shape's specific implementation attributes to the stream
-  virtual void serializeToStream_(std::ostream& gogOutputStream) const;
+  void serializeToStream_(std::ostream& gogOutputStream) const override;
 
   double north_ = 0.; ///< north corner latitude, radians
   double south_ = 0.; ///< south corner latitude, radians
@@ -964,8 +964,8 @@ public:
   ImageOverlay();
 
   /// Always returns false
-  virtual bool canRotate() const override;
-  virtual ShapeType shapeType() const;
+  bool canRotate() const override;
+  ShapeType shapeType() const override;
 
   /// Box north corner latitude in radians
   double north() const;
@@ -997,7 +997,7 @@ public:
 
 private:
   /// Serialize the shape's specific implementation attributes to the stream
-  virtual void serializeToStream_(std::ostream& gogOutputStream) const;
+  void serializeToStream_(std::ostream& gogOutputStream) const override;
 
   double north_ = 0.; ///< north corner latitude, radians
   double south_ = 0.; ///< south corner latitude, radians

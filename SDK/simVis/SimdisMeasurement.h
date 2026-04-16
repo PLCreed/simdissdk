@@ -44,7 +44,7 @@ public:
   * @param precision Ignored
   * @return The value as a string
   */
-  virtual std::string stringValue(double value, int precision) const;
+  std::string stringValue(double value, int precision) const override;
 };
 
 
@@ -85,8 +85,8 @@ class SDKVIS_EXPORT RFGainMeasurement : public RelOriMeasurement
 {
 public:
   RFGainMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -98,8 +98,8 @@ class SDKVIS_EXPORT RFPowerMeasurement : public RfMeasurement
 {
 public:
   RFPowerMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -111,8 +111,8 @@ class SDKVIS_EXPORT RFOneWayPowerMeasurement : public RfMeasurement
 {
 public:
   RFOneWayPowerMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -131,7 +131,7 @@ public:
   * @param units The units.
   */
   HorizonMeasurement(const std::string &typeName, const std::string &typeAbbr, const simCore::Units &units);
-  virtual bool willAccept(const RangeToolState& state) const;
+  bool willAccept(const RangeToolState& state) const override;
 
   /**
   * Set effective Earth radius scalars for optical and rf horizon measurement.
@@ -162,7 +162,7 @@ class SDKVIS_EXPORT RadioHorizonMeasurement : public HorizonMeasurement
 {
 public:
   RadioHorizonMeasurement();
-  virtual double value(RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -174,7 +174,7 @@ class SDKVIS_EXPORT OpticalHorizonMeasurement : public HorizonMeasurement
 {
 public:
   OpticalHorizonMeasurement();
-  virtual double value(RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -186,8 +186,8 @@ class SDKVIS_EXPORT PodMeasurement : public RfMeasurement
 {
 public:
   PodMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -199,8 +199,8 @@ class SDKVIS_EXPORT LossMeasurement : public RfMeasurement
 {
 public:
   LossMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -212,8 +212,8 @@ class SDKVIS_EXPORT PpfMeasurement : public RfMeasurement
 {
 public:
   PpfMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -225,8 +225,8 @@ class SDKVIS_EXPORT SnrMeasurement : public RfMeasurement
 {
 public:
   SnrMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -239,8 +239,8 @@ class SDKVIS_EXPORT CnrMeasurement : public RfMeasurement
 public:
   CnrMeasurement();
   //unlike other RF - related calculations, CNR doesn't have a height component
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -252,8 +252,8 @@ class SDKVIS_EXPORT RcsMeasurement : public RfMeasurement
 {
 public:
   RcsMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived

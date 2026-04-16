@@ -49,10 +49,10 @@ public:
   void update(const simData::CommonPrefs& commonPrefs, const std::string& text, float zOffset=0.f);
 
   /** Return the proper library name */
-  virtual const char* libraryName() const { return "simVis"; }
+  const char* libraryName() const override { return "simVis"; }
 
   /** Return the class name */
-  virtual const char* className() const { return "EntityLabelNode"; }
+  const char* className() const override { return "EntityLabelNode"; }
 
 protected:
   virtual ~EntityLabelNode();

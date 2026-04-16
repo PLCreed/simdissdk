@@ -179,13 +179,13 @@ public:
   virtual ~AntennaPatternGauss() {}
 
   /** @copydoc AntennaPattern::type */
-  virtual AntennaPatternType type() const { return ANTENNA_PATTERN_GAUSS; }
+  AntennaPatternType type() const override { return ANTENNA_PATTERN_GAUSS; }
 
   /** @copydoc AntennaPattern::gain */
-  virtual float gain(const AntennaGainParameters &params);
+  float gain(const AntennaGainParameters &params) override;
 
   /** @copydoc AntennaPattern::minMaxGain */
-  virtual void minMaxGain(float *min, float *max, const AntennaGainParameters &params);
+  void minMaxGain(float *min, float *max, const AntennaGainParameters &params) override;
 
 protected:
   float lastVbw_;             ///< Last vertical beam width used to calculate min & max gains
@@ -201,13 +201,13 @@ public:
   virtual ~AntennaPatternCscSq() {}
 
   /** @copydoc AntennaPattern::type */
-  virtual AntennaPatternType type() const { return ANTENNA_PATTERN_CSCSQ; }
+  AntennaPatternType type() const override { return ANTENNA_PATTERN_CSCSQ; }
 
   /** @copydoc AntennaPattern::gain */
-  virtual float gain(const AntennaGainParameters &params);
+  float gain(const AntennaGainParameters &params) override;
 
   /** @copydoc AntennaPattern::minMaxGain */
-  virtual void minMaxGain(float *min, float *max, const AntennaGainParameters &params);
+  void minMaxGain(float *min, float *max, const AntennaGainParameters &params) override;
 
 protected:
   float lastVbw_;             ///< Last vertical beam width used to calculate min & max gains
@@ -223,13 +223,13 @@ public:
   virtual ~AntennaPatternSinXX() {}
 
   /** @copydoc AntennaPattern::type */
-  virtual AntennaPatternType type() const { return ANTENNA_PATTERN_SINXX; }
+  AntennaPatternType type() const override { return ANTENNA_PATTERN_SINXX; }
 
   /** @copydoc AntennaPattern::gain */
-  virtual float gain(const AntennaGainParameters &params);
+  float gain(const AntennaGainParameters &params) override;
 
   /** @copydoc AntennaPattern::minMaxGain */
-  virtual void minMaxGain(float *min, float *max, const AntennaGainParameters &params);
+  void minMaxGain(float *min, float *max, const AntennaGainParameters &params) override;
 
 protected:
   float lastVbw_;             ///< Last vertical beam width used to calculate min & max gains
@@ -246,13 +246,13 @@ public:
   virtual ~AntennaPatternPedestal() {}
 
   /** @copydoc AntennaPattern::type */
-  virtual AntennaPatternType type() const { return ANTENNA_PATTERN_PEDESTAL; }
+  AntennaPatternType type() const override { return ANTENNA_PATTERN_PEDESTAL; }
 
   /** @copydoc AntennaPattern::gain */
-  virtual float gain(const AntennaGainParameters &params);
+  float gain(const AntennaGainParameters &params) override;
 
   /** @copydoc AntennaPattern::minMaxGain */
-  virtual void minMaxGain(float *min, float *max, const AntennaGainParameters &params);
+  void minMaxGain(float *min, float *max, const AntennaGainParameters &params) override;
 
 protected:
   float lastVbw_;             ///< Last vertical beam width used to calculate min & max gains
@@ -270,13 +270,13 @@ public:
   virtual ~AntennaPatternOmni() {}
 
   /** @copydoc AntennaPattern::type */
-  virtual AntennaPatternType type() const { return ANTENNA_PATTERN_OMNI; }
+  AntennaPatternType type() const override { return ANTENNA_PATTERN_OMNI; }
 
   /** @copydoc AntennaPattern::gain */
-  virtual float gain(const AntennaGainParameters &params);
+  float gain(const AntennaGainParameters &params) override;
 
   /** @copydoc AntennaPattern::minMaxGain */
-  virtual void minMaxGain(float *min, float *max, const AntennaGainParameters &params);
+  void minMaxGain(float *min, float *max, const AntennaGainParameters &params) override;
 };
 
 // ----------------------------------------------------------------------------
@@ -313,13 +313,13 @@ public:
   virtual ~AntennaPatternTable() {}
 
   /** @copydoc AntennaPattern::type */
-  virtual AntennaPatternType type() const { return ANTENNA_PATTERN_TABLE; }
+  AntennaPatternType type() const override { return ANTENNA_PATTERN_TABLE; }
 
   /** @copydoc AntennaPattern::gain */
-  virtual float gain(const AntennaGainParameters &params);
+  float gain(const AntennaGainParameters &params) override;
 
   /** @copydoc AntennaPattern::minMaxGain */
-  virtual void minMaxGain(float *min, float *max, const AntennaGainParameters &params);
+  void minMaxGain(float *min, float *max, const AntennaGainParameters &params) override;
 
   /**
   * This method checks the incoming antenna pattern data filename, opens a file stream and calls readPat
@@ -387,13 +387,13 @@ public:
   virtual ~AntennaPatternCRUISE() {reset_();}
 
   /** @copydoc AntennaPattern::type */
-  virtual AntennaPatternType type() const { return ANTENNA_PATTERN_CRUISE; }
+  AntennaPatternType type() const override { return ANTENNA_PATTERN_CRUISE; }
 
   /** @copydoc AntennaPattern::gain */
-  virtual float gain(const AntennaGainParameters &params);
+  float gain(const AntennaGainParameters &params) override;
 
   /** @copydoc AntennaPattern::minMaxGain */
-  virtual void minMaxGain(float *min, float *max, const AntennaGainParameters &params);
+  void minMaxGain(float *min, float *max, const AntennaGainParameters &params) override;
 
   /**
   * This method checks the incoming antenna pattern data filename, opens a file stream and calls readPat_
@@ -438,13 +438,13 @@ public:
   virtual ~AntennaPatternRelativeTable() {}
 
   /** @copydoc AntennaPattern::type */
-  virtual AntennaPatternType type() const { return ANTENNA_PATTERN_RELATIVE; }
+  AntennaPatternType type() const override { return ANTENNA_PATTERN_RELATIVE; }
 
   /** @copydoc AntennaPattern::gain */
-  virtual float gain(const AntennaGainParameters &params);
+  float gain(const AntennaGainParameters &params) override;
 
   /** @copydoc AntennaPattern::minMaxGain */
-  virtual void minMaxGain(float *min, float *max, const AntennaGainParameters &params);
+  void minMaxGain(float *min, float *max, const AntennaGainParameters &params) override;
 
   /**
   * This method checks the incoming antenna pattern data filename, opens a file stream and calls readPat_
@@ -512,13 +512,13 @@ public:
   virtual ~AntennaPatternMonopulse();
 
   /** @copydoc AntennaPattern::type */
-  virtual AntennaPatternType type() const { return ANTENNA_PATTERN_MONOPULSE; }
+  AntennaPatternType type() const override { return ANTENNA_PATTERN_MONOPULSE; }
 
   /** @copydoc AntennaPattern::gain */
-  virtual float gain(const AntennaGainParameters &params);
+  float gain(const AntennaGainParameters &params) override;
 
   /** @copydoc AntennaPattern::minMaxGain */
-  virtual void minMaxGain(float *min, float *max, const AntennaGainParameters &params);
+  void minMaxGain(float *min, float *max, const AntennaGainParameters &params) override;
 
   /**
   * This method checks the incoming antenna pattern data filename, opens a file stream and calls readPat_
@@ -596,13 +596,13 @@ public:
   virtual ~AntennaPatternBiLinear();
 
   /** @copydoc AntennaPattern::type */
-  virtual AntennaPatternType type() const { return ANTENNA_PATTERN_BILINEAR; }
+  AntennaPatternType type() const override { return ANTENNA_PATTERN_BILINEAR; }
 
   /** @copydoc AntennaPattern::gain */
-  virtual float gain(const AntennaGainParameters &params);
+  float gain(const AntennaGainParameters &params) override;
 
   /** @copydoc AntennaPattern::minMaxGain */
-  virtual void minMaxGain(float *min, float *max, const AntennaGainParameters &params);
+  void minMaxGain(float *min, float *max, const AntennaGainParameters &params) override;
 
   /**
   * This method checks the incoming antenna pattern data filename, opens a file stream and calls readPat_
@@ -633,13 +633,13 @@ public:
   virtual ~AntennaPatternNSMA() {}
 
   /** @copydoc AntennaPattern::type */
-  virtual AntennaPatternType type() const { return ANTENNA_PATTERN_NSMA; }
+  AntennaPatternType type() const override { return ANTENNA_PATTERN_NSMA; }
 
   /** @copydoc AntennaPattern::gain */
-  virtual float gain(const AntennaGainParameters &params);
+  float gain(const AntennaGainParameters &params) override;
 
   /** @copydoc AntennaPattern::minMaxGain */
-  virtual void minMaxGain(float *min, float *max, const AntennaGainParameters &params);
+  void minMaxGain(float *min, float *max, const AntennaGainParameters &params) override;
 
   /**
   * This method checks the incoming antenna pattern data filename, opens a file stream and calls readPat_
@@ -706,13 +706,13 @@ public:
   virtual ~AntennaPatternEZNEC() {}
 
   /** @copydoc AntennaPattern::type */
-  virtual AntennaPatternType type() const { return ANTENNA_PATTERN_EZNEC; }
+  AntennaPatternType type() const override { return ANTENNA_PATTERN_EZNEC; }
 
   /** @copydoc AntennaPattern::gain */
-  virtual float gain(const AntennaGainParameters &params);
+  float gain(const AntennaGainParameters &params) override;
 
   /** @copydoc AntennaPattern::minMaxGain */
-  virtual void minMaxGain(float *min, float *max, const AntennaGainParameters &params);
+  void minMaxGain(float *min, float *max, const AntennaGainParameters &params) override;
 
   /**
   * This method checks the incoming antenna pattern data filename, opens a file stream and calls readPat_
@@ -751,13 +751,13 @@ public:
   virtual ~AntennaPatternXFDTD() {}
 
   /** @copydoc AntennaPattern::type */
-  virtual AntennaPatternType type() const { return ANTENNA_PATTERN_XFDTD; }
+  AntennaPatternType type() const override { return ANTENNA_PATTERN_XFDTD; }
 
   /** @copydoc AntennaPattern::gain */
-  virtual float gain(const AntennaGainParameters &params);
+  float gain(const AntennaGainParameters &params) override;
 
   /** @copydoc AntennaPattern::minMaxGain */
-  virtual void minMaxGain(float *min, float *max, const AntennaGainParameters &params);
+  void minMaxGain(float *min, float *max, const AntennaGainParameters &params) override;
 
   /**
   * This method checks the incoming antenna pattern data filename, opens a file stream and calls readPat_

@@ -45,19 +45,19 @@ public:
 
   /** Color override when not picked */
   const osg::Vec4f& getColor() const;
-  void setColor(const osg::Vec4f& color);
+  void setColor(const osg::Vec4f& color) override;
 
   /** Color override when mouse is hovering or picked through clicking */
   const osg::Vec4f& getPickColor() const;
-  void setPickColor(const osg::Vec4f& pickColor);
+  void setPickColor(const osg::Vec4f& pickColor) override;
 
   /** On-screen size (square) in pixels */
   float getSize() const;
   void setSize(float size);
 
   // From Dragger:
-  virtual void enter() override;
-  virtual void leave() override;
+  void enter() override;
+  void leave() override;
 
 private:
   void updateColor_();

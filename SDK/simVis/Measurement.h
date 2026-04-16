@@ -185,8 +185,8 @@ class SDKVIS_EXPORT GroundDistanceMeasurement : public Measurement
 {
 public:
   GroundDistanceMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -198,8 +198,8 @@ class SDKVIS_EXPORT SlantDistanceMeasurement : public Measurement
 {
 public:
   SlantDistanceMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 public:
   /// osg::Referenced-derived
@@ -211,8 +211,8 @@ class SDKVIS_EXPORT AltitudeDeltaMeasurement : public Measurement
 {
 public:
   AltitudeDeltaMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -224,8 +224,8 @@ class SDKVIS_EXPORT BeamGroundDistanceMeasurement : public Measurement
 {
 public:
   BeamGroundDistanceMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -237,8 +237,8 @@ class SDKVIS_EXPORT BeamSlantDistanceMeasurement : public Measurement
 {
 public:
   BeamSlantDistanceMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -250,8 +250,8 @@ class SDKVIS_EXPORT BeamAltitudeDeltaMeasurement : public Measurement
 {
 public:
   BeamAltitudeDeltaMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -263,8 +263,8 @@ class SDKVIS_EXPORT DownRangeMeasurement : public Measurement
 {
 public:
   DownRangeMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -276,8 +276,8 @@ class SDKVIS_EXPORT CrossRangeMeasurement : public Measurement
 {
 public:
   CrossRangeMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -289,8 +289,8 @@ class SDKVIS_EXPORT DownRangeCrossRangeDownValueMeasurement : public Measurement
 {
 public:
   DownRangeCrossRangeDownValueMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -302,8 +302,8 @@ class SDKVIS_EXPORT GeoDownRangeMeasurement : public Measurement
 {
 public:
   GeoDownRangeMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -315,8 +315,8 @@ class SDKVIS_EXPORT GeoCrossRangeMeasurement : public Measurement
 {
 public:
   GeoCrossRangeMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -330,8 +330,8 @@ class SDKVIS_EXPORT TrueAzimuthMeasurement : public Measurement
 {
 public:
   TrueAzimuthMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 public:
   /// osg::Referenced-derived
@@ -343,8 +343,8 @@ class SDKVIS_EXPORT TrueElevationMeasurement : public Measurement
 {
 public:
   TrueElevationMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 public:
   /// osg::Referenced-derived
@@ -356,8 +356,8 @@ class SDKVIS_EXPORT TrueCompositeAngleMeasurement : public Measurement
 {
 public:
   TrueCompositeAngleMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 public:
   /// osg::Referenced-derived
@@ -368,8 +368,8 @@ class SDKVIS_EXPORT MagneticAzimuthMeasurement : public Measurement
 {
 public:
   explicit MagneticAzimuthMeasurement(std::shared_ptr<simCore::DatumConvert> datumConvert);
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 public:
   /// osg::Referenced-derived
@@ -411,8 +411,8 @@ class SDKVIS_EXPORT RelOriAzimuthMeasurement : public RelOriMeasurement
 {
 public:
   RelOriAzimuthMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 public:
   /// osg::Referenced-derived
@@ -424,8 +424,8 @@ class SDKVIS_EXPORT RelOriElevationMeasurement : public RelOriMeasurement
 {
 public:
   RelOriElevationMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 public:
   /// osg::Referenced-derived
@@ -437,8 +437,8 @@ class SDKVIS_EXPORT RelOriCompositeAngleMeasurement : public RelOriMeasurement
 {
 public:
   RelOriCompositeAngleMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 public:
   /// osg::Referenced-derived
@@ -479,8 +479,8 @@ class SDKVIS_EXPORT RelVelAzimuthMeasurement : public RelVelMeasurement
 {
 public:
   RelVelAzimuthMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 public:
   /// osg::Referenced-derived
@@ -492,8 +492,8 @@ class SDKVIS_EXPORT RelVelElevationMeasurement : public RelVelMeasurement
 {
 public:
   RelVelElevationMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 public:
   /// osg::Referenced-derived
@@ -505,8 +505,8 @@ class SDKVIS_EXPORT RelVelCompositeAngleMeasurement : public RelVelMeasurement
 {
 public:
   RelVelCompositeAngleMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 public:
   /// osg::Referenced-derived
@@ -520,8 +520,8 @@ class SDKVIS_EXPORT ClosingVelocityMeasurement : public Measurement
 {
 public:
   ClosingVelocityMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -533,8 +533,8 @@ class SDKVIS_EXPORT SeparationVelocityMeasurement : public Measurement
 {
 public:
   SeparationVelocityMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -546,8 +546,8 @@ class SDKVIS_EXPORT VelocityDeltaMeasurement : public Measurement
 {
 public:
   VelocityDeltaMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -559,8 +559,8 @@ class SDKVIS_EXPORT VelAzimDownRangeMeasurement : public Measurement
 {
 public:
   VelAzimDownRangeMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -572,8 +572,8 @@ class SDKVIS_EXPORT VelAzimCrossRangeMeasurement : public Measurement
 {
 public:
   VelAzimCrossRangeMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -585,8 +585,8 @@ class SDKVIS_EXPORT VelAzimGeoDownRangeMeasurement : public Measurement
 {
 public:
   VelAzimGeoDownRangeMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -598,8 +598,8 @@ class SDKVIS_EXPORT VelAzimGeoCrossRangeMeasurement : public Measurement
 {
 public:
   VelAzimGeoCrossRangeMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 protected:
   /// osg::Referenced-derived
@@ -611,8 +611,8 @@ class SDKVIS_EXPORT AspectAngleMeasurement : public Measurement
 {
 public:
   AspectAngleMeasurement();
-  virtual double value(RangeToolState& state) const;
-  virtual bool willAccept(const RangeToolState& state) const;
+  double value(RangeToolState& state) const override;
+  bool willAccept(const RangeToolState& state) const override;
 
 private:
   /// osg::Referenced-derived

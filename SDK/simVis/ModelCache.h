@@ -199,7 +199,7 @@ public:
   explicit ReplaceChildReadyCallback(osg::Group* parent, unsigned int childIndex = 0);
 
   /** Callback virtual method. */
-  virtual void loadFinished(const osg::ref_ptr<osg::Node>& model, bool isImage, const std::string& filename);
+  void loadFinished(const osg::ref_ptr<osg::Node>& model, bool isImage, const std::string& filename) override;
 
 private:
   osg::observer_ptr<osg::Group> parent_;

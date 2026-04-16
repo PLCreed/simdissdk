@@ -69,15 +69,15 @@ public:
   bool usePrefix() const;
 
   /** Override NotifyHandler::notify(). Is thread safe, but threaded message may introduce text mangling. */
-  virtual void notify(const std::string& message);
+  void notify(const std::string& message) override;
   /** Override NotifyHandler::notifyPrefix(). Is thread safe, but threaded message may introduce text mangling. */
-  virtual void notifyPrefix();
+  void notifyPrefix() override;
 
 protected:
   /** @see NotifyHandler::lockMutex_() */
-  virtual void lockMutex_();
+  void lockMutex_() override;
   /** @see NotifyHandler::unlockMutex_() */
-  virtual void unlockMutex_();
+  void unlockMutex_() override;
 
 private:
   ConsoleChannelPtr channel_;

@@ -1,4 +1,8 @@
-Checks: '-*,modernize-use-override'
+Checks: |
+  -*,
+  modernize-use-override,
+
+HeaderFilterRegex: '.*'
 
 CheckOptions:
   modernize-use-override.IgnoreDestructors: true

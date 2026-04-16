@@ -62,7 +62,7 @@ public:
 
   // GeoFence interface
   /** Returns true if the ECEF point p is visible relative to horizon */
-  virtual bool contains(const osg::Vec3d& p) const;
+  bool contains(const osg::Vec3d& p) const override;
 
 protected:
   virtual ~HorizonGeoFence() { }

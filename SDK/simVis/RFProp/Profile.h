@@ -96,16 +96,16 @@ public:
   void setTerrainHeights(const std::map<float, float>& terrainHeights);
 
   /** On update visitor, re-initialize when dirty */
-  virtual void traverse(osg::NodeVisitor& nv);
+  void traverse(osg::NodeVisitor& nv) override;
 
   /** Dirty this Profile causing it to be redrawn. */
   void dirty();
 
   /** Return the proper library name */
-  virtual const char* libraryName() const { return "simRF"; }
+  const char* libraryName() const override { return "simRF"; }
 
   /** Return the class name */
-  virtual const char* className() const { return "Profile"; }
+  const char* className() const override { return "Profile"; }
 
 protected:
   /// osg::Referenced-derived

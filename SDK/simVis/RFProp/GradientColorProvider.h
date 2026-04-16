@@ -41,7 +41,7 @@ public:
   GradientColorProvider();
 
   /** Gets the display color mode */
-  virtual ColorMode getMode() const { return COLORMODE_GRADIENT; }
+  ColorMode getMode() const override { return COLORMODE_GRADIENT; }
 
   /** Set alpha value for all colors in the gradient */
   void setAlpha(float value);
@@ -65,10 +65,10 @@ public:
   void clear();
 
   /** Installs this color provider from the given state set */
-  virtual void install(osg::StateSet* stateset);
+  void install(osg::StateSet* stateset) override;
 
   /** Uninstall this color provider from the given state set */
-  virtual void uninstall(osg::StateSet* stateset);
+  void uninstall(osg::StateSet* stateset) override;
 
 protected:
   /// osg::Referenced-derived

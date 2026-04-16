@@ -306,9 +306,9 @@ namespace simVis
     void setNodeGetter(std::function<EntityNode* (simData::ObjectId)> getter);
 
     /** Return the proper library name */
-    virtual const char* libraryName() const { return "simVis"; }
+    const char* libraryName() const override { return "simVis"; }
     /** Return the class name */
-    virtual const char* className() const { return "EntityNode"; }
+    const char* className() const override { return "EntityNode"; }
 
   protected:
     virtual ~EntityNode();

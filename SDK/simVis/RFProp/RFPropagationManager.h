@@ -72,15 +72,15 @@ public:
     : RFPropagationManager()
   {
   }
-  virtual simRF::RFPropagationFacade* getRFPropagation(simData::ObjectId id) const
+  simRF::RFPropagationFacade* getRFPropagation(simData::ObjectId id) const override
   {
     return nullptr;
   }
-  virtual simRF::RFPropagationFacade* getOrCreateRFPropagation(simData::ObjectId id)
+  simRF::RFPropagationFacade* getOrCreateRFPropagation(simData::ObjectId id) override
   {
     return nullptr;
   }
-  virtual int loadFiles(simData::ObjectId beamId, const std::vector<std::string>& files)
+  int loadFiles(simData::ObjectId beamId, const std::vector<std::string>& files) override
   {
     return 1;
   }

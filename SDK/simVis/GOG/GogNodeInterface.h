@@ -594,18 +594,18 @@ public:
   FeatureNodeInterface(osg::Group* node, osgEarth::FeatureNode* featureNode, const simVis::GOG::GogMetaData& metaData);
   virtual ~FeatureNodeInterface() {}
 
-  virtual int getPosition(osg::Vec3d& position, osgEarth::GeoPoint* referencePosition = nullptr) const override;
-  virtual int getTessellation(TessellationStyle& style) const override;
-  virtual void setAltitudeMode(AltitudeMode altMode) override;
-  virtual void setAltOffset(double altOffsetMeters) override;
-  virtual void setExtrude(bool extrude) override;
-  virtual void setTessellation(TessellationStyle style) override;
-  virtual void markDirty() override;
+  int getPosition(osg::Vec3d& position, osgEarth::GeoPoint* referencePosition = nullptr) const override;
+  int getTessellation(TessellationStyle& style) const override;
+  void setAltitudeMode(AltitudeMode altMode) override;
+  void setAltOffset(double altOffsetMeters) override;
+  void setExtrude(bool extrude) override;
+  void setTessellation(TessellationStyle style) override;
+  void markDirty() override;
 
 protected:
-  virtual void adjustAltitude_() override;
-  virtual void setStyle_(const osgEarth::Style& style) override;
-  virtual void applyOrientationOffsets_() override;
+  void adjustAltitude_() override;
+  void setStyle_(const osgEarth::Style& style) override;
+  void applyOrientationOffsets_() override;
 
   osg::observer_ptr<osgEarth::FeatureNode> featureNode_;
   /// cache the original altitude values, to apply altitude offset dynamically
@@ -625,17 +625,17 @@ public:
   /** Constructor */
   LocalGeometryNodeInterface(osgEarth::LocalGeometryNode* localNode, const simVis::GOG::GogMetaData& metaData);
   virtual ~LocalGeometryNodeInterface() {}
-  virtual int getPosition(osg::Vec3d& position, osgEarth::GeoPoint* referencePosition = nullptr) const override;
+  int getPosition(osg::Vec3d& position, osgEarth::GeoPoint* referencePosition = nullptr) const override;
   // override the get/set reference position to work directly with in-scene content
-  virtual int getReferencePosition(osg::Vec3d& referencePosition) const override;
-  virtual int setReferencePosition(const osg::Vec3& referencePos) override;
+  int getReferencePosition(osg::Vec3d& referencePosition) const override;
+  int setReferencePosition(const osg::Vec3& referencePos) override;
   /// Override is-attached to inspect the local geometry node
-  virtual bool isAttached() const override;
+  bool isAttached() const override;
 
 protected:
-  virtual void adjustAltitude_() override;
-  virtual void setStyle_(const osgEarth::Style& style) override;
-  virtual void applyOrientationOffsets_() override;
+  void adjustAltitude_() override;
+  void setStyle_(const osgEarth::Style& style) override;
+  void applyOrientationOffsets_() override;
 
   /** LocalGeometryNode that this interface represents */
   osg::observer_ptr<osgEarth::LocalGeometryNode> localNode_;
@@ -651,26 +651,26 @@ public:
   /** Constructor */
   LabelNodeInterface(osgEarth::GeoPositionNode* labelNode, const simVis::GOG::GogMetaData& metaData);
   virtual ~LabelNodeInterface() {}
-  virtual int getFont(std::string& fontFile, int& fontSize, osg::Vec4f& fontColor) const override;
-  virtual int getPosition(osg::Vec3d& position, osgEarth::GeoPoint* referencePosition = nullptr) const override;
-  virtual int getTextOutline(osg::Vec4f& outlineColor, simData::TextOutline& outlineThickness) const override;
-  virtual int getDeclutterPriority(int& priority) const override;
-  virtual void setFont(const std::string& fontName, int fontSize, const osg::Vec4f& color) override;
-  virtual void setTextOutline(const osg::Vec4f& outlineColor, simData::TextOutline outlineThickness) override;
-  virtual void setDeclutterPriority(int priority) override;
-  virtual void applyOrientationOffsets_() override;
+  int getFont(std::string& fontFile, int& fontSize, osg::Vec4f& fontColor) const override;
+  int getPosition(osg::Vec3d& position, osgEarth::GeoPoint* referencePosition = nullptr) const override;
+  int getTextOutline(osg::Vec4f& outlineColor, simData::TextOutline& outlineThickness) const override;
+  int getDeclutterPriority(int& priority) const override;
+  void setFont(const std::string& fontName, int fontSize, const osg::Vec4f& color) override;
+  void setTextOutline(const osg::Vec4f& outlineColor, simData::TextOutline outlineThickness) override;
+  void setDeclutterPriority(int priority) override;
+  void applyOrientationOffsets_() override;
   /** Override serialize, since image file may need to be created */
-  virtual void serializeToStream(std::ostream& gogOutputStream) override;
+  void serializeToStream(std::ostream& gogOutputStream) override;
 
   // override the get/set reference position to work directly with in-scene content
-  virtual int getReferencePosition(osg::Vec3d& referencePosition) const override;
-  virtual int setReferencePosition(const osg::Vec3& referencePos) override;
+  int getReferencePosition(osg::Vec3d& referencePosition) const override;
+  int setReferencePosition(const osg::Vec3& referencePos) override;
   /// Override is-attached to inspect the local geometry node
-  virtual bool isAttached() const override;
+  bool isAttached() const override;
 
 protected:
-  virtual void adjustAltitude_() override;
-  virtual void setStyle_(const osgEarth::Style& style) override;
+  void adjustAltitude_() override;
+  void setStyle_(const osgEarth::Style& style) override;
 
 private:
   // Stores either a LabelNode or PlaceNode
@@ -692,20 +692,20 @@ public:
   /** Constructor */
   CylinderNodeInterface(osg::Group* groupNode, osgEarth::LocalGeometryNode* sideNode, osgEarth::LocalGeometryNode* topCapNode, osgEarth::LocalGeometryNode* bottomCapNode, const simVis::GOG::GogMetaData& metaData);
   virtual ~CylinderNodeInterface();
-  virtual int getPosition(osg::Vec3d& position, osgEarth::GeoPoint* referencePosition = nullptr) const override;
-  virtual void setAltitudeMode(AltitudeMode altMode) override;
-  virtual void applyOrientationOffsets_() override;
+  int getPosition(osg::Vec3d& position, osgEarth::GeoPoint* referencePosition = nullptr) const override;
+  void setAltitudeMode(AltitudeMode altMode) override;
+  void applyOrientationOffsets_() override;
 
   // override the get/set reference position to work directly with in-scene content
-  virtual int getReferencePosition(osg::Vec3d& referencePosition) const override;
-  virtual int setReferencePosition(const osg::Vec3& referencePos) override;
+  int getReferencePosition(osg::Vec3d& referencePosition) const override;
+  int setReferencePosition(const osg::Vec3& referencePos) override;
   /// Override is-attached to inspect the local geometry node
-  virtual bool isAttached() const override;
+  bool isAttached() const override;
 
 protected:
-  virtual void adjustAltitude_() override;
-  virtual void setStyle_(const osgEarth::Style& style) override;
-  virtual void applyScale_(const osg::Vec3d& scale) override;
+  void adjustAltitude_() override;
+  void setStyle_(const osgEarth::Style& style) override;
+  void applyScale_(const osg::Vec3d& scale) override;
 
 private:
 
@@ -727,20 +727,20 @@ public:
   /** Constructor */
   ArcNodeInterface(osg::Group* groupNode, osgEarth::LocalGeometryNode* shapeNode, osgEarth::LocalGeometryNode* fillNode, const simVis::GOG::GogMetaData& metatData);
   virtual ~ArcNodeInterface() {}
-  virtual int getPosition(osg::Vec3d& position, osgEarth::GeoPoint* referencePosition = nullptr) const override;
-  virtual void setFilledState(bool state) override;
+  int getPosition(osg::Vec3d& position, osgEarth::GeoPoint* referencePosition = nullptr) const override;
+  void setFilledState(bool state) override;
 
   // override the get/set reference position to work directly with in-scene content
-  virtual int getReferencePosition(osg::Vec3d& referencePosition) const override;
-  virtual int setReferencePosition(const osg::Vec3& referencePos) override;
+  int getReferencePosition(osg::Vec3d& referencePosition) const override;
+  int setReferencePosition(const osg::Vec3& referencePos) override;
   /// Override is-attached to inspect the local geometry node
-  virtual bool isAttached() const override;
+  bool isAttached() const override;
 
 protected:
-  virtual void adjustAltitude_() override;
-  virtual void setStyle_(const osgEarth::Style& style) override;
-  virtual void applyOrientationOffsets_() override;
-  virtual void applyScale_(const osg::Vec3d& scale) override;
+  void adjustAltitude_() override;
+  void setStyle_(const osgEarth::Style& style) override;
+  void applyOrientationOffsets_() override;
+  void applyScale_(const osg::Vec3d& scale) override;
 
 private:
   osg::observer_ptr<osgEarth::LocalGeometryNode> shapeNode_; ///< draws the arc
@@ -758,15 +758,15 @@ public:
   /** Constructor */
   SphericalNodeInterface(osgEarth::LocalGeometryNode* localNode, const simVis::GOG::GogMetaData& metaData);
   virtual ~SphericalNodeInterface() {}
-  virtual int getFilledState(bool& state, osg::Vec4f& color) const;
-  virtual int getLineState(bool& outlineState, osg::Vec4f& color, Utils::LineStyle& lineStyle, int& lineWidth) const;
-  virtual void setFillColor(const osg::Vec4f& color);
-  virtual void setFilledState(bool state);
-  virtual void setLineColor(const osg::Vec4f& color);
+  int getFilledState(bool& state, osg::Vec4f& color) const override;
+  int getLineState(bool& outlineState, osg::Vec4f& color, Utils::LineStyle& lineStyle, int& lineWidth) const override;
+  void setFillColor(const osg::Vec4f& color) override;
+  void setFilledState(bool state) override;
+  void setLineColor(const osg::Vec4f& color) override;
 
 protected:
   /** Override setStyle to fix the depth */
-  virtual void setStyle_(const osgEarth::Style& style);
+  void setStyle_(const osgEarth::Style& style) override;
 
 private:
   void setColor_(const osg::Vec4f& color);
@@ -782,7 +782,7 @@ class SDKVIS_EXPORT ConeNodeInterface : public LocalGeometryNodeInterface
 public:
   ConeNodeInterface(osgEarth::LocalGeometryNode* localNode, const simVis::GOG::GogMetaData& metaData);
   virtual ~ConeNodeInterface() {}
-  virtual void setFillColor(const osg::Vec4f& color);
+  void setFillColor(const osg::Vec4f& color) override;
 };
 
 /**
@@ -794,19 +794,19 @@ class SDKVIS_EXPORT ImageOverlayInterface : public GogNodeInterface
 public:
   ImageOverlayInterface(osgEarth::ImageOverlay* imageNode, const simVis::GOG::GogMetaData& metaData);
   virtual ~ImageOverlayInterface() {}
-  virtual int getPosition(osg::Vec3d& position, osgEarth::GeoPoint* referencePosition = nullptr) const;
+  int getPosition(osg::Vec3d& position, osgEarth::GeoPoint* referencePosition = nullptr) const override;
   /** Override serialize, since image file may need to be created */
-  virtual void serializeToStream(std::ostream& gogOutputStream) override;
+  void serializeToStream(std::ostream& gogOutputStream) override;
   /** Override opacity, since the override color approach doesn't work */
-  virtual void setOpacity(float opacity) override;
+  void setOpacity(float opacity) override;
 
   // override the get reference position; this is absolute, and reference cannot be set.
-  virtual int getReferencePosition(osg::Vec3d& referencePosition) const override;
+  int getReferencePosition(osg::Vec3d& referencePosition) const override;
 
 protected:
-  virtual void adjustAltitude_();
-  virtual void setStyle_(const osgEarth::Style& style);
-  virtual void applyOrientationOffsets_();
+  void adjustAltitude_() override;
+  void setStyle_(const osgEarth::Style& style) override;
+  void applyOrientationOffsets_() override;
 
 private:
   osg::observer_ptr<osgEarth::ImageOverlay> imageNode_;
@@ -821,10 +821,10 @@ public:
   LatLonAltBoxInterface(osg::Group* node, osgEarth::FeatureNode* topNode, osgEarth::FeatureNode* bottomNode, const simVis::GOG::GogMetaData& metaData);
   virtual ~LatLonAltBoxInterface() {}
   // handle the special case for MultiGeometry
-  virtual void setAltOffset(double altOffsetMeters);
+  void setAltOffset(double altOffsetMeters) override;
 
 protected:
-  virtual void setStyle_(const osgEarth::Style& style);
+  void setStyle_(const osgEarth::Style& style) override;
 
 private:
   /// store the altitudes of the specified node into the specified altitudes vector, handles iterating through MultiGeometry

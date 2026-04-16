@@ -94,13 +94,13 @@ public:
   virtual ~MagneticDatumConvert();
 
   /// Converts Magnetic Datum
-  virtual double convertMagneticDatum(const Vec3& lla, const TimeStamp& timeStamp, double bearingRad,
+  double convertMagneticDatum(const Vec3& lla, const TimeStamp& timeStamp, double bearingRad,
     CoordinateSystem coordSystem, MagneticVariance inputDatum, MagneticVariance outputDatum,
-    double userOffset) const;
+    double userOffset) const override;
 
   /// Note: Does not support EGM96 (MSL)
-  virtual double convertVerticalDatum(const Vec3& lla, const TimeStamp& timeStamp, CoordinateSystem coordSystem,
-    VerticalDatum inputDatum, VerticalDatum outputDatum, double userOffset);
+  double convertVerticalDatum(const Vec3& lla, const TimeStamp& timeStamp, CoordinateSystem coordSystem,
+    VerticalDatum inputDatum, VerticalDatum outputDatum, double userOffset) override;
 
 private:
   /** Not implemented */

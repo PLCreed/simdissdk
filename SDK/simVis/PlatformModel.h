@@ -157,13 +157,13 @@ public: // PlatformAttachment interface
 public: // LocatorNode interface
 
   /** Override to keep image icons rotated toward eye */
-  virtual void syncWithLocator(); //override
+  void syncWithLocator() override; //override
 
   /** Return the proper library name */
-  virtual const char* libraryName() const { return "simVis"; }
+  const char* libraryName() const override { return "simVis"; }
 
   /** Return the class name */
-  virtual const char* className() const { return "PlatformModelNode"; }
+  const char* className() const override { return "PlatformModelNode"; }
 
 protected:
   virtual ~PlatformModelNode();

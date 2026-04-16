@@ -56,9 +56,9 @@ public:
   virtual ~GanttChartView();
 
   /** Pure virtuals from QAbstractItemView */
-  virtual QModelIndex indexAt(const QPoint &point) const;
-  virtual void scrollTo(const QModelIndex &index, ScrollHint hint = EnsureVisible);
-  virtual QRect visualRect(const QModelIndex &index) const;
+  QModelIndex indexAt(const QPoint &point) const override;
+  void scrollTo(const QModelIndex &index, ScrollHint hint = EnsureVisible) override;
+  QRect visualRect(const QModelIndex &index) const override;
 
   /** Zoom factor for increasing draw size of items */
   double zoom() const;
@@ -133,31 +133,31 @@ protected Q_SLOTS:
   /** Redraw when data changes */
   virtual void dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight);
   /** Redraw when data changes */
-  virtual void rowsInserted(const QModelIndex &parent, int start, int end);
+  void rowsInserted(const QModelIndex &parent, int start, int end) override;
   /** Redraw when data changes */
-  virtual void rowsAboutToBeRemoved(const QModelIndex &parent, int start, int end);
+  void rowsAboutToBeRemoved(const QModelIndex &parent, int start, int end) override;
 
 protected:
   /** Catch events sent to viewport widget when necessary */
-  virtual bool viewportEvent(QEvent* event);
+  bool viewportEvent(QEvent* event) override;
   /** Draw the chart*/
-  virtual void paintEvent(QPaintEvent* event);
+  void paintEvent(QPaintEvent* event) override;
   /** Emit signal describing item that was double clicked */
-  virtual void mouseDoubleClickEvent(QMouseEvent* event);
+  void mouseDoubleClickEvent(QMouseEvent* event) override;
   /** Emit signals at mouse left click */
-  virtual void mousePressEvent(QMouseEvent* event);
+  void mousePressEvent(QMouseEvent* event) override;
   /** Change zoom with mouse wheel */
-  virtual void wheelEvent(QWheelEvent* event);
+  void wheelEvent(QWheelEvent* event) override;
   /** Update horizontal scroll bar on resize */
-  virtual void resizeEvent(QResizeEvent* event);
+  void resizeEvent(QResizeEvent* event) override;
 
   /** Pure virtuals from QAbstractItemView */
-  virtual int horizontalOffset() const;
-  virtual bool isIndexHidden(const QModelIndex &index) const;
-  virtual QModelIndex moveCursor(CursorAction cursorAction, Qt::KeyboardModifiers modifiers);
-  virtual void setSelection(const QRect &rect, QItemSelectionModel::SelectionFlags flags);
-  virtual int verticalOffset() const;
-  virtual QRegion visualRegionForSelection(const QItemSelection &selection) const;
+  int horizontalOffset() const override;
+  bool isIndexHidden(const QModelIndex &index) const override;
+  QModelIndex moveCursor(CursorAction cursorAction, Qt::KeyboardModifiers modifiers) override;
+  void setSelection(const QRect &rect, QItemSelectionModel::SelectionFlags flags) override;
+  int verticalOffset() const override;
+  QRegion visualRegionForSelection(const QItemSelection &selection) const override;
 
 private:
   /** Update the horizontal scroll bar's range */

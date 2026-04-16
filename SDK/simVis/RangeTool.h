@@ -384,7 +384,7 @@ class LocatorNode;
       /**
       * Sets dirty flag and clears labels_ cache to force text color update
       */
-      virtual void setDirty();
+      void setDirty() override;
 
       /**
       * Gets the root node representing this association
@@ -455,25 +455,25 @@ class LocatorNode;
     * Gets the node representing the range tool's graphics.
     * @returns an OSG node
     */
-    osg::Node* getNode() const { return root_.get(); }
+    osg::Node* getNode() const override { return root_.get(); }
 
 
   public: // ScenarioTool interface
 
     /** @see ScenarioTool::onInstall() */
-    virtual void onInstall(const ScenarioManager& scenario);
+    void onInstall(const ScenarioManager& scenario) override;
 
     /** @see ScenarioTool::onUninstall() */
-    virtual void onUninstall(const ScenarioManager& scenario);
+    void onUninstall(const ScenarioManager& scenario) override;
 
     /**
     * Updates the range tool based on a new time stamp
     */
-    virtual void onUpdate(const ScenarioManager& scenario, const simCore::TimeStamp& timeStamp, const EntityVector& updates);
+    void onUpdate(const ScenarioManager& scenario, const simCore::TimeStamp& timeStamp, const EntityVector& updates) override;
 
   public:
     /// @copydoc osgEarth::setDirty()
-    virtual void setDirty();
+    void setDirty() override;
 
   protected:
     /// osg::Referenced-derived
@@ -484,7 +484,7 @@ class LocatorNode;
     {
       osg::observer_ptr<RangeTool> tool_;
       RefreshGroup(RangeTool* tool) : tool_(tool) { }
-      void traverse(osg::NodeVisitor& nv);
+      void traverse(osg::NodeVisitor& nv) override;
       void scheduleRefresh();
     };
 
@@ -524,7 +524,7 @@ class LocatorNode;
     class SDKVIS_EXPORT PieSliceGraphic : public Graphic
     {
     public:
-      virtual osg::Vec3 labelPos(RangeToolState& state);
+      osg::Vec3 labelPos(RangeToolState& state) override;
 
       /// PieSliceGraphics cache their measured value here
       virtual void setMeasuredValue(double value) { measuredValue_ = value; }
@@ -559,8 +559,8 @@ class LocatorNode;
     {
     public:
       GroundLineGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
-      osg::Vec3 labelPos(RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
+      osg::Vec3 labelPos(RangeToolState& state) override;
 
     protected:
       /// osg::Referenced-derived
@@ -572,8 +572,8 @@ class LocatorNode;
     {
     public:
       SlantLineGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
-      osg::Vec3 labelPos(RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
+      osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~SlantLineGraphic() {}
@@ -584,8 +584,8 @@ class LocatorNode;
     {
     public:
       BeginAltitudeLineGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
-      osg::Vec3 labelPos(RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
+      osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~BeginAltitudeLineGraphic() {}
@@ -596,8 +596,8 @@ class LocatorNode;
     {
     public:
       EndAltitudeLineGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
-      osg::Vec3 labelPos(RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
+      osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~EndAltitudeLineGraphic() {}
@@ -608,8 +608,8 @@ class LocatorNode;
     {
     public:
       BeginAltitudeLineToEndAltitudeGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
-      osg::Vec3 labelPos(RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
+      osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~BeginAltitudeLineToEndAltitudeGraphic() {}
@@ -620,8 +620,8 @@ class LocatorNode;
     {
     public:
       EndAltitudeLineToBeginAltitudeGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
-      osg::Vec3 labelPos(RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
+      osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~EndAltitudeLineToBeginAltitudeGraphic() {}
@@ -632,8 +632,8 @@ class LocatorNode;
     {
     public:
       BeginToEndLineAtBeginAltitudeGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
-      osg::Vec3 labelPos(RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
+      osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~BeginToEndLineAtBeginAltitudeGraphic() {}
@@ -644,8 +644,8 @@ class LocatorNode;
     {
     public:
       BeginToEndLineAtEndAltitudeGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
-      osg::Vec3 labelPos(RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
+      osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~BeginToEndLineAtEndAltitudeGraphic() {}
@@ -656,8 +656,8 @@ class LocatorNode;
     {
     public:
       BeamGroundLineGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
-      osg::Vec3 labelPos(RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
+      osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~BeamGroundLineGraphic() {}
@@ -668,8 +668,8 @@ class LocatorNode;
     {
     public:
       BeamSlantLineGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
-      osg::Vec3 labelPos(RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
+      osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~BeamSlantLineGraphic() {}
@@ -680,8 +680,8 @@ class LocatorNode;
     {
     public:
       BeamBeginAltitudeLineGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
-      osg::Vec3 labelPos(RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
+      osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~BeamBeginAltitudeLineGraphic() {}
@@ -692,8 +692,8 @@ class LocatorNode;
     {
     public:
       BeamEndAltitudeLineGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
-      osg::Vec3 labelPos(RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
+      osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~BeamEndAltitudeLineGraphic() {}
@@ -704,8 +704,8 @@ class LocatorNode;
     {
     public:
       BeamBeginAltitudeLineToEndAltitudeGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
-      osg::Vec3 labelPos(RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
+      osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~BeamBeginAltitudeLineToEndAltitudeGraphic() {}
@@ -716,8 +716,8 @@ class LocatorNode;
     {
     public:
       BeamEndAltitudeLineToBeginAltitudeGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
-      osg::Vec3 labelPos(RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
+      osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~BeamEndAltitudeLineToBeginAltitudeGraphic() {}
@@ -728,8 +728,8 @@ class LocatorNode;
     {
     public:
       BeamBeginToEndLineAtBeginAltitudeGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
-      osg::Vec3 labelPos(RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
+      osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~BeamBeginToEndLineAtBeginAltitudeGraphic() {}
@@ -740,8 +740,8 @@ class LocatorNode;
     {
     public:
       BeamBeginToEndLineAtEndAltitudeGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
-      osg::Vec3 labelPos(RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
+      osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~BeamBeginToEndLineAtEndAltitudeGraphic() {}
@@ -752,8 +752,8 @@ class LocatorNode;
     {
     public:
       CrossRangeLineGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
-      osg::Vec3 labelPos(RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
+      osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~CrossRangeLineGraphic() {}
@@ -764,8 +764,8 @@ class LocatorNode;
     {
     public:
       DownRangeLineGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
-      osg::Vec3 labelPos(RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
+      osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~DownRangeLineGraphic() {}
@@ -776,8 +776,8 @@ class LocatorNode;
     {
     public:
       VelAzimDownRangeLineGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
-      osg::Vec3 labelPos(RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
+      osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~VelAzimDownRangeLineGraphic() {}
@@ -788,8 +788,8 @@ class LocatorNode;
     {
     public:
       VelAzimCrossRangeLineGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
-      osg::Vec3 labelPos(RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
+      osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~VelAzimCrossRangeLineGraphic() {}
@@ -800,8 +800,8 @@ class LocatorNode;
     {
     public:
       DownRangeCrossRangeDownLineGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
-      osg::Vec3 labelPos(RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
+      osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~DownRangeCrossRangeDownLineGraphic() {}
@@ -812,7 +812,7 @@ class LocatorNode;
     {
     public:
       TrueAzimuthPieSliceGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~TrueAzimuthPieSliceGraphic() {}
@@ -823,7 +823,7 @@ class LocatorNode;
     {
     public:
       TrueElevationPieSliceGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~TrueElevationPieSliceGraphic() {}
@@ -834,7 +834,7 @@ class LocatorNode;
     {
     public:
       TrueCompositeAnglePieSliceGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~TrueCompositeAnglePieSliceGraphic() {}
@@ -844,7 +844,7 @@ class LocatorNode;
     {
     public:
       MagneticAzimuthPieSliceGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~MagneticAzimuthPieSliceGraphic() {}
@@ -855,7 +855,7 @@ class LocatorNode;
     {
     public:
       RelOriAzimuthPieSliceGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~RelOriAzimuthPieSliceGraphic() {}
@@ -866,7 +866,7 @@ class LocatorNode;
     {
     public:
       RelOriElevationPieSliceGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~RelOriElevationPieSliceGraphic() {}
@@ -877,7 +877,7 @@ class LocatorNode;
     {
     public:
       RelOriCompositeAnglePieSliceGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~RelOriCompositeAnglePieSliceGraphic() {}
@@ -888,7 +888,7 @@ class LocatorNode;
     {
     public:
       RelAspectAnglePieSliceGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
     private:
       /// osg::Referenced-derived
       virtual ~RelAspectAnglePieSliceGraphic() {}
@@ -899,7 +899,7 @@ class LocatorNode;
     {
     public:
       RelVelAzimuthPieSliceGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~RelVelAzimuthPieSliceGraphic() {}
@@ -910,7 +910,7 @@ class LocatorNode;
     {
     public:
       RelVelElevationPieSliceGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~RelVelElevationPieSliceGraphic() {}
@@ -921,7 +921,7 @@ class LocatorNode;
     {
     public:
       RelVelCompositeAnglePieSliceGraphic();
-      void render(osg::Geode* geode, RangeToolState& state);
+      void render(osg::Geode* geode, RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
       virtual ~RelVelCompositeAnglePieSliceGraphic() {}

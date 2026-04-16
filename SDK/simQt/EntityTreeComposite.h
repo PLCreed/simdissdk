@@ -54,7 +54,7 @@ public:
   virtual ~FilterDialog();
 
   /** Override the QDialog close event to emit the closedGui signal */
-  virtual void closeEvent(QCloseEvent*);
+  void closeEvent(QCloseEvent*) override;
 
 Q_SIGNALS:
   /** Signal emitted when this dialog is closed */

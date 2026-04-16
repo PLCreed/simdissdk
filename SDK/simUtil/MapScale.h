@@ -204,7 +204,7 @@ public:
   }
 
   // Override from MapScaleUnitsProvider
-  virtual const simCore::Units& units(double maxRangeM) const
+  const simCore::Units& units(double maxRangeM) const override
   {
     return units_;
   }
@@ -233,7 +233,7 @@ public:
   }
 
   // Override from MapScaleUnitsProvider
-  virtual const simCore::Units& units(double maxRangeM) const
+  const simCore::Units& units(double maxRangeM) const override
   {
     if (maxRangeM < cutoffM_)
       return smallUnits_;

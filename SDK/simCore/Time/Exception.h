@@ -46,7 +46,7 @@ namespace simCore
     }
     virtual ~TimeException() throw() {}
 
-    virtual const char* what() const noexcept
+    const char* what() const noexcept override
     {
       return description.c_str();
     }

@@ -131,7 +131,7 @@ private:
 
     /** Called in ~HeatMapSystem() to completely ensure no dangling pointers left */
     void clearSystem();
-    virtual void objectDeleted(void* ptr) override;
+    void objectDeleted(void* ptr) override;
 
   private:
     HeatMapSystem* system_ = nullptr;

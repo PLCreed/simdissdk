@@ -58,10 +58,10 @@ namespace simVis
       const simData::BeamPrefs* b);
 
     /** Return the proper library name */
-    virtual const char* libraryName() const { return "simVis"; }
+    const char* libraryName() const override { return "simVis"; }
 
     /** Return the class name */
-    virtual const char* className() const { return "BeamVolume"; }
+    const char* className() const override { return "BeamVolume"; }
 
   protected:
     /// osg::Referenced-derived
@@ -180,9 +180,9 @@ namespace simVis
     simCore::PolarityType polarity() const;
 
     /** Return the proper library name */
-    virtual const char* libraryName() const { return "simVis"; }
+    const char* libraryName() const override { return "simVis"; }
     /** Return the class name */
-    virtual const char* className() const { return "BeamNode"; }
+    const char* className() const override { return "BeamNode"; }
 
   public: // EntityNode interface
     /**
@@ -191,21 +191,21 @@ namespace simVis
     * current scenario time, and has not received a command to turn off
     * @return true if active; false if not
     */
-    virtual bool isActive() const;
+    bool isActive() const override;
 
     /**
     * Whether this entity is visible.
     */
-    virtual bool isVisible() const;
+    bool isVisible() const override;
 
     /**
     * Get the object ID of the beam rendered by this node
     * @return Beam's object ID
     */
-    virtual simData::ObjectId getId() const;
+    simData::ObjectId getId() const override;
 
     /** Get the beam's host's ID */
-    virtual bool getHostId(simData::ObjectId& out_hostId) const;
+    bool getHostId(simData::ObjectId& out_hostId) const override;
 
     /**
     * Returns the entity name. Can be used to get the actual name always or the
@@ -215,14 +215,14 @@ namespace simVis
     * @param allowBlankAlias If true DISPLAY_NAME will return blank if usealias is true and alias is blank
     * @return    actual/alias entity name string
     */
-    virtual const std::string getEntityName(EntityNode::NameType nameType, bool allowBlankAlias = false) const;
+    const std::string getEntityName(EntityNode::NameType nameType, bool allowBlankAlias = false) const override;
 
     /// Returns the pop up text based on the label content callback, update and preference
-    virtual std::string popupText() const;
+    std::string popupText() const override;
     /// Returns the hook text based on the label content callback, update and preference
-    virtual std::string hookText() const;
+    std::string hookText() const override;
     /// Returns the legend text based on the label content callback, update and preference
-    virtual std::string legendText() const;
+    std::string legendText() const override;
 
     /**
     * Updates the entity based on the bound data store.
@@ -230,20 +230,20 @@ namespace simVis
     * @param force true to force the update to be applied; false allows entity to use its own internal logic to decide whether the update should be applied
     * @return true if update applied, false if not
     */
-    virtual bool updateFromDataStore(const simData::DataSliceBase* updateSlice, bool force=false);
+    bool updateFromDataStore(const simData::DataSliceBase* updateSlice, bool force=false) override;
 
     /**
     * Flushes all the entity's data point visualization.
     */
-    virtual void flush();
+    void flush() override;
 
     /**
     * Returns a range value (meters) used for visualization.
     */
-    virtual double range() const;
+    double range() const override;
 
     /** Retrieve the object index tag for beams. */
-    virtual unsigned int objectIndexTag() const;
+    unsigned int objectIndexTag() const override;
 
     /**
     * Gets the world position for this beam's origin. This is a convenience
@@ -252,7 +252,7 @@ namespace simVis
     * @param[in ] coordsys Requested coord sys of the output position (only LLA, ECEF, or ECI supported)
     * @return 0 if the output parameter is populated successfully, nonzero on failure
     */
-    virtual int getPosition(simCore::Vec3* out_position, simCore::CoordinateSystem coordsys = simCore::COORD_SYS_ECEF) const;
+    int getPosition(simCore::Vec3* out_position, simCore::CoordinateSystem coordsys = simCore::COORD_SYS_ECEF) const override;
 
     /**
     * Gets the world position & orientation for this beam's origin. This is a convenience
@@ -262,8 +262,8 @@ namespace simVis
     * @param[in ] coordsys Requested coord sys of the output position (only LLA, ECEF, or ECI supported)
     * @return 0 if the output parameter is populated successfully, nonzero on failure
     */
-    virtual int getPositionOrientation(simCore::Vec3* out_position, simCore::Vec3* out_orientation,
-      simCore::CoordinateSystem coordsys = simCore::COORD_SYS_ECEF) const;
+    int getPositionOrientation(simCore::Vec3* out_position, simCore::Vec3* out_orientation,
+      simCore::CoordinateSystem coordsys = simCore::COORD_SYS_ECEF) const override;
 
     /**
     * Get the traversal mask for this node type

@@ -186,7 +186,7 @@ public:
   }
 
   /** Detect mesa Geometry Shader bug with GL3 and disable geometry portions if present */
-  virtual void operator()(osg::Object* obj) override
+  void operator()(osg::Object* obj) override
   {
     osg::GraphicsContext* gc = dynamic_cast<osg::GraphicsContext*>(obj);
     simVis::applyCoreProfileValidity(gc);

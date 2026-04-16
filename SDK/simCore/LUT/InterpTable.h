@@ -75,7 +75,7 @@ namespace simCore
     virtual ~InterpTableException() throw() {}
 
     /** @return InterpTableException error condition */
-    virtual const char *what() const throw() { return error_.c_str(); }
+    const char *what() const throw() override { return error_.c_str(); }
   private:
     std::string error_;   /**< error condition */
   };

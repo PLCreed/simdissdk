@@ -55,7 +55,7 @@ namespace simQt {
     virtual ~AbstractEntityTreeModel() {}
 
     /** QAbstractItemModel interface */
-    virtual QModelIndex index(int row, int column, const QModelIndex & parent = QModelIndex()) const = 0;
+    QModelIndex index(int row, int column, const QModelIndex & parent = QModelIndex()) const override = 0;
 
     /** Return an Index based on the entity's ID */
     virtual QModelIndex index(uint64_t id) const = 0;

@@ -41,7 +41,7 @@ class OsgImGuiHandler : public osgGA::GUIEventHandler
 public:
   OsgImGuiHandler();
 
-  virtual bool handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa) override;
+  bool handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa) override;
 
   /** Add a GUI to the manager */
 #if OSGEARTH_SOVERSION >= 159

@@ -148,13 +148,13 @@ public: // EntityNode interface
   * current scenario time, and has not received a command to turn off
   * @return true if active; false if not
   */
-  virtual bool isActive() const;
+  bool isActive() const override;
 
   /** Gets the unique ID of the platform driving this node. */
-  virtual simData::ObjectId getId() const;
+  simData::ObjectId getId() const override;
 
   /** Platform has no host. */
-  virtual bool getHostId(simData::ObjectId& out_hostId) const { return false; }
+  bool getHostId(simData::ObjectId& out_hostId) const override { return false; }
 
   /**
   * Returns the entity name. Can be used to get the actual name always or the
@@ -164,14 +164,14 @@ public: // EntityNode interface
   * @param allowBlankAlias If true DISPLAY_NAME will return blank if usealias is true and alias is blank
   * @return    actual/alias entity name string
   */
-  virtual const std::string getEntityName(EntityNode::NameType nameType, bool allowBlankAlias = false) const;
+  const std::string getEntityName(EntityNode::NameType nameType, bool allowBlankAlias = false) const override;
 
   /// Returns the pop up text based on the label content callback, update and preference
-  virtual std::string popupText() const;
+  std::string popupText() const override;
   /// Returns the hook text based on the label content callback, update and preference
-  virtual std::string hookText() const;
+  std::string hookText() const override;
   /// Returns the legend text based on the label content callback, update and preference
-  virtual std::string legendText() const;
+  std::string legendText() const override;
 
   /**
   * Updates the entity based on the bound data store.
@@ -179,29 +179,29 @@ public: // EntityNode interface
   * @param force true to force the update to be applied; false only apply if logic dictates
   * @return true if update applied, false if not
   */
-  virtual bool updateFromDataStore(const simData::DataSliceBase* updateSlice, bool force = false);
+  bool updateFromDataStore(const simData::DataSliceBase* updateSlice, bool force = false) override;
 
   /**
   * Notifies the platform of a clock mode update.
   * override from EntityNode.
   */
-  virtual void updateClockMode(const simCore::Clock* clock);
+  void updateClockMode(const simCore::Clock* clock) override;
 
   /**
   * Flushes all the entity's data point visualization
   */
-  virtual void flush();
+  void flush() override;
 
   /**
   * Returns a range value (meters) used for visualization.  Will return zero for platforms and projectors.
   */
-  virtual double range() const;
+  double range() const override;
 
   /** Override Entity::acceptProjectors() to handle Platform-specific scene layout */
-  virtual int acceptProjectors(const std::vector<ProjectorNode*>& projectors) override;
+  int acceptProjectors(const std::vector<ProjectorNode*>& projectors) override;
 
   /** Retrieve the object index tag for platforms. */
-  virtual unsigned int objectIndexTag() const;
+  unsigned int objectIndexTag() const override;
 
   /**
   * Gets the traversal mask for this node type
@@ -245,10 +245,10 @@ public: // EntityNode interface
   const simData::PlatformUpdate* labelUpdate() const;
 
   /** Return the proper library name */
-  virtual const char* libraryName() const { return "simVis"; }
+  const char* libraryName() const override { return "simVis"; }
 
   /** Return the class name */
-  virtual const char* className() const { return "PlatformNode"; }
+  const char* className() const override { return "PlatformNode"; }
 
 protected:
   /// osg::Referenced-derived

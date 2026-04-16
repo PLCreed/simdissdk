@@ -65,10 +65,10 @@ public:
   void setModelNode(const PlatformModelNode* hostPlatformModel);
 
   /** Return the proper library name */
-  virtual const char* libraryName() const { return "simVis"; }
+  const char* libraryName() const override { return "simVis"; }
 
   /** Return the class name */
-  virtual const char* className() const { return "EphemerisVector"; }
+  const char* className() const override { return "EphemerisVector"; }
 
 protected:
   /// osg::Referenced-derived

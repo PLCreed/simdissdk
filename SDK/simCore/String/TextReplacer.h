@@ -119,7 +119,7 @@ private:
 class IgnoreUndefinedVariables : public TextReplacer::UndefinedVariableHandler
 {
 public:
-  virtual std::string getText(const std::string& varName) const { return varName; }
+  std::string getText(const std::string& varName) const override { return varName; }
 };
 
 /// Shared pointer to a TextReplacer
