@@ -925,7 +925,7 @@ public:
   {
   }
 
-  virtual bool isValid() const
+  bool isValid() const override
   {
     if (numRanges_ < 2 || rangeStep_ <= 0.)
     {
@@ -936,7 +936,7 @@ public:
     return true;
   }
 
-  virtual int calculateVoxel(unsigned int rangeIndex, VoxelRange& voxelRange, VoxelHeight& nearHeight, VoxelHeight& farHeight) const
+  int calculateVoxel(unsigned int rangeIndex, VoxelRange& voxelRange, VoxelHeight& nearHeight, VoxelHeight& farHeight) const override
   {
     if (rangeIndex >= (numRanges_ - 1))
     {
@@ -958,7 +958,7 @@ public:
     return rvNear + rvFar;
   }
 
-  virtual void setIndexCache(unsigned int i2, unsigned int i3, unsigned int i6, unsigned int i7)
+  void setIndexCache(unsigned int i2, unsigned int i3, unsigned int i6, unsigned int i7) override
   {
     if (i2 == std::numeric_limits<unsigned int>::max() ||
       i3 == std::numeric_limits<unsigned int>::max() ||
@@ -978,7 +978,7 @@ public:
     cachedIndicesAreValid_ = true;
   }
 
-  virtual void clearIndexCache()
+  void clearIndexCache() override
   {
     cachedIndicesAreValid_ = false;
     cache_.i2 = std::numeric_limits<unsigned int>::max();
@@ -987,7 +987,7 @@ public:
     cache_.i7 = std::numeric_limits<unsigned int>::max();
   }
 
-  virtual int indexCache(VoxelIndexCache& cache) const
+  int indexCache(VoxelIndexCache& cache) const override
   {
     if (!cachedIndicesAreValid_)
       return 1;
@@ -1065,7 +1065,7 @@ public:
   {
   }
 
-  virtual int calculateVoxel(unsigned int rangeIndex, VoxelRange& voxelRange, VoxelHeight& nearHeight, VoxelHeight& farHeight) const
+  int calculateVoxel(unsigned int rangeIndex, VoxelRange& voxelRange, VoxelHeight& nearHeight, VoxelHeight& farHeight) const override
   {
     if (rangeIndex >= (numRanges_ - 1))
     {

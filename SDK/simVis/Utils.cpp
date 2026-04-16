@@ -227,20 +227,20 @@ unsigned char cursorScaleUlLrPng[] = {
         swapper_(swapper)
     { }
 
-    void apply(osg::MatrixTransform& xform)
+    void apply(osg::MatrixTransform& xform) override
     {
       xform.setMatrix(xform.getMatrix() * swapper_);
       traverse(xform);
     }
 
-    void apply(osg::PositionAttitudeTransform& xform)
+    void apply(osg::PositionAttitudeTransform& xform) override
     {
       xform.setPosition(xform.getPosition() * swapper_);
       xform.setPivotPoint(xform.getPivotPoint() * swapper_);
       traverse(xform);
     }
 
-    void apply(osg::Geode& geode)
+    void apply(osg::Geode& geode) override
     {
       for (unsigned int i = 0; i < geode.getNumDrawables(); ++i)
       {
@@ -263,7 +263,7 @@ unsigned char cursorScaleUlLrPng[] = {
           (*normals)[i] = (*normals)[i] * swapper_;
     }
 
-    void apply(osg::Billboard& billboard)
+    void apply(osg::Billboard& billboard) override
     {
       osg::Billboard::PositionList& list = billboard.getPositionList();
       for (unsigned int i = 0; i < list.size(); ++i)
@@ -333,7 +333,7 @@ unsigned char cursorScaleUlLrPng[] = {
       //nop
     }
 
-    virtual osg::Object* clone(const osg::CopyOp& copyop) const
+    osg::Object* clone(const osg::CopyOp& copyop) const override
     {
       return new TwoPassAlphaRenderBin(*this, copyop);
     }
@@ -341,7 +341,7 @@ unsigned char cursorScaleUlLrPng[] = {
     // Draw the same geometry twice, once for each pass.
     // We ignore the incoming "previous" leaf since we are handling state changes
     // manually in this bin.
-    void drawImplementation(osg::RenderInfo& ri, osgUtil::RenderLeaf*& previous)
+    void drawImplementation(osg::RenderInfo& ri, osgUtil::RenderLeaf*& previous) override
     {
       // Initialize the alpha test, which cannot be done in the constructor due to static
       // initialization conflicts with its use of osgEarth::Registry::capabilities()
@@ -1626,7 +1626,7 @@ static const unsigned int ROTATION_LIMIT_MASK = ROTATION_PITCH_LIMIT_BIT | ROTAT
 class ConstrainHprValues : public osg::Callback
 {
 public:
-  virtual bool run(osg::Object* object, osg::Object* data)
+  bool run(osg::Object* object, osg::Object* data) override
   {
     // Only work on animated DOFs
     osgSim::DOFTransform* dofXform = dynamic_cast<osgSim::DOFTransform*>(object);
@@ -1817,7 +1817,7 @@ public:
   }
 
   /** Override the apply() method to traverse the node and subgraph */
-  virtual void apply(osg::Node& node) override
+  void apply(osg::Node& node) override
   {
     if (mgr_.valid())
       return;

@@ -40,7 +40,7 @@ namespace
   {
     osg::observer_ptr<simVis::ViewManager> viewman_;
     explicit OnRealize(simVis::ViewManager* viewman) : viewman_(viewman) { }
-    void operator()(osg::Object* gc_obj)
+    void operator()(osg::Object* gc_obj) override
     {
       if (!viewman_.valid())
         return;
@@ -76,7 +76,7 @@ namespace
       viewMan_(viewMan)
       { }
 
-    bool handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa, osg::Object* object, osg::NodeVisitor*)
+    bool handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa, osg::Object* object, osg::NodeVisitor*) override
     {
       if (!viewMan_.valid())
         return false;
@@ -99,10 +99,10 @@ namespace
     }
 
     /** Return the proper library name */
-    virtual const char* libraryName() const { return "simVis"; }
+    const char* libraryName() const override { return "simVis"; }
 
     /** Return the class name */
-    virtual const char* className() const { return "OnResize"; }
+    const char* className() const override { return "OnResize"; }
 
   private:
     osg::observer_ptr<simVis::ViewManager> viewMan_;

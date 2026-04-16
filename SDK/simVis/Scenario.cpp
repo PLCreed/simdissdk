@@ -85,7 +85,7 @@ struct SetHorizonCullCallback : public osg::NodeCallback
   {
   }
 
-  void operator()(osg::Node* node, osg::NodeVisitor* nv)
+  void operator()(osg::Node* node, osg::NodeVisitor* nv) override
   {
     // Do not move this declaration inside the if() statement.  The osgEarth::ObjectStorage::set()
     // solution stores the pointer in an osg::observer_ptr, so when horizon falls out of scope it
@@ -115,7 +115,7 @@ public:
   {
   }
 
-  virtual void operator()(simVis::PlatformModelNode* model, Callback::EventType eventType)
+  void operator()(simVis::PlatformModelNode* model, Callback::EventType eventType) override
   {
     if (eventType == Callback::BOUNDS_CHANGED && model && model->getNumParents() > 0)
     {
@@ -277,13 +277,13 @@ public:
   }
 
   /** Returns true if surface clamping should be applied */
-  virtual bool isApplicable(const simData::PlatformPrefs& prefs) const
+  bool isApplicable(const simData::PlatformPrefs& prefs) const override
   {
     return prefs.surfaceclamping() && coordSurfaceClamping_.isValid();
   }
 
   /** Applies coordinate surface clamping to the LLA coordinate */
-  virtual PlatformTspiFilterManager::FilterResponse filter(simCore::Coordinate& llaCoord, const simData::PlatformPrefs& prefs, const simData::PlatformProperties& props)
+  PlatformTspiFilterManager::FilterResponse filter(simCore::Coordinate& llaCoord, const simData::PlatformPrefs& prefs, const simData::PlatformProperties& props) override
   {
     if (!prefs.surfaceclamping() || !coordSurfaceClamping_.isValid())
       return PlatformTspiFilterManager::POINT_UNCHANGED;
@@ -334,13 +334,13 @@ public:
   }
 
   /** Returns true if surface clamping should be applied */
-  virtual bool isApplicable(const simData::PlatformPrefs& prefs) const
+  bool isApplicable(const simData::PlatformPrefs& prefs) const override
   {
     return prefs.abovesurfaceclamping() && mapNode_.valid();
   }
 
   /** Applies coordinate surface clamping to the LLA coordinate */
-  virtual PlatformTspiFilterManager::FilterResponse filter(simCore::Coordinate& llaCoord, const simData::PlatformPrefs& prefs, const simData::PlatformProperties& props)
+  PlatformTspiFilterManager::FilterResponse filter(simCore::Coordinate& llaCoord, const simData::PlatformPrefs& prefs, const simData::PlatformProperties& props) override
   {
     if (!prefs.abovesurfaceclamping() || !mapNode_.valid())
       return PlatformTspiFilterManager::POINT_UNCHANGED;
@@ -410,7 +410,7 @@ public:
     map_ = map;
   }
 
-  virtual RadialLOSNode* newLosNode()
+  RadialLOSNode* newLosNode() override
   {
     if (map_.valid())
       return new RadialLOSNode(map_.get());
@@ -439,7 +439,7 @@ public:
     currTime_ = currTime;
   }
 
-  virtual void operator()(osg::Node* node, osg::NodeVisitor* nv) override
+  void operator()(osg::Node* node, osg::NodeVisitor* nv) override
   {
     // simCore::Timestamp can't be stored directly.  Separate it into constituent elements and recombine where needed
     nv->setUserValue("simVis.ScenarioManager.RefYear", currTime_.referenceYear());

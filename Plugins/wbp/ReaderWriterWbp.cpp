@@ -41,54 +41,54 @@ public:
     }
   }
 
-  virtual const char *className() const override
+  const char *className() const override
   {
     return "Google WebP .wbp Image Reader/Writer";
   }
 
-  virtual ReadResult readObject(const std::string& file, const osgDB::ReaderWriter::Options* options) const override
+  ReadResult readObject(const std::string& file, const osgDB::ReaderWriter::Options* options) const override
   {
     if (!webp_)
       return ReadResult::FILE_NOT_HANDLED;
     return webp_->readObject(file, options);
   }
 
-  virtual ReadResult readObject(std::istream& fin, const Options* options) const override
+  ReadResult readObject(std::istream& fin, const Options* options) const override
   {
     if (!webp_)
       return ReadResult::FILE_NOT_HANDLED;
     return webp_->readObject(fin, options);
   }
 
-  virtual ReadResult readImage(const std::string& file, const osgDB::ReaderWriter::Options* options) const override
+  ReadResult readImage(const std::string& file, const osgDB::ReaderWriter::Options* options) const override
   {
     if (!webp_)
       return ReadResult::FILE_NOT_HANDLED;
     return webp_->readImage(file, options);
   }
 
-  virtual ReadResult readImage(std::istream& fin, const Options* options) const override
+  ReadResult readImage(std::istream& fin, const Options* options) const override
   {
     if (!webp_)
       return ReadResult::FILE_NOT_HANDLED;
     return webp_->readImage(fin, options);
   }
 
-  virtual WriteResult writeObject(const osg::Object& object, const std::string& file, const osgDB::ReaderWriter::Options* options) const override
+  WriteResult writeObject(const osg::Object& object, const std::string& file, const osgDB::ReaderWriter::Options* options) const override
   {
     if (!webp_)
       return WriteResult::FILE_NOT_HANDLED;
     return webp_->writeObject(object, file, options);
   }
 
-  virtual WriteResult writeObject(const osg::Object& object, std::ostream& fout, const Options* options) const override
+  WriteResult writeObject(const osg::Object& object, std::ostream& fout, const Options* options) const override
   {
     if (!webp_)
       return WriteResult::FILE_NOT_HANDLED;
     return webp_->writeObject(object, fout, options);
   }
 
-  virtual WriteResult writeImage(const osg::Image& img, const std::string& file, const osgDB::ReaderWriter::Options* options) const override
+  WriteResult writeImage(const osg::Image& img, const std::string& file, const osgDB::ReaderWriter::Options* options) const override
   {
     if (!webp_)
       return WriteResult::FILE_NOT_HANDLED;

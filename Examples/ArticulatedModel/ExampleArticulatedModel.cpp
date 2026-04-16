@@ -133,7 +133,7 @@ public:
   {
   }
 
-  void apply(osg::Node& node)
+  void apply(osg::Node& node) override
   {
     if (node.getName() == searchFor_)
       node_ = &node;

@@ -44,7 +44,7 @@ public:
   /** Constructor */
   explicit EntitySettingsObserver(EntityTreeWidget* parent) : parent_(parent) {}
   virtual ~EntitySettingsObserver() {}
-  virtual void onSettingChange(const QString& name, const QVariant& value)
+  void onSettingChange(const QString& name, const QVariant& value) override
   {
     parent_->toggleTreeView(value.toBool());
   }

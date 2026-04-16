@@ -53,12 +53,12 @@ public:
   {
   }
 
-  virtual void rewind(Orientation ori)
+  void rewind(Orientation ori) override
   {
     // Noop: Do not automatically rewind
   }
 
-  virtual Geometry* cloneAs(const Geometry::Type& newType) const
+  Geometry* cloneAs(const Geometry::Type& newType) const override
   {
     if (newType == TYPE_LINESTRING)
       return Ring::cloneAs(newType);

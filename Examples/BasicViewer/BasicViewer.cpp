@@ -49,7 +49,7 @@
 // view events.
 struct ViewReportCallback : public simVis::ViewManager::Callback
 {
-  void operator()(simVis::View* view, const EventType& e)
+  void operator()(simVis::View* view, const EventType& e) override
   {
     switch (e)
     {

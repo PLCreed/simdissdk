@@ -77,7 +77,7 @@ public:
   {
   }
 
-  virtual bool run(osg::Object* object, osg::Object* data)
+  bool run(osg::Object* object, osg::Object* data) override
   {
     // update the sphere transform
     const double r = app_.centroidNode->boundingSphereRadius();

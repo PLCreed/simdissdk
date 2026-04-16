@@ -213,7 +213,7 @@ public:
   {
   }
 
-  virtual void onSettingChange(const QString& name, const QVariant& value)
+  void onSettingChange(const QString& name, const QVariant& value) override
   {
     ButtonActions* actions = nullptr;
     for (size_t index = 0; index < parent_.buttonActions_.size(); ++index)

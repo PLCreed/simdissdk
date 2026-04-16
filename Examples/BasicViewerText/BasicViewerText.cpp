@@ -95,7 +95,7 @@ private:
 // view events.
 struct ViewReportCallback : public simVis::ViewManager::Callback
 {
-  void operator()(simVis::View* view, const EventType& e)
+  void operator()(simVis::View* view, const EventType& e) override
   {
     switch (e)
     {
@@ -123,7 +123,7 @@ struct MenuHandler : public osgGA::GUIEventHandler
   {
   }
 
-  bool handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa)
+  bool handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa) override
   {
     bool handled = false;
 

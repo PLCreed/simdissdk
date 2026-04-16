@@ -316,7 +316,7 @@ struct MenuHandler : public osgGA::GUIEventHandler
   }
 
   /// callback to process user input
-  bool handle(const osgGA::GUIEventAdapter &ea, osgGA::GUIActionAdapter &aa)
+  bool handle(const osgGA::GUIEventAdapter &ea, osgGA::GUIActionAdapter &aa) override
   {
     bool handled = false;
     osgEarth::Util::EarthManipulator* manip = dynamic_cast<osgEarth::Util::EarthManipulator*>(viewer_->getMainView()->getCameraManipulator());

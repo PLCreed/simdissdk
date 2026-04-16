@@ -285,7 +285,7 @@ public:
     {
     }
 
-    virtual bool run(osg::Object* object, osg::Object* data)
+    bool run(osg::Object* object, osg::Object* data) override
     {
       if (velocityTextureNode_.valid())
         velocityTextureNode_->swap();

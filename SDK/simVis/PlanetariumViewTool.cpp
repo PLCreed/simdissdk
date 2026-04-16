@@ -64,7 +64,7 @@ struct UpdateGeometryAdapter : public simVis::TargetDelegation::UpdateGeometryCa
 {
   simVis::PlanetariumViewTool* tool_;
   explicit UpdateGeometryAdapter(simVis::PlanetariumViewTool* tool) : tool_(tool) { }
-  void operator()(osg::MatrixTransform* xform, const osg::Vec3d& ecef)
+  void operator()(osg::MatrixTransform* xform, const osg::Vec3d& ecef) override
   {
     tool_->updateTargetGeometry(xform, ecef);
   }
@@ -486,7 +486,7 @@ public:
   {
   }
 
-  virtual void onPrefsChange(simData::DataStore* source, simData::ObjectId id)
+  void onPrefsChange(simData::DataStore* source, simData::ObjectId id) override
   {
     if (id == idOfInterest_)
       lambda_();

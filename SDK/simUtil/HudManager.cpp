@@ -482,7 +482,7 @@ public:
   { }
 
   /** Checks for resize events */
-  bool virtual handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa, osg::Object*, osg::NodeVisitor*)
+  bool handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa, osg::Object*, osg::NodeVisitor*) override
   {
     if (manager_ == nullptr)
       return false;
@@ -509,10 +509,10 @@ public:
   }
 
   /** Return the proper library name */
-  virtual const char* libraryName() const { return "simUtil"; }
+  const char* libraryName() const override { return "simUtil"; }
 
   /** Return the class name */
-  virtual const char* className() const { return "HudManager::ResizeHandler"; }
+  const char* className() const override { return "HudManager::ResizeHandler"; }
 
 protected:
   virtual ~ResizeHandler() {}

@@ -127,10 +127,10 @@ public:
   }
 
   /** Return the proper library name */
-  virtual const char* libraryName() const { return "simVis"; }
+  const char* libraryName() const override { return "simVis"; }
 
   /** Return the class name */
-  virtual const char* className() const { return "BorderNode"; }
+  const char* className() const override { return "BorderNode"; }
 
   simVis::View::BorderProperties props_;
 };
@@ -149,7 +149,7 @@ struct SetNearFarCallback : public osg::NodeCallback
       osg::StateAttribute::ON | osg::StateAttribute::OVERRIDE);
   }
 
-  virtual void operator()(osg::Node* node, osg::NodeVisitor* nv)
+  void operator()(osg::Node* node, osg::NodeVisitor* nv) override
   {
     osgUtil::CullVisitor* cv = dynamic_cast<osgUtil::CullVisitor*>(nv);
 
@@ -483,7 +483,7 @@ public:
   }
 
   /** Process the frame event and if watch mode enabled, update it */
-  bool handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa, osg::Object*, osg::NodeVisitor*)
+  bool handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa, osg::Object*, osg::NodeVisitor*) override
   {
     if (active_ && ea.getEventType() == osgGA::GUIEventAdapter::FRAME && view_.valid() && view_->isWatchEnabled())
       view_->updateWatchView_();
@@ -497,10 +497,10 @@ public:
   }
 
   /** Return the proper library name */
-  virtual const char* libraryName() const { return "simVis"; }
+  const char* libraryName() const override { return "simVis"; }
 
   /** Return the class name */
-  virtual const char* className() const { return "View::UpdateWatchView"; }
+  const char* className() const override { return "View::UpdateWatchView"; }
 
 private:
   osg::observer_ptr<View> view_;
@@ -516,7 +516,7 @@ public:
   explicit ViewTetherCallback(simVis::View* view) : view_(view)
   {}
   /// Process the change-of-tether event
-  void operator()(osg::Node* node)
+  void operator()(osg::Node* node) override
   {
     // if node is nullptr, tether is broken
     if (node == nullptr && view_.valid())

@@ -139,7 +139,7 @@ public:
     //  triton_->removeIntersections(isect_.get());
   }
 
-  void operator()(osg::Node* node, osg::NodeVisitor* nv)
+  void operator()(osg::Node* node, osg::NodeVisitor* nv) override
   {
     if (enabled_ || reset_)
     {
@@ -190,7 +190,7 @@ struct MenuHandler : public osgGA::GUIEventHandler
     scene_(scene)
   { }
 
-  bool handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa)
+  bool handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa) override
   {
     bool handled = false;
 
@@ -304,7 +304,7 @@ namespace
     virtual ~CloudManager() {}
 
     /** Clears out then applies clouds as needed */
-    virtual void apply_(osgEarth::SilverLining::Atmosphere& atmosphere)
+    void apply_(osgEarth::SilverLining::Atmosphere& atmosphere) override
     {
       if (clearClouds_.isSet())
       {

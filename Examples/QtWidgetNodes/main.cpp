@@ -141,7 +141,7 @@ public:
 
 protected:
   /** Called when the application is closing to cleanup */
-  virtual void closeEvent(QCloseEvent* event) override
+  void closeEvent(QCloseEvent* event) override
   {
     // Remove all of the widgets from the HUD
     for (const auto& hudElement : hudElements_)

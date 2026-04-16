@@ -58,13 +58,13 @@ public:
     : parent_(parent)
   {}
 
-  void onAddTable(simData::DataTable* table)
+  void onAddTable(simData::DataTable* table) override
   {
     if ((table != nullptr) && (table->ownerId() == parent_.entityId_) && (table->tableName() == simData::INTERNAL_TRACK_HISTORY_TABLE))
       parent_.initializeTableId_();
   }
 
-  void onPreRemoveTable(simData::DataTable* table)
+  void onPreRemoveTable(simData::DataTable* table) override
   {
     if (table != nullptr && table->tableId() == parent_.tableId_)
     {
@@ -84,16 +84,16 @@ public:
     : parent_(parent)
   {}
 
-  virtual void onAddColumn(simData::DataTable& table, const simData::TableColumn& column) {}
+  void onAddColumn(simData::DataTable& table, const simData::TableColumn& column) override {}
 
-  virtual void onAddRow(simData::DataTable& table, const simData::TableRow& row)
+  void onAddRow(simData::DataTable& table, const simData::TableRow& row) override
   {
     parent_.checkColorHistoryChange_(table, row);
   }
 
-  virtual void onPreRemoveColumn(simData::DataTable& table, const simData::TableColumn& column) {}
+  void onPreRemoveColumn(simData::DataTable& table, const simData::TableColumn& column) override {}
 
-  virtual void onPreRemoveRow(simData::DataTable& table, double rowTime) {}
+  void onPreRemoveRow(simData::DataTable& table, double rowTime) override {}
 
 private:
   TrackHistoryNode& parent_;

@@ -234,7 +234,7 @@ struct MenuHandler : public osgGA::GUIEventHandler
   }
 
   /// callback to process user input
-  bool handle(const osgGA::GUIEventAdapter &ea, osgGA::GUIActionAdapter &aa)
+  bool handle(const osgGA::GUIEventAdapter &ea, osgGA::GUIActionAdapter &aa) override
   {
     /// only handle key down
     if (ea.getEventType() != osgGA::GUIEventAdapter::KEYDOWN)

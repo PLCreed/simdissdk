@@ -65,7 +65,7 @@ public:
   }
 
   // From GUIEventHandler:
-  virtual bool handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa) override
+  bool handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa) override
   {
     if (mainWindow_)
       mainWindow_->processOsgEvent(ea);

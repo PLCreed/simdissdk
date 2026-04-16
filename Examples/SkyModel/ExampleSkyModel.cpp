@@ -214,7 +214,7 @@ public:
   }
 
   // From osg::Operation:
-  virtual void operator()(osg::Object*) override
+  void operator()(osg::Object*) override
   {
     app_.setSkyModel(model_);
   }

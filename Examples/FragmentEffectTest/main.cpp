@@ -226,7 +226,7 @@ public:
   }
 
   // From GUIEventHandler:
-  virtual bool handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa) override
+  bool handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa) override
   {
     if (ea.getEventType() == osgGA::GUIEventAdapter::KEYDOWN)
     {
@@ -263,7 +263,7 @@ public:
   }
 
   // From KeyEventHandler:
-  virtual void execute() override
+  void execute() override
   {
     lambda_();
   }
@@ -292,7 +292,7 @@ public:
   }
 
   // From KeyEventHandler:
-  virtual void execute() override
+  void execute() override
   {
     setPlatformPrefs(dataStore_, uid_, setFunc_);
   }

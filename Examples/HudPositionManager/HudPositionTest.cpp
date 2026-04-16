@@ -277,7 +277,7 @@ public:
 
 protected:
   /** Similar to GridCell::setPositionImpl_(), but do not scale contents, and positions a little different. */
-  virtual void setPositionImpl_()
+  void setPositionImpl_() override
   {
     osg::Matrix m;
     // Do not scale contents; we're already at right pixel size.
@@ -326,7 +326,7 @@ public:
 
 protected:
   /** Override to reposition the text based on the X, Y, and Height values configured. */
-  virtual void setPositionImpl_()
+  void setPositionImpl_() override
   {
     // Adjust the position of the text manually
     title_->setPosition(osg::Vec3f(x(), y() + height(), 0.f));

@@ -68,7 +68,7 @@ public:
   {
   }
 #endif
-  virtual void mouseOverLatLon(double lat, double lon, double elev)
+  void mouseOverLatLon(double lat, double lon, double elev) override
   {
     if (!showLatLonElevation_)
       return;

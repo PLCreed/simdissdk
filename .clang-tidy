@@ -1,0 +1,4 @@
+Checks: '-*,modernize-use-override'
+
+CheckOptions:
+  modernize-use-override.IgnoreDestructors: true

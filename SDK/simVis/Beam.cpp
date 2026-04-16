@@ -261,9 +261,9 @@ public:
   BeamCenterLine();
   SDK_DISABLE_COPY(BeamCenterLine);
   /** Return the proper library name */
-  virtual const char* libraryName() const override  { return "simVis"; }
+  const char* libraryName() const override  { return "simVis"; }
   /** Return the class name */
-  virtual const char* className() const override  { return "BeamCenterLine"; }
+  const char* className() const override  { return "BeamCenterLine"; }
 
   /// update the beam line for range and color from update and prefs
   void update(const simData::BeamUpdate& update, const simData::BeamPrefs& activePrefs);

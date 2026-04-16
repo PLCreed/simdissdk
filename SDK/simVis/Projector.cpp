@@ -242,7 +242,7 @@ static const float DEFAULT_ALPHA_VALUE = 0.1f;
     }
 
     //! Prunes the projector list and updates all texgen matrices
-    void operator()(osg::Node* node, osg::NodeVisitor* nv)
+    void operator()(osg::Node* node, osg::NodeVisitor* nv) override
     {
       prune();
 

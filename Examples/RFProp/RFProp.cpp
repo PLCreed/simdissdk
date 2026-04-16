@@ -149,7 +149,7 @@ struct AutoBearingHandler : public osgGA::GUIEventHandler
   {
   }
 
-  bool handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa)
+  bool handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa) override
   {
     double rate = osg::DegreesToRadians(20.0);
     osg::Timer_t time = osg::Timer::instance()->tick();

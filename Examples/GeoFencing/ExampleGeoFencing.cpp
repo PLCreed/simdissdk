@@ -325,7 +325,7 @@ struct Tester : public osgGA::GUIEventHandler
   }
 
   /** On mouse move, test the new ECEF point and print to screen/modify graphics */
-  virtual bool handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa, osg::Object*, osg::NodeVisitor*) override
+  bool handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa, osg::Object*, osg::NodeVisitor*) override
   {
     if (ea.getEventType() == ea.MOVE)
     {

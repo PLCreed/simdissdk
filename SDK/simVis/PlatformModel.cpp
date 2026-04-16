@@ -74,7 +74,7 @@ public:
       ignoreResult_(false)
   {
   }
-  virtual void loadFinished(const osg::ref_ptr<osg::Node>& model, bool isImage, const std::string& uri)
+  void loadFinished(const osg::ref_ptr<osg::Node>& model, bool isImage, const std::string& uri) override
   {
     osg::ref_ptr<PlatformModelNode> refPlatform;
     if (platform_.lock(refPlatform) && !ignoreResult_)

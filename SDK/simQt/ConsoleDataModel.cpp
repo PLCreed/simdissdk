@@ -65,7 +65,7 @@ public:
    * @param severity Severity level with which to push out text
    * @param text Text string to push out to all observers; should be completely formed (buffered) message
    */
-  virtual void addText(simNotify::NotifySeverity severity, const QString& text)
+  void addText(simNotify::NotifySeverity severity, const QString& text) override
   {
     if (dataModel_ == nullptr)
       return;
@@ -85,7 +85,7 @@ public:
   }
 
   /** Returns the name of the channel */
-  virtual const QString& name() const
+  const QString& name() const override
   {
     return name_;
   }

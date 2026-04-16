@@ -207,7 +207,7 @@ public:
   }
 
   /** Override publicly accessible memento function to restore data */
-  virtual int restore(ActionRegistry& registry) const
+  int restore(ActionRegistry& registry) const override
   {
     return MementoImpl::restoreDestructive_(registry, data_);
   }

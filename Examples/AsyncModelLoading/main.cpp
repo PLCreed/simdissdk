@@ -68,7 +68,7 @@ public:
     str_ = "N/A";
   }
 
-  virtual void loadFinished(const osg::ref_ptr<osg::Node>& model, bool isImage, const std::string& filename)
+  void loadFinished(const osg::ref_ptr<osg::Node>& model, bool isImage, const std::string& filename) override
   {
     // Call inherited method
     ReplaceChildReadyCallback::loadFinished(model, isImage, filename);
@@ -271,7 +271,7 @@ struct MenuHandler : public osgGA::GUIEventHandler
   }
 
   /// callback to process user input
-  bool handle(const osgGA::GUIEventAdapter &ea, osgGA::GUIActionAdapter &aa)
+  bool handle(const osgGA::GUIEventAdapter &ea, osgGA::GUIActionAdapter &aa) override
   {
     if (ea.getEventType() == osgGA::GUIEventAdapter::KEYDOWN)
     {

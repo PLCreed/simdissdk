@@ -118,7 +118,7 @@ public:
   double lon() const { return lastLon_; }
   double elev() const { return lastElev_; }
 
-  virtual void mouseOverLatLon(double lat, double lon, double elev)
+  void mouseOverLatLon(double lat, double lon, double elev) override
   {
     lastLat_ = lat;
     lastLon_ = lon;

@@ -87,7 +87,7 @@ public:
   }
 
   // From NodeVisitor:
-  virtual void operator()(osg::Node* node, osg::NodeVisitor* nv) override
+  void operator()(osg::Node* node, osg::NodeVisitor* nv) override
   {
     auto* manip = dynamic_cast<simUtil::GogManipulator*>(node);
     if (manip && manip->hasTarget())
