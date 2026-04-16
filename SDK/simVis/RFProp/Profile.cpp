@@ -1241,7 +1241,7 @@ void Profile::initRAE_()
     assert(0);
     return;
   }
-  RahVoxelProcessor vProcessor(*(data_.get()), profileContext_->heightM);
+  RahVoxelProcessor vProcessor(*(data_), profileContext_->heightM);
   if (!vProcessor.isValid())
     return;
 

@@ -2042,7 +2042,7 @@ void LabelNodeInterface::serializeToStream(std::ostream& gogOutputStream)
 void LabelNodeInterface::adjustAltitude_()
 {
   if (labelNode_.valid())
-    setGeoPositionAltitude_(*labelNode_.get(), 0.);
+    setGeoPositionAltitude_(*labelNode_, 0.);
 }
 
 void LabelNodeInterface::setStyle_(const osgEarth::Style& style)
@@ -2137,11 +2137,11 @@ void CylinderNodeInterface::setAltitudeMode(AltitudeMode altMode)
 void CylinderNodeInterface::adjustAltitude_()
 {
   if (topCapNode_.valid())
-    setGeoPositionAltitude_(*topCapNode_.get(), height_);
+    setGeoPositionAltitude_(*topCapNode_, height_);
   if (sideNode_.valid())
-    setGeoPositionAltitude_(*sideNode_.get(), 0.);
+    setGeoPositionAltitude_(*sideNode_, 0.);
   if (bottomCapNode_.valid())
-    setGeoPositionAltitude_(*bottomCapNode_.get(), 0.);
+    setGeoPositionAltitude_(*bottomCapNode_, 0.);
 }
 
 void CylinderNodeInterface::setStyle_(const osgEarth::Style& style)
@@ -2266,9 +2266,9 @@ int ArcNodeInterface::getPosition(osg::Vec3d& position, osgEarth::GeoPoint* refe
 void ArcNodeInterface::adjustAltitude_()
 {
   if (shapeNode_.valid())
-    setGeoPositionAltitude_(*shapeNode_.get(), 0.);
+    setGeoPositionAltitude_(*shapeNode_, 0.);
   if (fillNode_.valid())
-    setGeoPositionAltitude_(*fillNode_.get(), 0.);
+    setGeoPositionAltitude_(*fillNode_, 0.);
 }
 
 void ArcNodeInterface::setFilledState(bool state)
@@ -2657,9 +2657,9 @@ LatLonAltBoxInterface::LatLonAltBoxInterface(osg::Group* node, osgEarth::Feature
     bottomNode_(bottomNode)
 {
   if (featureNode_.valid())
-    initAltitudes_(*featureNode_.get(), originalAltitude_);
+    initAltitudes_(*featureNode_, originalAltitude_);
   if (bottomNode_.valid())
-    initAltitudes_(*bottomNode_.get(), bottomAltitude_);
+    initAltitudes_(*bottomNode_, bottomAltitude_);
 }
 
 void LatLonAltBoxInterface::setAltOffset(double altOffsetMeters)
@@ -2671,9 +2671,9 @@ void LatLonAltBoxInterface::setAltOffset(double altOffsetMeters)
   altOffset_ = altOffsetMeters;
 
   if (featureNode_.valid())
-    applyAltOffsets_(*featureNode_.get(), originalAltitude_);
+    applyAltOffsets_(*featureNode_, originalAltitude_);
   if (bottomNode_.valid())
-    applyAltOffsets_(*bottomNode_.get(), bottomAltitude_);
+    applyAltOffsets_(*bottomNode_, bottomAltitude_);
 
   if (shape_)
     shape_->setAltitudeOffset(altOffsetMeters);

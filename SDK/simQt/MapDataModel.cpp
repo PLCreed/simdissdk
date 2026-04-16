@@ -1231,7 +1231,7 @@ void MapDataModel::fillModel_(osgEarth::Map *map)
   {
     imageGroup_()->insertChild(new ImageLayerItem(imageGroup_(), iter->get()), 0);
 #if OSGEARTH_SOVERSION >= 152
-    registerLayerCallbacks_(*iter->get());
+    registerLayerCallbacks_(**iter);
 #else
     osg::ref_ptr<osgEarth::TileLayerCallback> cb = new ImageLayerListener(*this);
     imageCallbacks_[iter->get()] = cb.get();
@@ -1246,7 +1246,7 @@ void MapDataModel::fillModel_(osgEarth::Map *map)
   {
     elevationGroup_()->insertChild(new ElevationLayerItem(elevationGroup_(), iter->get()), 0);
 #if OSGEARTH_SOVERSION >= 152
-    registerLayerCallbacks_(*iter->get());
+    registerLayerCallbacks_(**iter);
 #else
     osg::ref_ptr<osgEarth::TileLayerCallback> cb = new ElevationLayerListener(*this);
     elevationCallbacks_[iter->get()] = cb.get();
@@ -1261,7 +1261,7 @@ void MapDataModel::fillModel_(osgEarth::Map *map)
   {
     featureGroup_()->insertChild(new FeatureModelLayerItem(featureGroup_(), iter->get()), 0);
 #if OSGEARTH_SOVERSION >= 152
-    registerLayerCallbacks_(*iter->get());
+    registerLayerCallbacks_(**iter);
 #else
     osg::ref_ptr<osgEarth::VisibleLayerCallback> cb = new FeatureModelLayerListener(*this);
     featureCallbacks_[iter->get()] = cb.get();
@@ -1277,7 +1277,7 @@ void MapDataModel::fillModel_(osgEarth::Map *map)
   {
     velocityGroup_()->insertChild(new VelocityParticleLayerItem(velocityGroup_(), iter->get()), 0);
 #if OSGEARTH_SOVERSION >= 152
-    registerLayerCallbacks_(*iter->get());
+    registerLayerCallbacks_(**iter);
 #else
     // Velocity layers are image layers, so use an image layer listener
     osg::ref_ptr<osgEarth::TileLayerCallback> cb = new ImageLayerListener(*this);
@@ -1294,7 +1294,7 @@ void MapDataModel::fillModel_(osgEarth::Map *map)
   {
     otherGroup_()->insertChild(new OtherLayerItem(otherGroup_(), iter->get()), 0);
 #if OSGEARTH_SOVERSION >= 152
-    registerLayerCallbacks_(*iter->get());
+    registerLayerCallbacks_(**iter);
 #else
     osg::ref_ptr<osgEarth::VisibleLayerCallback> cb = new OtherLayerListener(*this);
     otherCallbacks_[iter->get()] = cb.get();

@@ -380,7 +380,7 @@ int main(int argc, char **argv)
 
   // Cycle fragment effects
   ChangeEffect cycle(dataStore, platform);
-  mainView->addEventHandler(new LambdaKeyEventHandler('1', std::bind(&ChangeEffect::cycleNext, &cycle)));
+  mainView->addEventHandler(new LambdaKeyEventHandler('1', [ObjectPtr = &cycle] { ObjectPtr->cycleNext(); }));
 
   // Grow/shrink the model (use keypad or normal keys)
   const auto& scaleUp = [](simData::PlatformPrefs& prefs) {prefs.set_scale(prefs.scale() * 2.); };
