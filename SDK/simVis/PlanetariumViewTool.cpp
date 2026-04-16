@@ -1005,7 +1005,7 @@ void PlanetariumViewTool::onUpdate(const ScenarioManager& scenario, const simCor
 
   lastUpdateTime_ = timeStamp.secondsSinceRefYear();
 
-  for (auto entityNode : updates)
+  for (const auto& entityNode : updates)
   {
     // Update beam node history
     BeamNode* beam = dynamic_cast<BeamNode*>(entityNode.get());
@@ -1165,7 +1165,7 @@ void PlanetariumViewTool::updateDome_()
 
 void PlanetariumViewTool::applyOverrides_(bool enable)
 {
-  for (auto entityObsPtr : family_.members())
+  for (const auto& entityObsPtr : family_.members())
   {
     if (entityObsPtr.valid())
       applyOverrides_(entityObsPtr.get(), enable);

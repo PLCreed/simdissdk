@@ -429,7 +429,7 @@ int ViewerApp::loadGog_(const std::string& filename)
 
   simVis::GOG::Loader::GogNodeVector gogs;
   loader.loadGogs(is, filename, false, gogs);
-  for (auto gog : gogs)
+  for (const auto& gog : gogs)
     sceneManager_->getScenario()->addChild(gog->osgNode());
 
   return 1;

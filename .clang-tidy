@@ -3,6 +3,7 @@ Checks: |
   modernize-use-override,
   modernize-use-nullptr,
   modernize-redundant-void-arg,
+  performance-for-range-copy,
 
 HeaderFilterRegex: '.*'
 

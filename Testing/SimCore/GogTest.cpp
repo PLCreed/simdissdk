@@ -999,7 +999,7 @@ int testAnnotation()
     positions.push_back(simCore::Vec3(23.4* simCore::DEG2RAD, 55.4 * simCore::DEG2RAD, 0.));
 
     // check that all 3 annotations have the same attributes, since they should all match the first annotation fields found
-    for (simCore::GOG::GogShapePtr gogPtr : shapes)
+    for (const simCore::GOG::GogShapePtr& gogPtr : shapes)
     {
       simCore::GOG::Annotation* anno = dynamic_cast<simCore::GOG::Annotation*>(gogPtr.get());
       rv += SDK_ASSERT(anno != nullptr);
@@ -1045,7 +1045,7 @@ int testAnnotation()
   if (!shapes.empty())
   {
     int textId = 0;
-    for (simCore::GOG::GogShapePtr gogPtr : shapes)
+    for (const simCore::GOG::GogShapePtr& gogPtr : shapes)
     {
       simCore::GOG::Annotation* anno = dynamic_cast<simCore::GOG::Annotation*>(gogPtr.get());
       rv += SDK_ASSERT(anno != nullptr);
@@ -1565,7 +1565,7 @@ int testSerializeShape(const std::string& gog, const std::vector<std::string>& s
     shapes.front()->serializeToStream(os);
     std::string serialized = os.str();
     // verify all the expected items are present in the serialized shape
-    for (std::string item : serializedItems)
+    for (const std::string& item : serializedItems)
     {
       rv += SDK_ASSERT(serialized.find(item) != std::string::npos);
       if (serialized.find(item) == std::string::npos)
@@ -2047,7 +2047,7 @@ int testColors()
   parser.addOverwriteColor("color2", "0000ac02");
   std::vector<simCore::GOG::GogShapePtr> shapes;
   std::stringstream gogStr;
-  for (std::string colorStr : colorStringsInput)
+  for (const std::string& colorStr : colorStringsInput)
     gogStr << "start\n circle\n" << colorStr << "end\n";
   parser.parse(gogStr, "", shapes);
   rv += SDK_ASSERT(shapes.size() == colorStringsInput.size());
@@ -2063,7 +2063,7 @@ int testColors()
   colors.push_back(simCore::GOG::Color(255, 153, 153, 153));
 
   int i = 0;
-  for (simCore::GOG::GogShapePtr shape : shapes)
+  for (const simCore::GOG::GogShapePtr& shape : shapes)
   {
     simCore::GOG::Circle* circle = dynamic_cast<simCore::GOG::Circle*>(shape.get());
     rv += SDK_ASSERT(circle != nullptr);

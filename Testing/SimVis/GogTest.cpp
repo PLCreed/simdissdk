@@ -818,7 +818,7 @@ int testItemsInSerialization(const std::string& serialized, const std::vector<st
 {
   int rv = 0;
   // verify all the expected items are present in the serialized shape
-  for (std::string item : items)
+  for (const std::string& item : items)
   {
     rv += SDK_ASSERT(serialized.find(item) != std::string::npos);
     if (serialized.find(item) == std::string::npos)
@@ -914,7 +914,7 @@ int testBasicGog(std::vector<std::string>& shapeItems, bool testLined, bool test
 
   std::stringstream gogStr;
   gogStr << "start\n";
-  for (std::string item : shapeItems)
+  for (const std::string& item : shapeItems)
     gogStr << item;
   gogStr << "end\n";
   shapeItems.push_back("start\n");

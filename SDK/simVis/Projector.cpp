@@ -321,7 +321,7 @@ ProjectorNode::~ProjectorNode()
     hostLocator_->removeCallback(locatorCallback_.get());
 
   auto localCopy = projectedNodes_;
-  for (auto node : localCopy)
+  for (const auto& node : localCopy)
   {
     osg::ref_ptr<osg::Node> lock;
     if (node.first.lock(lock))

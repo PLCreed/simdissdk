@@ -1047,7 +1047,7 @@ GogShapePtr Parser::getShape_(const ParsedShape& parsed) const
       break;
     }
     std::unique_ptr<Points> points(new Points(relative));
-    for (PositionStrings pos : positions)
+    for (const PositionStrings& pos : positions)
     {
       simCore::Vec3 position;
       if (getPosition_(pos, relative, units, position) == 0)
@@ -1407,7 +1407,7 @@ GogShapePtr Parser::getShape_(const ParsedShape& parsed) const
     }
   }
 
-  for (std::string comment : parsed.comments())
+  for (const std::string& comment : parsed.comments())
   {
     rv->addComment(comment);
   }
@@ -1519,7 +1519,7 @@ int Parser::parsePointBased_(const ParsedShape& parsed, bool relative, const std
     printError_(parsed.filename(), parsed.lineNumber(), shapeTypeName + (name.empty() ? "" : " " + name) + " has less than the required number of points, cannot create shape");
     return 1;
   }
-  for (PositionStrings pos : positions)
+  for (const PositionStrings& pos : positions)
   {
     simCore::Vec3 position;
     if (getPosition_(pos, relative, units, position) == 0)

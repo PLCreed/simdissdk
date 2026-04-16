@@ -1576,7 +1576,7 @@ public:
     for (ScenarioListenerList::const_iterator iter2 = scenarioListeners_.begin(); iter2 != scenarioListeners_.end(); ++iter2)
       ds.addScenarioListener(*iter2);
 
-    for (auto listener : newUpdatesListeners_)
+    for (const auto& listener : newUpdatesListeners_)
       ds.addNewUpdatesListener(listener);
 
     for (std::vector<DataTableManager::ManagerObserverPtr>::const_iterator iter = dtObservers_.begin(); iter != dtObservers_.end(); ++iter)

@@ -908,7 +908,7 @@ void VisualizationClock::setLockedToDataClock(bool lock)
     localClock_->setControlsDisabled(false);
   }
 
-  for (auto observer : visClockObservers_)
+  for (const auto& observer : visClockObservers_)
     observer->onLockChanged(lockToDataClock_);
 }
 
