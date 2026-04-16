@@ -32,7 +32,7 @@ class EntityLineEditPlugin : public QObject, public QDesignerCustomWidgetInterfa
   Q_INTERFACES(QDesignerCustomWidgetInterface)
 
 public:
-  explicit EntityLineEditPlugin(QObject *parent = 0);
+  explicit EntityLineEditPlugin(QObject *parent = nullptr);
 
   bool isContainer() const override;
   bool isInitialized() const override;

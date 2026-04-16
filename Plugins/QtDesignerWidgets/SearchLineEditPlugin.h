@@ -32,7 +32,7 @@ class SearchLineEditPlugin : public QObject, public QDesignerCustomWidgetInterfa
   Q_INTERFACES(QDesignerCustomWidgetInterface);
 
 public:
-  explicit SearchLineEditPlugin(QObject *parent = 0);
+  explicit SearchLineEditPlugin(QObject *parent = nullptr);
 
   bool isContainer() const override;
   bool isInitialized() const override;

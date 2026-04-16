@@ -32,7 +32,7 @@ class UnitsSelectorComboBoxPlugin : public QObject, public QDesignerCustomWidget
   Q_INTERFACES(QDesignerCustomWidgetInterface);
 
 public:
-  explicit UnitsSelectorComboBoxPlugin(QObject *parent = 0);
+  explicit UnitsSelectorComboBoxPlugin(QObject *parent = nullptr);
 
   bool isContainer() const override;
   bool isInitialized() const override;

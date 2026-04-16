@@ -32,7 +32,7 @@ class ColorButtonPlugin : public QObject, public QDesignerCustomWidgetInterface
   Q_INTERFACES(QDesignerCustomWidgetInterface);
 
 public:
-  explicit ColorButtonPlugin(QObject *parent = 0);
+  explicit ColorButtonPlugin(QObject *parent = nullptr);
 
   bool isContainer() const override;
   bool isInitialized() const override;

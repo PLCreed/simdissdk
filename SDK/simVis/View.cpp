@@ -642,7 +642,7 @@ View::~View()
   simVis::EarthManipulator* manip = dynamic_cast<simVis::EarthManipulator*>(getCameraManipulator());
   if (manip)
   {
-    manip->setTetherCallback(0L);
+    manip->setTetherCallback(nullptr);
     manip->clearViewpoint();
   }
   // if we have insets, remove them.
@@ -709,7 +709,7 @@ bool View::setUpViewAsHUD(simVis::View* host)
     camera->setAllowEventFocus(false);
 
     // don't need this
-    setCameraManipulator(0L);
+    setCameraManipulator(nullptr);
 
     // save a reference to the host.
     host_ = host;
@@ -1115,7 +1115,7 @@ void View::setSceneManager(simVis::SceneManager* node)
   {
     Viewpoint oldVP = oldManip->getViewpoint();
     osg::ref_ptr<osg::Node> oldTetherNode = oldVP.getNode();
-    oldManip->setTetherCallback(0L);
+    oldManip->setTetherCallback(nullptr);
     simVis::EarthManipulator* newManip = new simVis::EarthManipulator();
     newManip->setName("Earth Manipulator");
 

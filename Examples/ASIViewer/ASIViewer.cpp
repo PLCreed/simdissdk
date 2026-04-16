@@ -193,7 +193,7 @@ struct AppData
 
     if (tetherIndex_ < 0)
     {
-      view_->tetherCamera(0L);
+      view_->tetherCamera(nullptr);
     }
     else
     {

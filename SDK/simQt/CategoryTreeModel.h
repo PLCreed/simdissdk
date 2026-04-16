@@ -84,7 +84,7 @@ class SDKQT_EXPORT CategoryProxyModel : public QSortFilterProxyModel
 
 public:
   /// constructor passes parent to QSortFilterProxyModel
-  explicit CategoryProxyModel(QObject *parent = 0);
+  explicit CategoryProxyModel(QObject *parent = nullptr);
   virtual ~CategoryProxyModel();
 
 public Q_SLOTS:

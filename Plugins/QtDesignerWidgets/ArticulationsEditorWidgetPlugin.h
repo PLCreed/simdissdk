@@ -32,7 +32,7 @@ class ArticulationsEditorWidgetPlugin : public QObject, public QDesignerCustomWi
   Q_INTERFACES(QDesignerCustomWidgetInterface)
 
 public:
-  explicit ArticulationsEditorWidgetPlugin(QObject* parent = 0);
+  explicit ArticulationsEditorWidgetPlugin(QObject* parent = nullptr);
   virtual ~ArticulationsEditorWidgetPlugin();
 
   bool isContainer() const override;

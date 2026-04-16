@@ -43,7 +43,7 @@ class SDKQT_EXPORT EntityProxyModel : public QSortFilterProxyModel
 
 public:
   /// constructor passes parent to QSortFilterProxyModel
-  EntityProxyModel(QObject *parent = 0);
+  EntityProxyModel(QObject *parent = nullptr);
   virtual ~EntityProxyModel();
 
   /// QAbstractItemModel interface

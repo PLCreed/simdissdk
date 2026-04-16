@@ -522,7 +522,7 @@ void RTTPicker::setUpViewWithDebugTexture(osgViewer::View* intoView, simVis::Vie
   if (!rttTex)
     return;
 
-  intoView->setCameraManipulator(0L);
+  intoView->setCameraManipulator(nullptr);
   intoView->getCamera()->setName("RTT view");
   intoView->getCamera()->setViewport(0, 0, 256, 256);
   intoView->getCamera()->setClearColor(simVis::Color::White);

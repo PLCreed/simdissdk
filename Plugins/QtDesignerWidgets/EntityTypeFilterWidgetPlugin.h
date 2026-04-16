@@ -33,7 +33,7 @@ class EntityTypeFilterWidgetPlugin : public QObject, public QDesignerCustomWidge
   Q_INTERFACES(QDesignerCustomWidgetInterface)
 
 public:
-  explicit EntityTypeFilterWidgetPlugin(QObject *parent = 0);
+  explicit EntityTypeFilterWidgetPlugin(QObject *parent = nullptr);
 
   bool isContainer() const override;
   bool isInitialized() const override;

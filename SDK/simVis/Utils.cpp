@@ -1120,7 +1120,7 @@ osg::ref_ptr<osg::Geometry> createEllipsoidGeometry(float xRadius, float yRadius
   verts->reserve(numLatPoints * numLonPoints);
 
   // Create texture coordinates only if needed
-  osg::Vec2Array* texCoords = 0;
+  osg::Vec2Array* texCoords = nullptr;
   if (genTexCoords)
   {
     texCoords = new osg::Vec2Array();
@@ -1243,7 +1243,7 @@ osg::Matrix computeLocalToWorld(const osg::Node* node)
       const osg::Transform* t = dynamic_cast<const osg::Transform*>(node);
       if (t)
       {
-        t->computeLocalToWorldMatrix(m, 0L);
+        t->computeLocalToWorldMatrix(m, nullptr);
       }
     }
   }

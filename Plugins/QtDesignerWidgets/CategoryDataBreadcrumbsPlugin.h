@@ -34,7 +34,7 @@ class CategoryDataBreadcrumbsPlugin : public QObject, public QDesignerCustomWidg
   Q_INTERFACES(QDesignerCustomWidgetInterface)
 
 public:
-  explicit CategoryDataBreadcrumbsPlugin(QObject *parent = 0);
+  explicit CategoryDataBreadcrumbsPlugin(QObject *parent = nullptr);
   virtual ~CategoryDataBreadcrumbsPlugin();
 
   bool isContainer() const override;

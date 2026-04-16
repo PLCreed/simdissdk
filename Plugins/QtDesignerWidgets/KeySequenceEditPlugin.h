@@ -32,7 +32,7 @@ class KeySequenceEditPlugin : public QObject, public QDesignerCustomWidgetInterf
   Q_INTERFACES(QDesignerCustomWidgetInterface);
 
 public:
-  explicit KeySequenceEditPlugin(QObject *parent = 0);
+  explicit KeySequenceEditPlugin(QObject *parent = nullptr);
 
   bool isContainer() const override;
   bool isInitialized() const override;

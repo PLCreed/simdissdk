@@ -34,7 +34,7 @@ class GanttChartViewPlugin : public QObject, public QDesignerCustomWidgetInterfa
   Q_INTERFACES(QDesignerCustomWidgetInterface);
 
 public:
-  explicit GanttChartViewPlugin(QObject *parent = 0);
+  explicit GanttChartViewPlugin(QObject *parent = nullptr);
 
   bool isContainer() const override;
   bool isInitialized() const override;

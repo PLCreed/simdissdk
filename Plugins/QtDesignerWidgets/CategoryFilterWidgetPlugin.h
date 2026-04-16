@@ -34,7 +34,7 @@ class CategoryFilterWidgetPlugin : public QObject, public QDesignerCustomWidgetI
   Q_INTERFACES(QDesignerCustomWidgetInterface)
 
 public:
-  explicit CategoryFilterWidgetPlugin(QObject *parent = 0);
+  explicit CategoryFilterWidgetPlugin(QObject *parent = nullptr);
   virtual ~CategoryFilterWidgetPlugin();
 
   bool isContainer() const override;

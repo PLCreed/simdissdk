@@ -32,7 +32,7 @@ class ColorGradientWidgetPlugin : public QObject, public QDesignerCustomWidgetIn
   Q_INTERFACES(QDesignerCustomWidgetInterface);
 
 public:
-  explicit ColorGradientWidgetPlugin(QObject *parent = 0);
+  explicit ColorGradientWidgetPlugin(QObject *parent = nullptr);
 
   bool isContainer() const override;
   bool isInitialized() const override;

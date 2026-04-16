@@ -32,7 +32,7 @@ class DirectorySelectorWidgetPlugin : public QObject, public QDesignerCustomWidg
   Q_INTERFACES(QDesignerCustomWidgetInterface);
 
 public:
-  explicit DirectorySelectorWidgetPlugin(QObject *parent = 0);
+  explicit DirectorySelectorWidgetPlugin(QObject *parent = nullptr);
 
   bool isContainer() const override;
   bool isInitialized() const override;

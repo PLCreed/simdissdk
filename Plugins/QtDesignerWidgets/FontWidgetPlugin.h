@@ -32,7 +32,7 @@ class FontWidgetPlugin : public QObject, public QDesignerCustomWidgetInterface
   Q_INTERFACES(QDesignerCustomWidgetInterface);
 
 public:
-  explicit FontWidgetPlugin(QObject *parent = 0);
+  explicit FontWidgetPlugin(QObject *parent = nullptr);
 
   bool isContainer() const override;
   bool isInitialized() const override;

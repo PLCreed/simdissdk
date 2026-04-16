@@ -345,7 +345,7 @@ void EntityLineEdit::wasActivated_(const QModelIndex& index)
 
   QCompleter* completer = composite_->lineEdit->completer();
   QAbstractProxyModel* proxyModel = qobject_cast<QAbstractProxyModel*>(completer->completionModel());
-  Q_ASSERT(proxyModel != 0);
+  Q_ASSERT(proxyModel != nullptr);
 
   // Unwind the double proxy, ours and the build in proxy of the completer
   QModelIndex modelIndex = proxy_->mapToSource(proxyModel->mapToSource(index));

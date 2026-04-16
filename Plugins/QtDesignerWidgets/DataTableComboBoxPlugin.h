@@ -32,7 +32,7 @@ class DataTableComboBoxPlugin : public QObject, public QDesignerCustomWidgetInte
   Q_INTERFACES(QDesignerCustomWidgetInterface)
 
 public:
-  explicit DataTableComboBoxPlugin(QObject *parent = 0);
+  explicit DataTableComboBoxPlugin(QObject *parent = nullptr);
 
   bool isContainer() const override;
   bool isInitialized() const override;

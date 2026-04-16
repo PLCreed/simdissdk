@@ -32,7 +32,7 @@ class EntityFilterLineEditPlugin : public QObject, public QDesignerCustomWidgetI
   Q_INTERFACES(QDesignerCustomWidgetInterface)
 
 public:
-  explicit EntityFilterLineEditPlugin(QObject *parent = 0);
+  explicit EntityFilterLineEditPlugin(QObject *parent = nullptr);
 
   bool isContainer() const override;
   bool isInitialized() const override;

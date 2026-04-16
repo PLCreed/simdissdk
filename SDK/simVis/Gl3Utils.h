@@ -115,7 +115,7 @@ inline void applyMesaGeometryShaderFix(osg::GraphicsContext* graphicsContext)
   // now until it can be shown that this issue impacts other drivers too.
   const unsigned int contextId = graphicsContext->getState()->getContextID();
   osg::ref_ptr<osg::GLExtensions> glExtensions = osg::GLExtensions::Get(contextId, true);
-  if (strstr(glVersionString, "Mesa") != 0 && glExtensions.valid())
+  if (strstr(glVersionString, "Mesa") != nullptr && glExtensions.valid())
   {
     // Disable geometry shader support until GL 4.1, or explicit support for shader4
     if (glExtensions->isGeometryShader4Supported &&

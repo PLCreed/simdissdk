@@ -48,7 +48,7 @@ public:
   */
   void setBrightnessContrast(const osg::Vec2f& bc);
   /** Retrieves the brightness (x) and contrast (y) values */
-  osg::Vec2f getBrightnessContrast(void) const;
+  osg::Vec2f getBrightnessContrast() const;
 
   // ColorFilter methods
 

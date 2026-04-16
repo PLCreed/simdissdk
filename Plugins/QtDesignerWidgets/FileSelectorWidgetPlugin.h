@@ -32,7 +32,7 @@ class FileSelectorWidgetPlugin : public QObject, public QDesignerCustomWidgetInt
   Q_INTERFACES(QDesignerCustomWidgetInterface);
 
 public:
-  explicit FileSelectorWidgetPlugin(QObject *parent = 0);
+  explicit FileSelectorWidgetPlugin(QObject *parent = nullptr);
 
   bool isContainer() const override;
   bool isInitialized() const override;

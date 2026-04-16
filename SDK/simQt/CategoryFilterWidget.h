@@ -122,7 +122,7 @@ class SDKQT_EXPORT CategoryFilterWidget : public QWidget
   Q_PROPERTY(bool showEntityCount READ showEntityCount WRITE setShowEntityCount);
 
 public:
-  explicit CategoryFilterWidget(QWidget* parent = 0);
+  explicit CategoryFilterWidget(QWidget* parent = nullptr);
   virtual ~CategoryFilterWidget();
 
   /** Sets the data store, updating the category tree based on changes to that data store. */

@@ -260,7 +260,7 @@ void OverheadMode::enableGeoTransformClamping(bool value, osgEarth::GeoTransform
 {
   if (xform)
   {
-    xform->setComputeMatrixCallback(value ? new ClampMatrixCallback() : 0L);
+    xform->setComputeMatrixCallback(value ? new ClampMatrixCallback() : nullptr);
   }
 }
 

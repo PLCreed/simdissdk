@@ -32,7 +32,7 @@ class DockWidgetPlugin : public QObject, public QDesignerCustomWidgetInterface
   Q_INTERFACES(QDesignerCustomWidgetInterface);
 
 public:
-  explicit DockWidgetPlugin(QObject *parent = 0);
+  explicit DockWidgetPlugin(QObject *parent = nullptr);
 
   bool isContainer() const override;
   bool isInitialized() const override;

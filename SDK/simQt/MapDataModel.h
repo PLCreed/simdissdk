@@ -104,7 +104,7 @@ class SDKQT_EXPORT MapDataModel : public QAbstractItemModel
   Q_OBJECT;
 public:
   /** Constructor */
-  explicit MapDataModel(QObject* parent=0);
+  explicit MapDataModel(QObject* parent=nullptr);
   virtual ~MapDataModel();
 
   /// Changes the underlying Map pointer (nullptr is tolerated)

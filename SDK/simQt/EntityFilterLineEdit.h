@@ -38,7 +38,7 @@ class SDKQT_EXPORT EntityFilterLineEdit : public QLineEdit
 
 public:
   /// Constructor takes the parent widget
-  explicit EntityFilterLineEdit(QWidget *parent = 0);
+  explicit EntityFilterLineEdit(QWidget *parent = nullptr);
   virtual ~EntityFilterLineEdit();
 
   /// Set options
