@@ -103,7 +103,7 @@ public:
 
   protected:
     /// osg::Referenced-derived
-    virtual ~Callback() {}
+    virtual ~Callback() = default;
   };
 
   /** Lambda callback; particularly useful when you register and don't need to unregister. */
@@ -123,7 +123,7 @@ public:
 
   protected:
     /// osg::Referenced-derived
-    virtual ~LambdaCallback() {}
+    virtual ~LambdaCallback() = default;
 
   private:
     std::function<void(simVis::View*, Callback::EventType)> func_;
@@ -137,7 +137,7 @@ public:
 
   protected:
     /// osg::Referenced-derived
-    virtual ~PostCameraEventHandler() {}
+    virtual ~PostCameraEventHandler() = default;
   };
 
   /** Constructs a new view manager. */

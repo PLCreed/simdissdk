@@ -38,7 +38,7 @@ namespace simQt {
 class ConsoleChannel
 {
 public:
-  virtual ~ConsoleChannel() {}
+  virtual ~ConsoleChannel() = default;
 
   /**
    * Call this to notify all observers of your new text string.  When adding a new channel

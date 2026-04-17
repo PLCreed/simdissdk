@@ -105,7 +105,7 @@ protected:
   void init_();
 
   /// osg::Referenced-derived
-  virtual ~ThresholdColorProvider() {}
+  virtual ~ThresholdColorProvider() = default;
 
 protected:
   osg::Vec4f belowColor_; ///< Color for values below threshold

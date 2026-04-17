@@ -49,7 +49,7 @@ class SDKQT_EXPORT Toast
 {
 public:
   /** Virtual destructor */
-  virtual ~Toast() {}
+  virtual ~Toast() = default;
 
   /** Duration specifies how long to show the text */
   enum Duration

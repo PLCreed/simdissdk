@@ -73,7 +73,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~TwoWayPowerDataProvider() {}
+  virtual ~TwoWayPowerDataProvider() = default;
 
 private:
   const RadarParametersPtr radarParameters_;

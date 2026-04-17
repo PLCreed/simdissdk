@@ -61,7 +61,7 @@ namespace simVis
 #endif
 
   protected:
-    virtual ~Text() { }
+    virtual ~Text() = default;
 
   private:
     float x_;

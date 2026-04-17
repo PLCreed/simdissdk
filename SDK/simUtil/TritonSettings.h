@@ -146,9 +146,7 @@ protected:
   }
 
   /** Protected virtual destructor due to osg::Referenced derivation */
-  virtual ~TritonValueT()
-  {
-  }
+  virtual ~TritonValueT() = default;
 
 private:
   T value_;

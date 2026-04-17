@@ -65,7 +65,7 @@ public:
 
   protected:
     /** Derived from osg::Referenced */
-    virtual ~UnitsProvider() {}
+    virtual ~UnitsProvider() = default;
   };
 
   /** Default constructor. */
@@ -210,7 +210,7 @@ public:
   }
 
 protected:
-  virtual ~MapScaleOneUnitProvider() {}
+  virtual ~MapScaleOneUnitProvider() = default;
 
 private:
   const simCore::Units& units_;
@@ -241,7 +241,7 @@ public:
   }
 
 protected:
-  virtual ~MapScaleTwoUnitsProvider() {}
+  virtual ~MapScaleTwoUnitsProvider() = default;
 
 private:
   const simCore::Units& smallUnits_;

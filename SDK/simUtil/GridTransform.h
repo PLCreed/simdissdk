@@ -63,7 +63,7 @@ public:
 
 protected:
   /** Protect osg::Referenced-derived destructor */
-  virtual ~GridLayoutListener() {}
+  virtual ~GridLayoutListener() = default;
 };
 
 /**

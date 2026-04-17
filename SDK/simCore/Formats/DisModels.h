@@ -40,7 +40,7 @@ template<typename T>
 class DisModelCache
 {
 public:
-  DisModelCache() {}
+  DisModelCache() = default;
 
   /**
    * Get the model using wildcard searching. If model is found, stored in the model cache so next search on the same disId is faster.

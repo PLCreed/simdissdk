@@ -67,7 +67,7 @@ public:
   osgEarth::Config getConfig() const override;
 
 protected:
-  virtual ~ChromaKeyColorFilter() {} // osg::Referenced object
+  virtual ~ChromaKeyColorFilter() = default; // osg::Referenced object
 
 private:
   void init_();

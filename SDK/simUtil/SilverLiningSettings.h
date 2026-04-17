@@ -147,9 +147,7 @@ protected:
   }
 
   /** Protected virtual destructor due to osg::Referenced derivation */
-  virtual ~SilverLiningValueT()
-  {
-  }
+  virtual ~SilverLiningValueT() = default;
 
 private:
   T value_;
@@ -400,7 +398,7 @@ public:
   virtual unsigned long getMilliseconds() const = 0;
 
 protected:
-  virtual ~SilverLiningTimeStrategy() {}
+  virtual ~SilverLiningTimeStrategy() = default;
 };
 
 /** Use the default SilverLining time, based on an ever-increasing real-time timer */
@@ -410,7 +408,7 @@ public:
   unsigned long getMilliseconds() const override;
 
 protected:
-  virtual ~SLAlwaysRealTime() {}
+  virtual ~SLAlwaysRealTime() = default;
 };
 
 /** Use the scenario time as indicated by the simCore Clock, falling back to system clock if undefined */
@@ -420,7 +418,7 @@ public:
   unsigned long getMilliseconds() const override;
 
 protected:
-  virtual ~SLRegistryClockTime() {}
+  virtual ~SLRegistryClockTime() = default;
 };
 
 /**

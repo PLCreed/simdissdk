@@ -37,7 +37,7 @@ namespace simUtil {
 class SDKUTIL_EXPORT IdMapper
 {
 public:
-  virtual ~IdMapper() {}
+  virtual ~IdMapper() = default;
 
   /**
    * Map ID value to local system; returns 0 on not-found.

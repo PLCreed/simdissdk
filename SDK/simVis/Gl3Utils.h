@@ -196,9 +196,7 @@ public:
   }
 
 protected:
-  virtual ~Gl3RealizeOperation()
-  {
-  }
+  virtual ~Gl3RealizeOperation() = default;
 
 private:
   osg::ref_ptr<osg::Operation> nested_;

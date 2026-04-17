@@ -45,7 +45,7 @@ class SDKCORE_EXPORT UnitContext
 {
 public:
   /** Inherit a virtual destructor */
-  virtual ~UnitContext() {}
+  virtual ~UnitContext() = default;
 
   ///@{
   /// Getters for various unit types and formats

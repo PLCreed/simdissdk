@@ -103,7 +103,7 @@ public:
   void reset();
 
 protected:
-  virtual ~TrackPointsChunk() {}
+  virtual ~TrackPointsChunk() = default;
 
   /// Is this chunk empty?
   bool isEmpty_() const;

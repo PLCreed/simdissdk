@@ -152,7 +152,7 @@ public:
   class Listener
   {
   public: // methods
-    virtual ~Listener() {}
+    virtual ~Listener() = default;
 
     /// Controls the order that listeners are invoked; higher numbers are invoked later
     virtual int weight() const = 0;
@@ -193,7 +193,7 @@ public:
   class DefaultListener : public Listener
   {
   public: // methods
-    virtual ~DefaultListener() {}
+    virtual ~DefaultListener() = default;
 
     /// Controls the order that listeners are invoked; higher numbers are invoked later
     int weight() const override { return 0; }
@@ -237,7 +237,7 @@ public:
   class ScenarioListener
   {
   public: // methods
-    virtual ~ScenarioListener() {}
+    virtual ~ScenarioListener() = default;
 
     /// Scenario Property changed
     virtual void onScenarioPropertiesChange(DataStore *source) = 0;
@@ -247,7 +247,7 @@ public:
   class SDKDATA_EXPORT NewUpdatesListener
   {
   public:
-    virtual ~NewUpdatesListener() {}
+    virtual ~NewUpdatesListener() = default;
 
     /// New update was added for the entity ID provided, at the time provided.  Query the data store for the contents of the update.
     virtual void onEntityUpdate(simData::DataStore* source, simData::ObjectId id, double dataTime) = 0;
@@ -743,7 +743,7 @@ protected:
   class TransactionImpl
   {
   public:
-    virtual ~TransactionImpl() {}
+    virtual ~TransactionImpl() = default;
 
     virtual void  commit() = 0; ///< accept the updates connected to this transaction
     virtual void release() = 0; ///< reject the updates connected to this transaction

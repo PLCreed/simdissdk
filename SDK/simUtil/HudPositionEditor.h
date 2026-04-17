@@ -120,7 +120,7 @@ private:
 class SDKUTIL_EXPORT HudEditorRightClickCallback
 {
 public:
-  virtual ~HudEditorRightClickCallback() {}
+  virtual ~HudEditorRightClickCallback() = default;
 
   /** Called when a window named windowName is right clicked. */
   virtual void rightClicked(const std::string& windowName) = 0;

@@ -169,7 +169,7 @@ public:
 
 protected:
   /** Reference-derived */
-  virtual ~Position() {}
+  virtual ~Position() = default;
 
   /** Helper function that can be used to implement operator==() and operator!=() */
   bool positionEquals_(const Position& other) const;

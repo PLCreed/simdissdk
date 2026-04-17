@@ -56,7 +56,7 @@ struct PopupContentCallback : public osg::Referenced
 
 protected:
   /// osg::Referenced-derived
-  virtual ~PopupContentCallback() {}
+  virtual ~PopupContentCallback() = default;
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////

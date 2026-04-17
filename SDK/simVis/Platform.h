@@ -55,7 +55,7 @@ class VelocityVector;
 class LosCreator
 {
 public:
-  virtual ~LosCreator() {}
+  virtual ~LosCreator() = default;
   /// Creates a new RadialLOSNode which is owned by the caller
   virtual RadialLOSNode* newLosNode() = 0;
 };

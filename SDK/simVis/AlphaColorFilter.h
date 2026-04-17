@@ -110,7 +110,7 @@ namespace simVis
     osgEarth::Config getConfig() const override;
 
   protected:
-    virtual ~AlphaColorFilter() {} // osg::Referenced object
+    virtual ~AlphaColorFilter() = default; // osg::Referenced object
 
   private:
     void init_();

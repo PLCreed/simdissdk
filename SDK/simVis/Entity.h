@@ -58,7 +58,7 @@ namespace simVis
     /** Gets the mask of components to inherit (see Locator::Components) */
     virtual unsigned int getLocatorComponents() const = 0;
 
-    virtual ~EntityAttachable() {}
+    virtual ~EntityAttachable() = default;
   };
 
   /** Helper class for entity's to help clamp coordinate points to map surface */

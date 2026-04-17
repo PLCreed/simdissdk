@@ -48,7 +48,7 @@ public:
 class Listener
 {
 public:
-  virtual ~Listener() {}
+  virtual ~Listener() = default;
 
   /// Invoked when a new category is added
   virtual void onAddCategory(int categoryIndex) = 0;

@@ -71,7 +71,7 @@ public:
 
   protected:
     /** osg::Referenced classes have protected destructors to avoid double delete. */
-    virtual ~RepositionCallback() {}
+    virtual ~RepositionCallback() = default;
   };
 
   /**

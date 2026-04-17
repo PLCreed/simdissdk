@@ -41,7 +41,7 @@ class Seconds;
 class SDKCORE_EXPORT TimeFormatter
 {
 public:
-  virtual ~TimeFormatter() {}
+  virtual ~TimeFormatter() = default;
 
   /**
    * Converts the time stamp to a string.  In cases where applicable, the reference year provides an

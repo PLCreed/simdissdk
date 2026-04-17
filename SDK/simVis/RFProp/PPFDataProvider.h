@@ -48,7 +48,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~PPFDataProvider() {}
+  virtual ~PPFDataProvider() = default;
 
 private:
   /**

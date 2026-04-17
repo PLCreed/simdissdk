@@ -58,7 +58,7 @@ class QtDesignerDisplayTree : public simQt::AbstractEntityTreeModel
 
 public:
   explicit QtDesignerDisplayTree(QObject* parent);
-  virtual ~QtDesignerDisplayTree() {}
+  virtual ~QtDesignerDisplayTree() = default;
 
 
   /** Remove an entity from the tree via its ID */

@@ -72,7 +72,7 @@ namespace simCore
     */
     InterpTableException(const std::string &err) : error_(err) {}
     /** InterpTableException destructor */
-    virtual ~InterpTableException() throw() {}
+    virtual ~InterpTableException() throw() = default;
 
     /** @return InterpTableException error condition */
     const char *what() const throw() override { return error_.c_str(); }
@@ -97,7 +97,7 @@ namespace simCore
     InterpTableLimitException(const std::string &error, int x, int y, const Type &value)
       : InterpTableException(error), x_(x), y_(y), value_(value) {}
     /** InterpTableLimitException destructor */
-    virtual ~InterpTableLimitException() throw() {}
+    virtual ~InterpTableLimitException() throw() = default;
 
   private:
     int x_;       /**< requested X dimension index */

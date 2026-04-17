@@ -38,7 +38,7 @@ class UnitContext : public QObject, public simCore::UnitContext
   Q_OBJECT;
 public:
   /** Inherit a virtual destructor */
-  virtual ~UnitContext() {}
+  virtual ~UnitContext() = default;
 
 Q_SIGNALS:
   /** One of the values in the provided unit context has changed.  Emitted after individual changes. */

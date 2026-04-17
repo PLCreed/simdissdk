@@ -156,8 +156,8 @@ private:
 class SDKVIS_EXPORT CompassUpdateListener
 {
 public:
-  CompassUpdateListener() {}
-  virtual ~CompassUpdateListener() {}
+  CompassUpdateListener() = default;
+  virtual ~CompassUpdateListener() = default;
 
   /** Executed when the compass heading changes, passes in heading in degrees */
   virtual void onUpdate(double heading) = 0;

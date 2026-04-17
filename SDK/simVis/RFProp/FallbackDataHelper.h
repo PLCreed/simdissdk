@@ -36,7 +36,7 @@ namespace simRF
 class FallbackDataHelper
 {
 public:
-  virtual ~FallbackDataHelper() {}
+  virtual ~FallbackDataHelper() = default;
 
   /**
    * Indicates whether the DataHelper can provide a result for the given beam.
@@ -51,7 +51,7 @@ public:
 class NullDataHelper : public FallbackDataHelper
 {
 public:
-  NullDataHelper() {}
+  NullDataHelper() = default;
 
   /**
    * Indicates whether the DataHelper can provide a result for the given beam.

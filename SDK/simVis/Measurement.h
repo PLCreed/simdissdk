@@ -60,7 +60,7 @@ const double DEFAULT_RF_RADIUS = 4. / 3.;
 class SDKVIS_EXPORT ValueFormatter : public osg::Referenced
 {
 public:
-  virtual ~ValueFormatter() {}
+  virtual ~ValueFormatter() = default;
   /**
   * Formats the value into a string
   * @param value The value that needs to be converted into a string.
@@ -137,7 +137,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~Measurement() {}
+  virtual ~Measurement() = default;
 
   /// Returns true if the type is a beam, gate, laser or lob group
   bool isRaeObject_(simData::ObjectType type) const;
@@ -190,7 +190,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~GroundDistanceMeasurement() {}
+  virtual ~GroundDistanceMeasurement() = default;
 };
 
 /// Slant Range
@@ -203,7 +203,7 @@ public:
 
 public:
   /// osg::Referenced-derived
-  virtual ~SlantDistanceMeasurement() {}
+  virtual ~SlantDistanceMeasurement() = default;
 };
 
 /// Altitude
@@ -216,7 +216,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~AltitudeDeltaMeasurement() {}
+  virtual ~AltitudeDeltaMeasurement() = default;
 };
 
 /// Beam Ground Range
@@ -229,7 +229,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~BeamGroundDistanceMeasurement() {}
+  virtual ~BeamGroundDistanceMeasurement() = default;
 };
 
 /// Beam Slant Range
@@ -242,7 +242,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~BeamSlantDistanceMeasurement() {}
+  virtual ~BeamSlantDistanceMeasurement() = default;
 };
 
 /// Beam Altitude
@@ -255,7 +255,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~BeamAltitudeDeltaMeasurement() {}
+  virtual ~BeamAltitudeDeltaMeasurement() = default;
 };
 
 /// Down Range
@@ -268,7 +268,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~DownRangeMeasurement() {}
+  virtual ~DownRangeMeasurement() = default;
 };
 
 /// Cross Range
@@ -281,7 +281,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~CrossRangeMeasurement() {}
+  virtual ~CrossRangeMeasurement() = default;
 };
 
 /// Down Value
@@ -294,7 +294,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~DownRangeCrossRangeDownValueMeasurement() {}
+  virtual ~DownRangeCrossRangeDownValueMeasurement() = default;
 };
 
 /// Geodesic Down Range
@@ -307,7 +307,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~GeoDownRangeMeasurement() {}
+  virtual ~GeoDownRangeMeasurement() = default;
 };
 
 /// Geodesic Cross Range
@@ -320,7 +320,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~GeoCrossRangeMeasurement() {}
+  virtual ~GeoCrossRangeMeasurement() = default;
 };
 
 // True angles
@@ -335,7 +335,7 @@ public:
 
 public:
   /// osg::Referenced-derived
-  virtual ~TrueAzimuthMeasurement() {}
+  virtual ~TrueAzimuthMeasurement() = default;
 };
 
 /// True Elevation
@@ -348,7 +348,7 @@ public:
 
 public:
   /// osg::Referenced-derived
-  virtual ~TrueElevationMeasurement() {}
+  virtual ~TrueElevationMeasurement() = default;
 };
 
 /// True Composite Angle Calculation
@@ -361,7 +361,7 @@ public:
 
 public:
   /// osg::Referenced-derived
-  virtual ~TrueCompositeAngleMeasurement() {}
+  virtual ~TrueCompositeAngleMeasurement() = default;
 };
 
 class SDKVIS_EXPORT MagneticAzimuthMeasurement : public Measurement
@@ -373,7 +373,7 @@ public:
 
 public:
   /// osg::Referenced-derived
-  virtual ~MagneticAzimuthMeasurement() {}
+  virtual ~MagneticAzimuthMeasurement() = default;
 private:
   std::shared_ptr<const simCore::DatumConvert> datumConvert_;
 };
@@ -403,7 +403,7 @@ protected:
   void getAngles(double* az, double* el, double* cmp, RangeToolState& state) const;
 
   /// osg::Referenced-derived
-  virtual ~RelOriMeasurement() {}
+  virtual ~RelOriMeasurement() = default;
 };
 
 /// Orientation Relative Azimuth
@@ -416,7 +416,7 @@ public:
 
 public:
   /// osg::Referenced-derived
-  virtual ~RelOriAzimuthMeasurement() {}
+  virtual ~RelOriAzimuthMeasurement() = default;
 };
 
 /// Orientation Relative Elevation
@@ -429,7 +429,7 @@ public:
 
 public:
   /// osg::Referenced-derived
-  virtual ~RelOriElevationMeasurement() {}
+  virtual ~RelOriElevationMeasurement() = default;
 };
 
 /// Orientation Relative Composite Angle
@@ -442,7 +442,7 @@ public:
 
 public:
   /// osg::Referenced-derived
-  virtual ~RelOriCompositeAngleMeasurement() {}
+  virtual ~RelOriCompositeAngleMeasurement() = default;
 };
 
 // Velocity vector-relative angles
@@ -471,7 +471,7 @@ protected:
   void getAngles(double* az, double* el, double* cmp, RangeToolState& state) const;
 
   /// osg::Referenced-derived
-  virtual ~RelVelMeasurement() {}
+  virtual ~RelVelMeasurement() = default;
 };
 
 /// Velocity Relative Azimuth
@@ -484,7 +484,7 @@ public:
 
 public:
   /// osg::Referenced-derived
-  virtual ~RelVelAzimuthMeasurement() {}
+  virtual ~RelVelAzimuthMeasurement() = default;
 };
 
 /// Velocity Relative Elevation
@@ -497,7 +497,7 @@ public:
 
 public:
   /// osg::Referenced-derived
-  virtual ~RelVelElevationMeasurement() {}
+  virtual ~RelVelElevationMeasurement() = default;
 };
 
 /// Velocity Relative Composite Angle
@@ -510,7 +510,7 @@ public:
 
 public:
   /// osg::Referenced-derived
-  virtual ~RelVelCompositeAngleMeasurement() {}
+  virtual ~RelVelCompositeAngleMeasurement() = default;
 };
 
 // Velocity measures
@@ -525,7 +525,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~ClosingVelocityMeasurement() {}
+  virtual ~ClosingVelocityMeasurement() = default;
 };
 
 /// Separation Velocity
@@ -538,7 +538,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~SeparationVelocityMeasurement() {}
+  virtual ~SeparationVelocityMeasurement() = default;
 };
 
 /// Velocity Delta
@@ -551,7 +551,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~VelocityDeltaMeasurement() {}
+  virtual ~VelocityDeltaMeasurement() = default;
 };
 
 /// Velocity Azimuth Down Range
@@ -564,7 +564,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~VelAzimDownRangeMeasurement() {}
+  virtual ~VelAzimDownRangeMeasurement() = default;
 };
 
 /// Velocity Azimuth Cross Range
@@ -577,7 +577,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~VelAzimCrossRangeMeasurement() {}
+  virtual ~VelAzimCrossRangeMeasurement() = default;
 };
 
 /// Velocity Azimuth Geodesic Down Range
@@ -590,7 +590,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~VelAzimGeoDownRangeMeasurement() {}
+  virtual ~VelAzimGeoDownRangeMeasurement() = default;
 };
 
 /// Velocity Azimuth Geodesic Cross Range
@@ -603,7 +603,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~VelAzimGeoCrossRangeMeasurement() {}
+  virtual ~VelAzimGeoCrossRangeMeasurement() = default;
 };
 
 /// Aspect Angle
@@ -616,7 +616,7 @@ public:
 
 private:
   /// osg::Referenced-derived
-  virtual ~AspectAngleMeasurement() {}
+  virtual ~AspectAngleMeasurement() = default;
 };
 
 }

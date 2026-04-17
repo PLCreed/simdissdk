@@ -76,7 +76,7 @@ public:
   class Observer
   {
   public:
-    virtual ~Observer() {}
+    virtual ~Observer() = default;
     /** Manipulator has changed.  May be nullptr. */
     virtual void activeExclusiveManipulatorChanged(MouseManipulatorPtr active, MouseManipulatorPtr oldActive) = 0;
   };

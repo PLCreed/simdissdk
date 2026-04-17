@@ -49,7 +49,7 @@ struct LocatorCallback : public osg::Referenced
 
 protected:
   /// osg::Referenced-derived
-  virtual ~LocatorCallback() {}
+  virtual ~LocatorCallback() = default;
 };
 
 /** Function pointer to a LocatorCallback method that takes a Locator parameter (e.g. LocatorCallback::operator()) */
@@ -70,7 +70,7 @@ struct SyncLocatorCallback : public LocatorCallback
 
 protected:
   /// osg::Referenced-derived
-  virtual ~SyncLocatorCallback() {}
+  virtual ~SyncLocatorCallback() = default;
 
 public: // data
   /** Node pointer */
@@ -342,7 +342,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~Locator() {}
+  virtual ~Locator() = default;
 
   /**
   * Returns the base position of this locator after specified inheritance components are applied to it
@@ -464,7 +464,7 @@ public:
     const simCore::CoordinateSystem& coordsys = simCore::COORD_SYS_ECEF) const override;
 protected:
   /// osg::Referenced-derived
-  virtual ~CachingLocator() {}
+  virtual ~CachingLocator() = default;
 
 private:
   // cache frequently used LLA position and orientation
@@ -494,7 +494,7 @@ public:
   ResolvedPositionOrientationLocator(Locator* parentLoc, unsigned int inheritMask);
 protected:
   /// osg::Referenced-derived
-  virtual ~ResolvedPositionOrientationLocator() {}
+  virtual ~ResolvedPositionOrientationLocator() = default;
 private:
   /** @copydoc Locator::getPosition_() */
   bool getPosition_(osg::Vec3d& pos, unsigned int comps) const override;
@@ -520,7 +520,7 @@ public:
   ResolvedPositionLocator(Locator* parentLoc, unsigned int inheritMask);
 protected:
   /// osg::Referenced-derived
-  virtual ~ResolvedPositionLocator() {}
+  virtual ~ResolvedPositionLocator() = default;
 private:
   /** @copydoc Locator::getOrientation_() */
   bool getOrientation_(osg::Matrixd& ori, unsigned int comps) const override;

@@ -65,7 +65,7 @@ namespace simVis
 
   protected:
     /// osg::Referenced-derived
-    virtual ~BeamVolume() {}
+    virtual ~BeamVolume() = default;
 
   private:
     /// build the spherical volume

@@ -41,7 +41,7 @@ namespace simCore
   {
   public:
     RadarCrossSection() : filename_("") {}
-    virtual ~RadarCrossSection() {}
+    virtual ~RadarCrossSection() = default;
 
     /**
     * This method returns the type of radar cross section
@@ -115,7 +115,7 @@ namespace simCore
   {
   public:
     RCSTable();
-    virtual ~RCSTable() {}
+    virtual ~RCSTable() = default;
 
     /**
     * This method retrieves the radar cross section value for the requested azimuth
@@ -185,7 +185,7 @@ namespace simCore
   struct SDKCORE_EXPORT ELEVMAP
   {
     ELEV_RCSTABLE_MAP eMap;   ///< Container of RCS tables keyed on host body elevation (rad)
-    ELEVMAP() {}
+    ELEVMAP() = default;
     ~ELEVMAP();
   };
 
@@ -196,7 +196,7 @@ namespace simCore
   struct SDKCORE_EXPORT FREQMAP
   {
     FREQ_ELEV_MAP freqMap;   ///< Container of ELEVMAPs keyed on frequency
-    FREQMAP() {}
+    FREQMAP() = default;
     ~FREQMAP();
   };
 

@@ -41,9 +41,7 @@ public:
     : tabStop_(tabStop)
   {
   }
-  virtual ~SegmentedText()
-  {
-  }
+  virtual ~SegmentedText() = default;
 
   /// Returns true if the segment should be a tab stop
   bool tabStop() const { return tabStop_; }

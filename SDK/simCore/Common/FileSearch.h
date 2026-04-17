@@ -52,7 +52,7 @@ namespace simCore
       OTHER
     };
 
-    virtual ~FileSearch() {}
+    virtual ~FileSearch() = default;
 
     /**
      * Returns the full path for the given filename.
@@ -70,8 +70,8 @@ namespace simCore
   class NoSearchFileSearch : public FileSearch
   {
   public:
-    NoSearchFileSearch() {}
-    virtual ~NoSearchFileSearch() {}
+    NoSearchFileSearch() = default;
+    virtual ~NoSearchFileSearch() = default;
 
     std::string findFile(const std::string& filename, SearchFileType type) override
     {

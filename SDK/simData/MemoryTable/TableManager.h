@@ -73,7 +73,7 @@ public:
   class NewRowDataListener
   {
   public:
-    virtual ~NewRowDataListener() {}
+    virtual ~NewRowDataListener() = default;
 
     /// New row was processed for the entity ID provided, at the time provided.  Query the table for contents of update.
     virtual void onNewRowData(simData::DataTable& table, simData::ObjectId id, double dataTime) = 0;

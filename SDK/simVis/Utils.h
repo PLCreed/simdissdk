@@ -180,7 +180,7 @@ namespace simVis
 
   protected:
     /// osg::Referenced-derived
-    virtual ~LambdaOsgCallback() {}
+    virtual ~LambdaOsgCallback() = default;
 
   private:
     std::function<void()> voidFunc_;

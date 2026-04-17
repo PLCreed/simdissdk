@@ -76,7 +76,7 @@ public:
 
 protected:
   /** Protect osg::Referenced-derived destructor */
-  virtual ~ArticulationsVisitor() {}
+  virtual ~ArticulationsVisitor() = default;
 
 private:
   /** Stores sequence node name and type to map. */

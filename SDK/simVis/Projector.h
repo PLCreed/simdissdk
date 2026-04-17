@@ -67,7 +67,7 @@ public:
 
 protected:
 
-  virtual ~ProjectorTexture() { }
+  virtual ~ProjectorTexture() = default;
 };
 
 /** Projector-video interface on the ProjectorNode side */
@@ -87,7 +87,7 @@ public:
 
 protected:
 
-  virtual ~ProjectorTextureImpl() { }
+  virtual ~ProjectorTextureImpl() = default;
 
 private:
   osg::observer_ptr<osg::Texture2D> texture_;

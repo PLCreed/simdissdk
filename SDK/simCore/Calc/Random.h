@@ -168,7 +168,7 @@ namespace simCore
     RandomVariable() { seeds_ = 0; }
 
     /// CRandomVariable destructor
-    virtual ~RandomVariable() {}
+    virtual ~RandomVariable() = default;
 
   protected:
     double seeds_;  /**< seed for random number generator */
@@ -201,7 +201,7 @@ namespace simCore
     ComplexRandomVariable() { seeds_ = 0; }
 
     /// CComplexRandomVariable destructor
-    virtual ~ComplexRandomVariable() {}
+    virtual ~ComplexRandomVariable() = default;
 
   protected:
     double seeds_;  /**< seed for random number generator */
@@ -219,7 +219,7 @@ namespace simCore
     {}
 
     /// CNormalVariable destructor
-    virtual ~NormalVariable() {}
+    virtual ~NormalVariable() = default;
 
     /**
     * This method overrides the () operator to generate a normal(Gaussian) distribution
@@ -270,7 +270,7 @@ namespace simCore
     {}
 
     /// CGaussianVariable destructor
-    virtual ~GaussianVariable() {}
+    virtual ~GaussianVariable() = default;
 
     /**
     * This method overrides the () operator to generate a complex(Gaussian) distribution
@@ -318,7 +318,7 @@ namespace simCore
     {}
 
     /// CUniformVariable destructor
-    virtual ~UniformVariable() {}
+    virtual ~UniformVariable() = default;
 
     /**
     * This method overrides the () operator to generate a uniform distribution
@@ -364,7 +364,7 @@ namespace simCore
     {}
 
     /// ExponentialVariable destructor
-    virtual ~ExponentialVariable() {}
+    virtual ~ExponentialVariable() = default;
 
     /**
     * This method overrides the () operator to generate an exponential distribution
@@ -415,7 +415,7 @@ namespace simCore
     DiscreteRandomVariable() { seeds_=0; }
 
     /// CDiscreteRandomVariable destructor
-    virtual ~DiscreteRandomVariable() {}
+    virtual ~DiscreteRandomVariable() = default;
 
   protected:
     double seeds_;  /**< seed for random number generator */
@@ -433,7 +433,7 @@ namespace simCore
     PoissonVariable(double mean = 1.0);
 
     /// CPoissonVariable destructor
-    virtual ~PoissonVariable() {}
+    virtual ~PoissonVariable() = default;
 
     /**
     * This method overrides the () operator to generate a Poisson distribution
@@ -469,7 +469,7 @@ namespace simCore
     GeometricVariable(double beta = 0.5);
 
     /// GeometricVariable destructor
-    virtual ~GeometricVariable() {}
+    virtual ~GeometricVariable() = default;
 
     /**
     * This method overrides the () operator to generate an Geometric distribution
@@ -508,7 +508,7 @@ namespace simCore
     { }
 
     /// CExponentialVariable destructor
-    virtual ~BinomialVariable() {}
+    virtual ~BinomialVariable() = default;
 
     /**
     * This method overrides the () operator to generate an binomial distribution
@@ -555,7 +555,7 @@ namespace simCore
     { }
 
     /// CDiscreteUniformVariable destructor
-    virtual ~DiscreteUniformVariable() {}
+    virtual ~DiscreteUniformVariable() = default;
 
     /**
     * This method overrides the () operator to generate a discrete uniform distribution

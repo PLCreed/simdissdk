@@ -60,7 +60,7 @@ public:
   }
 
   // Virtual destructor for virtual functions
-  virtual ~DBOptions() {}
+  virtual ~DBOptions() = default;
 
   /// get the current configuration
   // (override from osgEarth::TileSourceOptions)

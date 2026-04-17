@@ -59,7 +59,7 @@ public:
   class EntryFilter
   {
   public:
-    virtual ~EntryFilter() {}
+    virtual ~EntryFilter() = default;
     /**
      * Return false to reject the ConsoleEntry so that it does not enter the data
      * model.  Note that entry values can be edited.  Only called for new entries.

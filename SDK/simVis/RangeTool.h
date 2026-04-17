@@ -190,7 +190,7 @@ class LocatorNode;
 
     protected:
       /// osg::Referenced-derived
-      virtual ~Graphic() {}
+      virtual ~Graphic() = default;
 
     protected:
       GraphicOptions options_; ///< controls for drawing
@@ -304,7 +304,7 @@ class LocatorNode;
 
     protected:
       /// osg::Referenced-derived
-      virtual ~Calculation() {}
+      virtual ~Calculation() = default;
 
     protected: // data
       std::string                 name_; ///< name of the measurement
@@ -477,7 +477,7 @@ class LocatorNode;
 
   protected:
     /// osg::Referenced-derived
-    virtual ~RangeTool() {}
+    virtual ~RangeTool() = default;
 
   private: // Private helper classes
     struct RefreshGroup : public osg::Group
@@ -517,7 +517,7 @@ class LocatorNode;
         RangeToolState&             state);
 
       /// osg::Referenced-derived
-      virtual ~LineGraphic() {}
+      virtual ~LineGraphic() = default;
     };
 
     /// a filled in arc
@@ -546,7 +546,7 @@ class LocatorNode;
         RangeToolState&       state);
 
       /// osg::Referenced-derived
-      virtual ~PieSliceGraphic() {}
+      virtual ~PieSliceGraphic() = default;
 
       osgEarth::optional<osg::Vec3> labelPos_; ///< label position
       double measuredValue_ = 0.;              ///< value of calc's measurement
@@ -564,7 +564,7 @@ class LocatorNode;
 
     protected:
       /// osg::Referenced-derived
-      virtual ~GroundLineGraphic() {}
+      virtual ~GroundLineGraphic() = default;
     };
 
     /// Graphics
@@ -576,7 +576,7 @@ class LocatorNode;
       osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~SlantLineGraphic() {}
+      virtual ~SlantLineGraphic() = default;
     };
 
     /// Graphics
@@ -588,7 +588,7 @@ class LocatorNode;
       osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~BeginAltitudeLineGraphic() {}
+      virtual ~BeginAltitudeLineGraphic() = default;
     };
 
     /// Graphics
@@ -600,7 +600,7 @@ class LocatorNode;
       osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~EndAltitudeLineGraphic() {}
+      virtual ~EndAltitudeLineGraphic() = default;
     };
 
     /// Graphics
@@ -612,7 +612,7 @@ class LocatorNode;
       osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~BeginAltitudeLineToEndAltitudeGraphic() {}
+      virtual ~BeginAltitudeLineToEndAltitudeGraphic() = default;
     };
 
     /// Graphics
@@ -624,7 +624,7 @@ class LocatorNode;
       osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~EndAltitudeLineToBeginAltitudeGraphic() {}
+      virtual ~EndAltitudeLineToBeginAltitudeGraphic() = default;
     };
 
     /// Graphics
@@ -636,7 +636,7 @@ class LocatorNode;
       osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~BeginToEndLineAtBeginAltitudeGraphic() {}
+      virtual ~BeginToEndLineAtBeginAltitudeGraphic() = default;
     };
 
     /// Graphics
@@ -648,7 +648,7 @@ class LocatorNode;
       osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~BeginToEndLineAtEndAltitudeGraphic() {}
+      virtual ~BeginToEndLineAtEndAltitudeGraphic() = default;
     };
 
     /// Graphics
@@ -660,7 +660,7 @@ class LocatorNode;
       osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~BeamGroundLineGraphic() {}
+      virtual ~BeamGroundLineGraphic() = default;
     };
 
     /// Graphics
@@ -672,7 +672,7 @@ class LocatorNode;
       osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~BeamSlantLineGraphic() {}
+      virtual ~BeamSlantLineGraphic() = default;
     };
 
     /// Graphics
@@ -684,7 +684,7 @@ class LocatorNode;
       osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~BeamBeginAltitudeLineGraphic() {}
+      virtual ~BeamBeginAltitudeLineGraphic() = default;
     };
 
     /// Graphics
@@ -696,7 +696,7 @@ class LocatorNode;
       osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~BeamEndAltitudeLineGraphic() {}
+      virtual ~BeamEndAltitudeLineGraphic() = default;
     };
 
     /// Graphics
@@ -708,7 +708,7 @@ class LocatorNode;
       osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~BeamBeginAltitudeLineToEndAltitudeGraphic() {}
+      virtual ~BeamBeginAltitudeLineToEndAltitudeGraphic() = default;
     };
 
     /// Graphics
@@ -720,7 +720,7 @@ class LocatorNode;
       osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~BeamEndAltitudeLineToBeginAltitudeGraphic() {}
+      virtual ~BeamEndAltitudeLineToBeginAltitudeGraphic() = default;
     };
 
     /// Graphics
@@ -732,7 +732,7 @@ class LocatorNode;
       osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~BeamBeginToEndLineAtBeginAltitudeGraphic() {}
+      virtual ~BeamBeginToEndLineAtBeginAltitudeGraphic() = default;
     };
 
     /// Graphics
@@ -744,7 +744,7 @@ class LocatorNode;
       osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~BeamBeginToEndLineAtEndAltitudeGraphic() {}
+      virtual ~BeamBeginToEndLineAtEndAltitudeGraphic() = default;
     };
 
     /// Graphics
@@ -756,7 +756,7 @@ class LocatorNode;
       osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~CrossRangeLineGraphic() {}
+      virtual ~CrossRangeLineGraphic() = default;
     };
 
     /// Graphics
@@ -768,7 +768,7 @@ class LocatorNode;
       osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~DownRangeLineGraphic() {}
+      virtual ~DownRangeLineGraphic() = default;
     };
 
     /// Graphics
@@ -780,7 +780,7 @@ class LocatorNode;
       osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~VelAzimDownRangeLineGraphic() {}
+      virtual ~VelAzimDownRangeLineGraphic() = default;
     };
 
     /// Graphics
@@ -792,7 +792,7 @@ class LocatorNode;
       osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~VelAzimCrossRangeLineGraphic() {}
+      virtual ~VelAzimCrossRangeLineGraphic() = default;
     };
 
     /// Graphics
@@ -804,7 +804,7 @@ class LocatorNode;
       osg::Vec3 labelPos(RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~DownRangeCrossRangeDownLineGraphic() {}
+      virtual ~DownRangeCrossRangeDownLineGraphic() = default;
     };
 
     /// Graphics
@@ -815,7 +815,7 @@ class LocatorNode;
       void render(osg::Geode* geode, RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~TrueAzimuthPieSliceGraphic() {}
+      virtual ~TrueAzimuthPieSliceGraphic() = default;
     };
 
     /// Graphics
@@ -826,7 +826,7 @@ class LocatorNode;
       void render(osg::Geode* geode, RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~TrueElevationPieSliceGraphic() {}
+      virtual ~TrueElevationPieSliceGraphic() = default;
     };
 
     /// Graphics
@@ -837,7 +837,7 @@ class LocatorNode;
       void render(osg::Geode* geode, RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~TrueCompositeAnglePieSliceGraphic() {}
+      virtual ~TrueCompositeAnglePieSliceGraphic() = default;
     };
 
     struct SDKVIS_EXPORT MagneticAzimuthPieSliceGraphic : public PieSliceGraphic
@@ -847,7 +847,7 @@ class LocatorNode;
       void render(osg::Geode* geode, RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~MagneticAzimuthPieSliceGraphic() {}
+      virtual ~MagneticAzimuthPieSliceGraphic() = default;
     };
 
     /// Graphics
@@ -858,7 +858,7 @@ class LocatorNode;
       void render(osg::Geode* geode, RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~RelOriAzimuthPieSliceGraphic() {}
+      virtual ~RelOriAzimuthPieSliceGraphic() = default;
     };
 
     /// Graphics
@@ -869,7 +869,7 @@ class LocatorNode;
       void render(osg::Geode* geode, RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~RelOriElevationPieSliceGraphic() {}
+      virtual ~RelOriElevationPieSliceGraphic() = default;
     };
 
     /// Graphics
@@ -880,7 +880,7 @@ class LocatorNode;
       void render(osg::Geode* geode, RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~RelOriCompositeAnglePieSliceGraphic() {}
+      virtual ~RelOriCompositeAnglePieSliceGraphic() = default;
     };
 
     /// Graphics
@@ -891,7 +891,7 @@ class LocatorNode;
       void render(osg::Geode* geode, RangeToolState& state) override;
     private:
       /// osg::Referenced-derived
-      virtual ~RelAspectAnglePieSliceGraphic() {}
+      virtual ~RelAspectAnglePieSliceGraphic() = default;
     };
 
     /// Graphics
@@ -902,7 +902,7 @@ class LocatorNode;
       void render(osg::Geode* geode, RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~RelVelAzimuthPieSliceGraphic() {}
+      virtual ~RelVelAzimuthPieSliceGraphic() = default;
     };
 
     /// Graphics
@@ -913,7 +913,7 @@ class LocatorNode;
       void render(osg::Geode* geode, RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~RelVelElevationPieSliceGraphic() {}
+      virtual ~RelVelElevationPieSliceGraphic() = default;
     };
 
     /// Graphics
@@ -924,7 +924,7 @@ class LocatorNode;
       void render(osg::Geode* geode, RangeToolState& state) override;
     protected:
       /// osg::Referenced-derived
-      virtual ~RelVelCompositeAnglePieSliceGraphic() {}
+      virtual ~RelVelCompositeAnglePieSliceGraphic() = default;
     };
   };
 } // namespace simVis

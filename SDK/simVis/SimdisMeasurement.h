@@ -37,7 +37,7 @@ namespace simVis
 class SDKVIS_EXPORT HorizonFormatter : public ValueFormatter
 {
 public:
-  virtual ~HorizonFormatter() {}
+  virtual ~HorizonFormatter() = default;
   /**
   * Formats the value into a string
   * @param value The value that needs to be converted into a string.
@@ -62,7 +62,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~RfMeasurement() {}
+  virtual ~RfMeasurement() = default;
   /**
   * Calculates RF parameters from the given state
   * @param state State information for both the begin and end entities
@@ -90,7 +90,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~RFGainMeasurement() {}
+  virtual ~RFGainMeasurement() = default;
 };
 
 /// Received Power
@@ -103,7 +103,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~RFPowerMeasurement() {}
+  virtual ~RFPowerMeasurement() = default;
 };
 
 /// One-Way Power
@@ -116,7 +116,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~RFOneWayPowerMeasurement() {}
+  virtual ~RFOneWayPowerMeasurement() = default;
 };
 
 /// Base class for Horizon calculations
@@ -142,7 +142,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~HorizonMeasurement() {}
+  virtual ~HorizonMeasurement() = default;
 
   /**
   * Calculates if the end entity is above or below the horizon
@@ -166,7 +166,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~RadioHorizonMeasurement() {}
+  virtual ~RadioHorizonMeasurement() = default;
 };
 
 /// Optical Horizon
@@ -178,7 +178,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~OpticalHorizonMeasurement() {}
+  virtual ~OpticalHorizonMeasurement() = default;
 };
 
 /// Probability of Detection (PoD)
@@ -191,7 +191,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~PodMeasurement() {}
+  virtual ~PodMeasurement() = default;
 };
 
 /// Propagation Loss
@@ -204,7 +204,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~LossMeasurement() {}
+  virtual ~LossMeasurement() = default;
 };
 
 /// Pattern Propagation Factor (PPF)
@@ -217,7 +217,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~PpfMeasurement() {}
+  virtual ~PpfMeasurement() = default;
 };
 
 /// Signal to Noise (SNR)
@@ -230,7 +230,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~SnrMeasurement() {}
+  virtual ~SnrMeasurement() = default;
 };
 
 /// Clutter to Noise (CNR)
@@ -244,7 +244,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~CnrMeasurement() {}
+  virtual ~CnrMeasurement() = default;
 };
 
 /// Radar Cross Section (RCS)
@@ -257,7 +257,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~RcsMeasurement() {}
+  virtual ~RcsMeasurement() = default;
 };
 
 }

@@ -90,7 +90,7 @@ public:
   class GogNodeListener
   {
   public:
-    virtual ~GogNodeListener() {}
+    virtual ~GogNodeListener() = default;
     virtual void drawChanged(const GogNodeInterface* nodeChanged) = 0;
   };
   typedef std::shared_ptr<GogNodeListener> GogNodeListenerPtr;
@@ -592,7 +592,7 @@ public:
   FeatureNodeInterface(osgEarth::FeatureNode* featureNode, const simVis::GOG::GogMetaData& metaData);
   /** Constructor with parent group node */
   FeatureNodeInterface(osg::Group* node, osgEarth::FeatureNode* featureNode, const simVis::GOG::GogMetaData& metaData);
-  virtual ~FeatureNodeInterface() {}
+  virtual ~FeatureNodeInterface() = default;
 
   int getPosition(osg::Vec3d& position, osgEarth::GeoPoint* referencePosition = nullptr) const override;
   int getTessellation(TessellationStyle& style) const override;
@@ -624,7 +624,7 @@ class SDKVIS_EXPORT LocalGeometryNodeInterface : public GogNodeInterface
 public:
   /** Constructor */
   LocalGeometryNodeInterface(osgEarth::LocalGeometryNode* localNode, const simVis::GOG::GogMetaData& metaData);
-  virtual ~LocalGeometryNodeInterface() {}
+  virtual ~LocalGeometryNodeInterface() = default;
   int getPosition(osg::Vec3d& position, osgEarth::GeoPoint* referencePosition = nullptr) const override;
   // override the get/set reference position to work directly with in-scene content
   int getReferencePosition(osg::Vec3d& referencePosition) const override;
@@ -650,7 +650,7 @@ class SDKVIS_EXPORT LabelNodeInterface : public GogNodeInterface
 public:
   /** Constructor */
   LabelNodeInterface(osgEarth::GeoPositionNode* labelNode, const simVis::GOG::GogMetaData& metaData);
-  virtual ~LabelNodeInterface() {}
+  virtual ~LabelNodeInterface() = default;
   int getFont(std::string& fontFile, int& fontSize, osg::Vec4f& fontColor) const override;
   int getPosition(osg::Vec3d& position, osgEarth::GeoPoint* referencePosition = nullptr) const override;
   int getTextOutline(osg::Vec4f& outlineColor, simData::TextOutline& outlineThickness) const override;
@@ -726,7 +726,7 @@ class SDKVIS_EXPORT ArcNodeInterface : public GogNodeInterface
 public:
   /** Constructor */
   ArcNodeInterface(osg::Group* groupNode, osgEarth::LocalGeometryNode* shapeNode, osgEarth::LocalGeometryNode* fillNode, const simVis::GOG::GogMetaData& metatData);
-  virtual ~ArcNodeInterface() {}
+  virtual ~ArcNodeInterface() = default;
   int getPosition(osg::Vec3d& position, osgEarth::GeoPoint* referencePosition = nullptr) const override;
   void setFilledState(bool state) override;
 
@@ -757,7 +757,7 @@ class SDKVIS_EXPORT SphericalNodeInterface : public LocalGeometryNodeInterface
 public:
   /** Constructor */
   SphericalNodeInterface(osgEarth::LocalGeometryNode* localNode, const simVis::GOG::GogMetaData& metaData);
-  virtual ~SphericalNodeInterface() {}
+  virtual ~SphericalNodeInterface() = default;
   int getFilledState(bool& state, osg::Vec4f& color) const override;
   int getLineState(bool& outlineState, osg::Vec4f& color, Utils::LineStyle& lineStyle, int& lineWidth) const override;
   void setFillColor(const osg::Vec4f& color) override;
@@ -781,7 +781,7 @@ class SDKVIS_EXPORT ConeNodeInterface : public LocalGeometryNodeInterface
 {
 public:
   ConeNodeInterface(osgEarth::LocalGeometryNode* localNode, const simVis::GOG::GogMetaData& metaData);
-  virtual ~ConeNodeInterface() {}
+  virtual ~ConeNodeInterface() = default;
   void setFillColor(const osg::Vec4f& color) override;
 };
 
@@ -793,7 +793,7 @@ class SDKVIS_EXPORT ImageOverlayInterface : public GogNodeInterface
 {
 public:
   ImageOverlayInterface(osgEarth::ImageOverlay* imageNode, const simVis::GOG::GogMetaData& metaData);
-  virtual ~ImageOverlayInterface() {}
+  virtual ~ImageOverlayInterface() = default;
   int getPosition(osg::Vec3d& position, osgEarth::GeoPoint* referencePosition = nullptr) const override;
   /** Override serialize, since image file may need to be created */
   void serializeToStream(std::ostream& gogOutputStream) override;
@@ -819,7 +819,7 @@ class SDKVIS_EXPORT LatLonAltBoxInterface : public FeatureNodeInterface
 {
 public:
   LatLonAltBoxInterface(osg::Group* node, osgEarth::FeatureNode* topNode, osgEarth::FeatureNode* bottomNode, const simVis::GOG::GogMetaData& metaData);
-  virtual ~LatLonAltBoxInterface() {}
+  virtual ~LatLonAltBoxInterface() = default;
   // handle the special case for MultiGeometry
   void setAltOffset(double altOffsetMeters) override;
 

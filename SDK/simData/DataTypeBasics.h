@@ -64,7 +64,7 @@ private:
 class FieldList
 {
 public:
-  virtual ~FieldList() {}
+  virtual ~FieldList() = default;
 
   bool operator==(const FieldList& rhs) const = default;
   bool operator!=(const FieldList& rhs) const = default;

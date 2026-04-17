@@ -39,9 +39,7 @@ struct /* HEADER-ONLY */ PositionStrings
 {
 public:
   /** Construct the position without any values. */
-  PositionStrings()
-  {
-  }
+  PositionStrings() = default;
 
   /** Construct the position with an XY or LL point. */
   PositionStrings(const std::string& xVal, const std::string& yVal)

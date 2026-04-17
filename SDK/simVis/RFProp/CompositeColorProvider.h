@@ -132,7 +132,7 @@ public:
 protected:
 
   /// osg::Referenced-derived
-  virtual ~CompositeColorProvider() {}
+  virtual ~CompositeColorProvider() = default;
 
 private:
   /// update the gradient color provider's color map

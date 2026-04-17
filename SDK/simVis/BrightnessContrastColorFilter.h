@@ -60,7 +60,7 @@ public:
   osgEarth::Config getConfig() const override;
 
 protected:
-  virtual ~BrightnessContrastColorFilter() {} // osg::Referenced object
+  virtual ~BrightnessContrastColorFilter() = default; // osg::Referenced object
 
 private:
   void init_();

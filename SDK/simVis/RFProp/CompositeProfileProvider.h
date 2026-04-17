@@ -115,7 +115,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~CompositeProfileProvider() {}
+  virtual ~CompositeProfileProvider() = default;
 
 protected:
   /** Index into providers_ that represents the current profile provider */

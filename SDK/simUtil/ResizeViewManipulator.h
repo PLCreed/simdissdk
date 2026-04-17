@@ -77,7 +77,7 @@ public:
   class Listener
   {
   public:
-    virtual ~Listener() {}
+    virtual ~Listener() = default;
     /** Fired off when the drag point of the resize view manipulator changes */
     virtual void dragPointChanged(DragPoint dragPoint) = 0;
   };

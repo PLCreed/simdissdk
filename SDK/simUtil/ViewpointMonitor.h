@@ -131,7 +131,7 @@ public:
   class Observer
   {
   public:
-    virtual ~Observer() {}
+    virtual ~Observer() = default;
 
     /**
      * Viewpoints can be tethered to an entity, or to a focal center point.  When the viewpoint changes

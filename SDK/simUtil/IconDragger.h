@@ -38,7 +38,7 @@ class SDKUTIL_EXPORT IconDragger : public osgEarth::Dragger
 {
 public:
   IconDragger(osgEarth::MapNode* mapNode, osg::Image* image);
-  virtual ~IconDragger() { }
+  virtual ~IconDragger() = default;
 
   /** Change the underlying image */
   void setImage(osg::Image* image);

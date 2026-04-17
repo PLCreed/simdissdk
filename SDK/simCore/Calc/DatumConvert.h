@@ -38,7 +38,7 @@ class Vec3;
 class SDKCORE_EXPORT DatumConvert
 {
 public:
-  virtual ~DatumConvert() {}
+  virtual ~DatumConvert() = default;
 
   /**
    * Returns a modified bearing based on location, time, requested conversion and optional offset.
@@ -70,7 +70,7 @@ public:
     VerticalDatum inputDatum, VerticalDatum outputDatum, double userOffset) = 0;
 
 protected:
-  DatumConvert() {}
+  DatumConvert() = default;
 
 private:
   /** Not implemented */

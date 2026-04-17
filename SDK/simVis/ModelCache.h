@@ -123,7 +123,7 @@ public:
     virtual void loadFinished(const osg::ref_ptr<osg::Node>& model, bool isImage, const std::string& uri) = 0;
   protected:
     /** Protected destructor due to Referenced derived class. */
-    virtual ~ModelReadyCallback() {}
+    virtual ~ModelReadyCallback() = default;
   };
 
   /**

@@ -53,7 +53,7 @@ public:
     GLenum severity, const std::string& message) = 0;
 
 protected:
-  virtual ~GlDebugMessageCallback() {}
+  virtual ~GlDebugMessageCallback() = default;
 };
 
 /**

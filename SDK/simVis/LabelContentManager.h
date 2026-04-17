@@ -99,7 +99,7 @@ namespace simVis
     virtual std::string createString(simData::ObjectId id, const simData::CustomRenderingPrefs& prefs, const simData::DisplayFields& fields) = 0;
 
   protected:
-    virtual ~LabelContentCallback() {}
+    virtual ~LabelContentCallback() = default;
   };
 
   /** Abstract class for creating callbacks for the different entity types */
@@ -111,14 +111,14 @@ namespace simVis
     virtual LabelContentCallback* createLabelContentCallback(simData::ObjectId id) = 0;
 
   protected:
-    virtual ~LabelContentManager() {}
+    virtual ~LabelContentManager() = default;
   };
 
   /** Returns "" for platform  */
   class NullEntityCallback : public simVis::LabelContentCallback
   {
   public:
-    NullEntityCallback() {}
+    NullEntityCallback() = default;
 
     std::string createString(const simData::PlatformPrefs& prefs, const simData::PlatformUpdate& lastUpdate, const simData::DisplayFields& fields) override
     {
@@ -156,14 +156,14 @@ namespace simVis
     }
 
   protected:
-    virtual ~NullEntityCallback() {}
+    virtual ~NullEntityCallback() = default;
   };
 
   /** Null object implementation for Null Label Content Manager */
   class NullLabelContentManager : public simVis::LabelContentManager
   {
   public:
-    NullLabelContentManager() {}
+    NullLabelContentManager() = default;
 
     simVis::LabelContentCallback* createLabelContentCallback(simData::ObjectId id) override
     {
@@ -171,7 +171,7 @@ namespace simVis
     }
 
   protected:
-    virtual ~NullLabelContentManager() {}
+    virtual ~NullLabelContentManager() = default;
 
   };
 }

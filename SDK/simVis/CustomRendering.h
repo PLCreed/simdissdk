@@ -101,7 +101,7 @@ public:
     virtual bool update(const simData::DataSliceBase* updateSlice, bool force = false) = 0;
 
   protected:
-    virtual ~UpdateCallback() {}
+    virtual ~UpdateCallback() = default;
   };
 
   /** set the update callback */
@@ -223,7 +223,7 @@ public:
   class AbstractPointPicker
   {
   public:
-    virtual ~AbstractPointPicker() {} // no-op
+    virtual ~AbstractPointPicker() = default; // no-op
 
     /// Implement to provide the ECEF points to use when picking
     virtual void getPickingPoints(std::vector<osg::Vec3d>& ecefVec) = 0;

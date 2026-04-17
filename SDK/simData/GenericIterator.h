@@ -33,7 +33,7 @@ template <typename ValueType>
 class GenericIteratorImpl
 {
 public:
-  virtual ~GenericIteratorImpl() {}
+  virtual ~GenericIteratorImpl() = default;
   /** Retrieves next element and increments iterator to position after that element
   * @return Element after original iterator position,
   * or nullptr if no such element
@@ -107,7 +107,7 @@ public:
   {
   }
   /// Virtual destructor
-  virtual ~GenericIterator() {}
+  virtual ~GenericIterator() = default;
 
   /** Retrieves next element and increments iterator to position after that element
   * @return Element after original iterator position,

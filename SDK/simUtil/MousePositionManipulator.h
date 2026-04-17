@@ -54,7 +54,7 @@ public:
   class Listener
   {
   public:
-    virtual ~Listener(){}
+    virtual ~Listener()= default;
     /// Called whenever the mouse moves and is at the passed in lat/lon (degrees) and alt (meters). Notification also happens in the FRAME event, for pending elevation queries.
     virtual void mouseOverLatLon(double lat, double lon, double alt) = 0;
   };

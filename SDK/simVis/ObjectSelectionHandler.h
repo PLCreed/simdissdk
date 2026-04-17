@@ -52,7 +52,7 @@ public:
 
   protected:
     /// osg::Referenced-derived
-    virtual ~SelectCallback() {}
+    virtual ~SelectCallback() = default;
   };
 
 public:
@@ -137,7 +137,7 @@ public: // osgGA::GUIEventHandler
 
 protected:
   /// osg::Referenced-derived
-  virtual ~ObjectSelectionHandler() {}
+  virtual ~ObjectSelectionHandler() = default;
 
 private: // methods
   bool isMouseClick_(const osgGA::GUIEventAdapter &ev);

@@ -118,7 +118,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~PlatformSimulator() {}
+  virtual ~PlatformSimulator() = default;
 
 private:
   double t0_;
@@ -175,7 +175,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~PlatformSimulatorManager() {}
+  virtual ~PlatformSimulatorManager() = default;
 
 protected: // types
   /// Vector of pointers to simulators

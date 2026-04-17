@@ -159,7 +159,7 @@ public:
   const char* className() const override { return "HudText"; }
 
 protected:
-  virtual ~HudText() {}
+  virtual ~HudText() = default;
 };
 
 

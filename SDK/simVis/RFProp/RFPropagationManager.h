@@ -37,7 +37,7 @@ class RFPropagationFacade;
 class RFPropagationManager
 {
 public:
-  virtual ~RFPropagationManager() {}
+  virtual ~RFPropagationManager() = default;
 
   /**
     * Returns an existing RFPropagationFacade object for the specified platform or beam

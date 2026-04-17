@@ -72,7 +72,7 @@ public:
 
 protected:
   /// osg::Referenced-derived
-  virtual ~GradientColorProvider() {}
+  virtual ~GradientColorProvider() = default;
 
   /** Reloads the shader */
   void reloadShader_();

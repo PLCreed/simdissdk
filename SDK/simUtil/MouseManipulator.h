@@ -48,7 +48,7 @@ namespace simUtil {
 class SDKUTIL_EXPORT MouseManipulator
 {
 public:
-  virtual ~MouseManipulator() {}
+  virtual ~MouseManipulator() = default;
 
   /** Mouse button pushed, returns non-zero on handled */
   virtual int push(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa) = 0;

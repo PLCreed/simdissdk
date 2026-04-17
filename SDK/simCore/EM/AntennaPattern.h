@@ -96,7 +96,7 @@ public:
     : azim_(az), elev_(el), polarity_(pol), hbw_(hbw), vbw_(vbw), refGain_(gain),
     firstLobe_(firstLobe), backLobe_(backLobe), freq_(freq),
     weighting_(weight), delta_(delta) {}
-  ~AntennaGainParameters() {}
+  ~AntennaGainParameters() = default;
 };
 
 // ----------------------------------------------------------------------------
@@ -113,7 +113,7 @@ public:
     filename_("") {};
 
   /** AntennaPattern destructor */
-  virtual ~AntennaPattern() {}
+  virtual ~AntennaPattern() = default;
 
   /**
   * This method returns the type of antenna pattern
@@ -176,7 +176,7 @@ class SDKCORE_EXPORT AntennaPatternGauss : public AntennaPattern
 {
 public:
   AntennaPatternGauss();
-  virtual ~AntennaPatternGauss() {}
+  virtual ~AntennaPatternGauss() = default;
 
   /** @copydoc AntennaPattern::type */
   AntennaPatternType type() const override { return ANTENNA_PATTERN_GAUSS; }
@@ -198,7 +198,7 @@ class SDKCORE_EXPORT AntennaPatternCscSq : public AntennaPattern
 {
 public:
   AntennaPatternCscSq();
-  virtual ~AntennaPatternCscSq() {}
+  virtual ~AntennaPatternCscSq() = default;
 
   /** @copydoc AntennaPattern::type */
   AntennaPatternType type() const override { return ANTENNA_PATTERN_CSCSQ; }
@@ -220,7 +220,7 @@ class SDKCORE_EXPORT AntennaPatternSinXX : public AntennaPattern
 {
 public:
   AntennaPatternSinXX();
-  virtual ~AntennaPatternSinXX() {}
+  virtual ~AntennaPatternSinXX() = default;
 
   /** @copydoc AntennaPattern::type */
   AntennaPatternType type() const override { return ANTENNA_PATTERN_SINXX; }
@@ -243,7 +243,7 @@ class SDKCORE_EXPORT AntennaPatternPedestal : public AntennaPattern
 {
 public:
   AntennaPatternPedestal();
-  virtual ~AntennaPatternPedestal() {}
+  virtual ~AntennaPatternPedestal() = default;
 
   /** @copydoc AntennaPattern::type */
   AntennaPatternType type() const override { return ANTENNA_PATTERN_PEDESTAL; }
@@ -267,7 +267,7 @@ class SDKCORE_EXPORT AntennaPatternOmni : public AntennaPattern
 {
 public:
   AntennaPatternOmni();
-  virtual ~AntennaPatternOmni() {}
+  virtual ~AntennaPatternOmni() = default;
 
   /** @copydoc AntennaPattern::type */
   AntennaPatternType type() const override { return ANTENNA_PATTERN_OMNI; }
@@ -310,7 +310,7 @@ class SDKCORE_EXPORT AntennaPatternTable : public AntennaPattern
 {
 public:
   AntennaPatternTable(bool type = false);
-  virtual ~AntennaPatternTable() {}
+  virtual ~AntennaPatternTable() = default;
 
   /** @copydoc AntennaPattern::type */
   AntennaPatternType type() const override { return ANTENNA_PATTERN_TABLE; }
@@ -435,7 +435,7 @@ class SDKCORE_EXPORT AntennaPatternRelativeTable : public AntennaPattern
 {
 public:
   AntennaPatternRelativeTable();
-  virtual ~AntennaPatternRelativeTable() {}
+  virtual ~AntennaPatternRelativeTable() = default;
 
   /** @copydoc AntennaPattern::type */
   AntennaPatternType type() const override { return ANTENNA_PATTERN_RELATIVE; }
@@ -630,7 +630,7 @@ class SDKCORE_EXPORT AntennaPatternNSMA : public AntennaPattern
 public:
 
   AntennaPatternNSMA();
-  virtual ~AntennaPatternNSMA() {}
+  virtual ~AntennaPatternNSMA() = default;
 
   /** @copydoc AntennaPattern::type */
   AntennaPatternType type() const override { return ANTENNA_PATTERN_NSMA; }
@@ -703,7 +703,7 @@ class SDKCORE_EXPORT AntennaPatternEZNEC : public AntennaPattern
 {
 public:
   AntennaPatternEZNEC();
-  virtual ~AntennaPatternEZNEC() {}
+  virtual ~AntennaPatternEZNEC() = default;
 
   /** @copydoc AntennaPattern::type */
   AntennaPatternType type() const override { return ANTENNA_PATTERN_EZNEC; }
@@ -748,7 +748,7 @@ class SDKCORE_EXPORT AntennaPatternXFDTD : public AntennaPattern
 {
 public:
   AntennaPatternXFDTD();
-  virtual ~AntennaPatternXFDTD() {}
+  virtual ~AntennaPatternXFDTD() = default;
 
   /** @copydoc AntennaPattern::type */
   AntennaPatternType type() const override { return ANTENNA_PATTERN_XFDTD; }
