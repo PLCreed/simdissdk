@@ -86,6 +86,11 @@ public:
     Locator* eciLocator = nullptr,
     int referenceYear = 1970);
 
+  /** Copy constructor, not implemented or available. */
+  PlatformNode(const PlatformNode&) = delete;
+  /** Assignment operator, not implemented or available */
+  PlatformNode& operator=(const PlatformNode&) = delete;
+
   /**
   * Gets or Creates the group that holds track history and vapor trail (to support expire mode)
   * @return expireModeGroup
@@ -255,11 +260,6 @@ protected:
   virtual ~PlatformNode();
 
 private:
-  /** Copy constructor, not implemented or available. */
-  PlatformNode(const PlatformNode&);
-  /** Assignment operator, not implemented or available */
-  PlatformNode& operator=(const PlatformNode&);
-
   /**
   * Indicates if the platform is currently active in the scenario, which is determined by if it has current data and if dataDrarw is set to on
   * @param prefs current pref values to determine the dataDraw state

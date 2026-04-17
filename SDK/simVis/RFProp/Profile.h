@@ -46,6 +46,9 @@ public:
    */
   Profile(CompositeProfileProvider* data);
 
+  /** Copy constructor, not implemented or available. */
+  Profile(const Profile&) = delete;
+
   /** Draw style for the profile */
   enum DrawMode
   {
@@ -112,9 +115,6 @@ protected:
   virtual ~Profile();
 
 private:
-  /** Copy constructor, not implemented or available. */
-  Profile(const Profile&);
-
   /** Performs initialization at construction time */
   void init_();
 

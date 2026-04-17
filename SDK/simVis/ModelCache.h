@@ -47,6 +47,11 @@ public:
   ModelCache();
   virtual ~ModelCache();
 
+  /// Copy constructor not permitted
+  ModelCache(const ModelCache& rhs) = delete;
+  /// Assignment operator not permitted
+  ModelCache& operator=(const ModelCache& rhs) = delete;
+
   /** Retrieves a pointer to a generic box icon used for blank models */
   osg::Node* boxNode() const;
 
@@ -142,11 +147,6 @@ public:
   static bool isAnimated(osg::Node* node);
 
 private:
-  /// Copy constructor not permitted
-  ModelCache(const ModelCache& rhs);
-  /// Assignment operator not permitted
-  ModelCache& operator=(const ModelCache& rhs);
-
   /// Saves the given URI into the cache
   void saveToCache_(const std::string& uri, osg::Node* node, bool isArticulated, bool isAnimated, bool isImage);
 

@@ -104,6 +104,9 @@ public:
     simVis::Locator* hostLocator,
     const simVis::EntityNode* host = nullptr);
 
+  /** Copy constructor, not implemented or available. */
+  ProjectorNode(const ProjectorNode&) = delete;
+
   /**
   * Gets the last known properties of this object
   * @return Object properties
@@ -255,9 +258,6 @@ protected:
   virtual ~ProjectorNode();
 
 private:
-  /** Copy constructor, not implemented or available. */
-  ProjectorNode(const ProjectorNode&);
-
   void init_();
 
   /// Read video file

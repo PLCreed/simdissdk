@@ -44,6 +44,9 @@ namespace simVis
     /** Constructor */
     GateVolume(simVis::Locator* locator, const simData::GatePrefs* prefs, const simData::GateUpdate* update);
 
+    /** Copy Not implemented */
+    GateVolume(const GateVolume&) = delete;
+
     /** Perform an in-place update to an existing volume */
     void performInPlaceUpdates(const simData::GateUpdate* a,
                                 const simData::GateUpdate* b);
@@ -62,9 +65,6 @@ namespace simVis
     virtual ~GateVolume();
 
   private:
-    // Not implemented
-    GateVolume(const GateVolume&);
-
     SphericalVolume* createNode_(const simData::GatePrefs* prefs, const simData::GateUpdate* update);
 
     osg::ref_ptr<SphericalVolume> gateSV_;
@@ -76,6 +76,9 @@ namespace simVis
   public:
     /** Constructor */
     explicit GateCentroid(simVis::Locator* locator);
+
+    /** Copy Not implemented */
+    GateCentroid(const GateCentroid&) = delete;
 
     /** Perform an in-place update to an existing centroid */
     void update(const simData::GateUpdate& update);
@@ -99,9 +102,6 @@ namespace simVis
     virtual ~GateCentroid();
 
   private:
-    // Not implemented
-    GateCentroid(const GateCentroid&);
-
     /// calculate centroid verts from update
     void updateCentroid_(const simData::GateUpdate& update);
 
@@ -125,6 +125,9 @@ namespace simVis
       Locator*                       locator = nullptr,
       const simVis::EntityNode*      host = nullptr,
       int                            referenceYear = 1970);
+
+    /** Copy Not implemented */
+    GateNode(const GateNode&) = delete;
 
     /**
     * Get latest properties applied to this gate.
@@ -281,9 +284,6 @@ namespace simVis
     virtual ~GateNode();
 
   private:
-    // Not implemented
-    GateNode(const GateNode&);
-
     /// determine if new update/new prefs can be handled with in-place-update (without complete rebuild)
     bool changeRequiresRebuild_(
       const simData::GateUpdate* newUpdate,

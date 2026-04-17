@@ -129,6 +129,9 @@ public:
   /** Initializes the visitor with the value to set the hint to */
   SetOverheadModeHintVisitor(bool hint, TraversalMode tm=osg::NodeVisitor::TRAVERSE_ACTIVE_CHILDREN);
 
+  /** No copy constructor implemented */
+  SetOverheadModeHintVisitor(const SetOverheadModeHintVisitor&) = delete;
+
   /** Changes the value of the hint */
   void setOverheadModeHint(bool hint);
 
@@ -136,9 +139,6 @@ public:
   void apply(osg::MatrixTransform& mx) override;
 
 private:
-  /** No copy constructor implemented */
-  SetOverheadModeHintVisitor(const SetOverheadModeHintVisitor&);
-
   bool hint_;
 };
 

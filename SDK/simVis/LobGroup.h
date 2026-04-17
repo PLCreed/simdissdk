@@ -63,6 +63,11 @@ public:
                CoordSurfaceClamping*              surfaceClamping,
                simData::DataStore&                ds);
 
+  /** Copy constructor, not implemented or available. */
+  LobGroupNode(const LobGroupNode&) = delete;
+  /** Assignment operator, not implemented or available. */
+  LobGroupNode& operator=(const LobGroupNode&) = delete;
+
   /**
     * Installs the global LOB shader program and initializes the default uniform variables
     * for the shader into the StateSet provided.  This is required in the scene graph somewhere
@@ -158,11 +163,6 @@ private: // types
   class Cache;
 
 private: // methods
-  /** Copy constructor, not implemented or available. */
-  LobGroupNode(const LobGroupNode&);
-  /** Assignment operator, not implemented or available. */
-  LobGroupNode& operator=(const LobGroupNode&);
-
   /// osg::Referenced-derived
   virtual ~LobGroupNode();
 

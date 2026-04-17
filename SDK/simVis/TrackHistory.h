@@ -58,6 +58,9 @@ class SDKVIS_EXPORT TrackHistoryNode : public osg::Group
 public:
   TrackHistoryNode(const simData::DataStore& ds, Locator* parentLocator, PlatformTspiFilterManager& manager, simData::ObjectId entityId);
 
+  /** Copy constructor, not implemented or available. */
+  TrackHistoryNode(const TrackHistoryNode&) = delete;
+
   /**
     * Before using this class a call to installShaderProgram is required.  This
     * method installs the shader program and default uniform variables for
@@ -115,9 +118,6 @@ private: // methods
 
   class ColorChangeObserver;
   class ColorTableObserver;
-
-  /** Copy constructor, not implemented or available. */
-  TrackHistoryNode(const TrackHistoryNode&);
 
   /**
   * If the color history change is within the time span of the currently displayed track history, redraw all history points

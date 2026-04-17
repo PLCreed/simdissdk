@@ -104,6 +104,9 @@ public:
   explicit MouseManipulatorAdapter(osgGA::GUIEventHandler* handler=nullptr, bool touchEmulatesMouse=true);
   virtual ~MouseManipulatorAdapter();
 
+  // Not implemented
+  MouseManipulatorAdapter(const MouseManipulatorAdapter& rhs) = delete;
+
   // From MouseManipulator:
   int push(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa) override;
   int release(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa) override;
@@ -129,9 +132,6 @@ public:
   bool touchEmulatesMouse() const;
 
 private:
-  // Not implemented
-  MouseManipulatorAdapter(const MouseManipulatorAdapter& rhs);
-
   osg::ref_ptr<osgGA::GUIEventHandler> handler_;
   bool touchEmulatesMouse_;
 };

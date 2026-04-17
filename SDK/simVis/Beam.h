@@ -92,6 +92,9 @@ namespace simVis
     explicit BeamNode(const simData::BeamProperties& props, Locator* locator = nullptr,
       const simVis::EntityNode* host = nullptr, int referenceYear = 1970);
 
+    /** Copy constructor, not implemented or available. */
+    BeamNode(const BeamNode&) = delete;
+
     /**
     * Access the properties object currently representing this beam.
     *
@@ -284,9 +287,6 @@ namespace simVis
     void applyDataStoreUpdate_(const simData::BeamUpdate& update, bool force=false);
 
   private: // methods
-    /** Copy constructor, not implemented or available. */
-    BeamNode(const BeamNode&);
-
     /// update the geometry based on changes in update or preferences.
     void apply_(
       const simData::BeamUpdate*     update,

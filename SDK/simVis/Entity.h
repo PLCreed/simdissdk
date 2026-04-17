@@ -107,6 +107,9 @@ namespace simVis
     EntityNode(simData::ObjectType type, Locator* locator = nullptr);
 
   public:
+    /** Copy constructor, not implemented or available. */
+    EntityNode(const EntityNode&) = delete;
+
     /** Enumerates different name types for the label */
     enum NameType {
       REAL_NAME,  ///< Real entity name
@@ -334,9 +337,6 @@ namespace simVis
     int acceptProjectors_(osg::Node* attachmentPoint, const std::vector<ProjectorNode*>& projectors);
 
   private:
-    /** Copy constructor, not implemented or available. */
-    EntityNode(const EntityNode&);
-
     simData::ObjectType type_;
     osg::ref_ptr<Locator> locator_;
     osg::ref_ptr<LabelContentCallback> contentCallback_;

@@ -110,6 +110,10 @@ public:
     button_.setMenu(menu);
   }
 
+  /** Declared but not defined to keep cppCheck warning free */
+  ButtonActions(const ButtonActions& rhs) = delete;
+  ButtonActions& operator=(ButtonActions& rhs) = delete;
+
   QToolButton& button() const
   {
     return button_;
@@ -171,10 +175,6 @@ public:
   }
 
 private:
-  /** Declared but not defined to keep cppCheck warning free */
-  ButtonActions(const ButtonActions& rhs);
-  ButtonActions& operator=(ButtonActions& rhs);
-
   /** Sets the text and tooltip on the "Load" button */
   void setLoadTextAndTooltips_(const QString& filterName)
   {

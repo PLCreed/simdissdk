@@ -57,6 +57,9 @@ class SDKVIS_EXPORT TimeTicks : public osg::Group
 public:
   TimeTicks(const simData::DataStore& ds, Locator* parentLocator, PlatformTspiFilterManager& manager, simData::ObjectId entityId);
 
+  /** Copy constructor, not implemented or available. */
+  TimeTicks(const TimeTicks&) = delete;
+
   /**
   * Reset the time ticks visualization, erasing everything that exists
   * so it can start building again from scratch.
@@ -98,9 +101,6 @@ protected: // methods
   virtual ~TimeTicks();
 
 private: // methods
-
-  /** Copy constructor, not implemented or available. */
-  TimeTicks(const TimeTicks&);
 
   /**
   * Return a chunk to which you can add a new point

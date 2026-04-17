@@ -69,6 +69,9 @@ public:
 
   CategoryNameManager();
 
+  /// Not implemented; if implemented will need to clearout listeners_
+  CategoryNameManager(const CategoryNameManager& rhs) = delete;
+
   /** Return the case-sensitive state of the manager. */
   bool isCaseSensitive() const;
 
@@ -146,9 +149,6 @@ public:
   static const std::string UNLISTED_CATEGORY_VALUE_STR; ///< string associated with the Pref Rule index above
 
 private:
-  /// Defined but not implemented; if implemented will need to clearout listeners_
-  CategoryNameManager(const CategoryNameManager& rhs);
-
   /// Return the string if caseSensitive_ is true or return an upper case version of the string if caseSensitive_ is false
   std::string fixString_(const std::string &str) const;
 

@@ -52,6 +52,9 @@ public:
    */
   EphemerisVector(const simVis::Color& moonColor, const simVis::Color& sunColor, float lineWidth = 2.0);
 
+  /** Copy constructor, not implemented or available. */
+  EphemerisVector(const EphemerisVector&) = delete;
+
   /**
    * Sets new preferences for this object.
    * @param prefs Preferences to apply
@@ -77,9 +80,6 @@ protected:
 private:
   /// Callback that will call rebuild_() when too much time-of-day has elapsed since last rebuild
   class RebuildOnTimer;
-
-  /** Copy constructor, not implemented or available. */
-  EphemerisVector(const EphemerisVector&);
 
   /// recreate the geometry
   void rebuild_(const simData::PlatformPrefs& prefs);

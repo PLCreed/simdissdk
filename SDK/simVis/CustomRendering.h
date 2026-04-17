@@ -52,6 +52,9 @@ public:
   CustomRenderingNode(const simData::CustomRenderingProperties& props,
     const simVis::EntityNode* host = nullptr, int referenceYear = 1970);
 
+  /** Copy constructor, not implemented or available. */
+  CustomRenderingNode(const CustomRenderingNode&) = delete;
+
   /**
   * Access the properties object currently representing this custom.
   *
@@ -239,9 +242,6 @@ protected:
   virtual ~CustomRenderingNode();
 
 private:
-  /** Copy constructor, not implemented or available. */
-  CustomRenderingNode(const CustomRenderingNode&);
-
   /**
   * Update the custom label with the specified custom preferences
   * @param prefs the custom preferences to update

@@ -74,6 +74,8 @@ public:
    * @param locator Parent locator from which to inherit position/orientation
    */
   PlatformModelNode(Locator* locator = nullptr);
+  PlatformModelNode(const PlatformModelNode& rhs) = delete; // not implemented
+  PlatformModelNode& operator=(const PlatformModelNode& rhs) = delete; // not implemented
 
   /**
   * Gets the bounds of the 3D model, possible scaled
@@ -169,9 +171,6 @@ protected:
   virtual ~PlatformModelNode();
 
 private:
-  PlatformModelNode(const PlatformModelNode& rhs); // not implemented
-  PlatformModelNode& operator=(const PlatformModelNode& rhs); // not implemented
-
   /// Callback to the Model Cache that will set our platform model on asynchronous load
   class SetModelCallback;
   /// Member pointer to the most recent set-model-callback

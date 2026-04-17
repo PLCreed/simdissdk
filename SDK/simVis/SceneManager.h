@@ -66,6 +66,9 @@ namespace simVis
      */
     SceneManager();
 
+    /** Copy constructor, not implemented or available. */
+    SceneManager(const SceneManager&) = delete;
+
     /**
     * The scene graph node that rendering the earth.
     * @return the MapNode
@@ -154,9 +157,6 @@ namespace simVis
     bool addChild(osg::Node *child) override;
 
   private:
-    /** Copy constructor, not implemented or available. */
-    SceneManager(const SceneManager&);
-
     /** Returns true if the sky node is SilverLining. */
     bool isSilverLining_(const osgEarth::SkyNode* skyNode) const;
 

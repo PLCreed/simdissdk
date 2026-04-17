@@ -475,6 +475,9 @@ public:
   HudManager(osgViewer::View* view, osg::Group* parentNode);
   virtual ~HudManager();
 
+  /// Declare to keep cppCheck warning free, but not implemented since it is not needed
+  HudManager(HudManager& noCopyConstructor) = delete;
+
   /**
    * Creates and returns a HudText for display overlay text.  Percentages are from 0 to 100.
    * @param text The text to display; may contain \n
@@ -564,9 +567,6 @@ private:
   class ResizeHandler;
   /// Called by osgGA::GUIEventHandler when the window re-sizes
   void resize_(int width, int height);
-
-  /// Declare to keep cppCheck warning free, but not implemented since it is not needed
-  HudManager(HudManager& noCopyConstructor);
 
   HudRenderLevel renderLevel_; ///< render level to draw this hud manager and its hud items
   osg::ref_ptr<osg::Group> group_;  ///< group node that holds all the hud text and images
