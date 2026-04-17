@@ -45,7 +45,7 @@ namespace
 /// Returns true if the specified token starts with the specified start string
 bool startsWith(const std::string& token, const std::string& start)
 {
-  return token.substr(0, start.size()) == start;
+  return token.starts_with(start);
 }
 
 /** List of tokens that are case sensitive and shouldn't be lowercase'd for parsing */
