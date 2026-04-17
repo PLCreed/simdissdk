@@ -1050,7 +1050,7 @@ int main(int argc, char **argv)
   ControlPanel* controlPanel = new ControlPanel();
   menuHandler->setImGuiControlPanel(controlPanel);
   ::GUI::OsgImGuiHandler* gui = new ::GUI::OsgImGuiHandler();
-  viewer->getMainView()->getEventHandlers().push_front(gui);
+  viewer->getMainView()->getEventHandlers().emplace_front(gui);
   gui->add(controlPanel);
 #endif
 

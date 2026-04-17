@@ -476,7 +476,7 @@ int main(int argc, char** argv)
   // Adjusted projection matrix is incorrect in ortho mode
   gui->setAutoAdjustProjectionMatrix(false);
 
-  viewer->getMainView()->getEventHandlers().push_front(gui);
+  viewer->getMainView()->getEventHandlers().emplace_front(gui);
   gui->add(new ControlPanel(viewer.get(), createInsetsHandler.get(), latLonElevListener.get(), dataStore, centeredPlat, showElevation));
 #endif
 

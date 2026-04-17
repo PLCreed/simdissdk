@@ -261,7 +261,7 @@ TableRow& TableRow::operator=(const TableRow& copy)
     time_ = copy.time_;
     for (std::vector<ColumnCellPair>::const_iterator i = copy.cells_.begin(); i != copy.cells_.end(); ++i)
     {
-      cells_.push_back(std::make_pair(i->first, i->second->clone()));
+      cells_.emplace_back(i->first, i->second->clone());
     }
   }
   return *this;

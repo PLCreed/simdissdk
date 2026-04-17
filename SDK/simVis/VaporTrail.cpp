@@ -464,7 +464,7 @@ void VaporTrail::processTextures_(const std::vector< osg::ref_ptr<osg::Texture2D
       osg::ref_ptr<osg::Billboard> billboard = new osg::Billboard();
       billboard->setMode(osg::Billboard::POINT_ROT_EYE);
       createTexture_(*(billboard), (*it).get());
-      textures_.push_back(billboard);
+      textures_.emplace_back(billboard);
     }
   }
 }

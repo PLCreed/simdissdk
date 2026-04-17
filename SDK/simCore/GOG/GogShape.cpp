@@ -983,7 +983,7 @@ void Orbit::createOrbitShape(double azimuthRad, double lengthM, double radiusM, 
     const double angle = simCore::angFix2PI(startRad + step * static_cast<double>(i));
     const double x = ctrX + sin(angle) * radiusM;
     const double y = ctrY + cos(angle) * radiusM;
-    xyz.push_back({ x, y, altitudeM });
+    xyz.emplace_back( x, y, altitudeM );
   }
 
   // calculate center point on other end of orbit
@@ -996,7 +996,7 @@ void Orbit::createOrbitShape(double azimuthRad, double lengthM, double radiusM, 
     const double angle = simCore::angFix2PI(endRad + step * static_cast<double>(i));
     const double x = ctrX + sin(angle) * radiusM;
     const double y = ctrY + cos(angle) * radiusM;
-    xyz.push_back({ x, y, altitudeM });
+    xyz.emplace_back( x, y, altitudeM );
   }
   // add back in first point to close the shape
   xyz.push_back(xyz.front());

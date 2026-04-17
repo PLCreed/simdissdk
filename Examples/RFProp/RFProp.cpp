@@ -677,7 +677,7 @@ int main(int argc, char** argv)
   controlPanel->heatColorProvider->setColorMap(heatColors);
 
   ::GUI::OsgImGuiHandler* gui = new ::GUI::OsgImGuiHandler();
-  viewer->getMainView()->getEventHandlers().push_front(gui);
+  viewer->getMainView()->getEventHandlers().emplace_front(gui);
   controlPanel->minHeight = minHeight;
   controlPanel->maxHeight = maxHeight;
   controlPanel->numHeights = numHeights;

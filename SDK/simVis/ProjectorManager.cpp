@@ -219,7 +219,7 @@ void ProjectorManager::registerProjector(ProjectorNode* proj)
     return;
   }
 
-  projectors_.push_back(proj);
+  projectors_.emplace_back(proj);
 
   ProjectorLayer* layer = new ProjectorLayer(proj->getId());
   layer->setName("SIMSDK Projector");

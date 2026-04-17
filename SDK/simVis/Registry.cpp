@@ -186,16 +186,16 @@ simVis::Registry::Registry()
 
   // models may be specified without extension, use this list to attempt to resolve.
   // these should be reconciled with list in simVis::isImageFile (Utils.cpp)
-  modelExtensions_.push_back("3db");
-  modelExtensions_.push_back("opt");
-  modelExtensions_.push_back("ive");
-  modelExtensions_.push_back("flt");
-  modelExtensions_.push_back("fbx");
+  modelExtensions_.emplace_back("3db");
+  modelExtensions_.emplace_back("opt");
+  modelExtensions_.emplace_back("ive");
+  modelExtensions_.emplace_back("flt");
+  modelExtensions_.emplace_back("fbx");
 
   // these may be used for models, but are not model-specific formats
-  modelExtensions_.push_back("png");
-  modelExtensions_.push_back("bmp");
-  modelExtensions_.push_back("jpg");
+  modelExtensions_.emplace_back("png");
+  modelExtensions_.emplace_back("bmp");
+  modelExtensions_.emplace_back("jpg");
 
   // Known OSG and SIMDIS pseudo loaders
   pseudoLoaderExtensions_.insert("osgs"); // encode OSG file as filename

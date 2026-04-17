@@ -915,7 +915,7 @@ int main(int argc, char** argv)
 
 #ifdef HAVE_IMGUI
   ::GUI::OsgImGuiHandler* gui = new ::GUI::OsgImGuiHandler();
-  viewer->getMainView()->getEventHandlers().push_front(gui);
+  viewer->getMainView()->getEventHandlers().emplace_front(gui);
   gui->add(new ControlPanel(simpleOceanLayer.get(), tritonLayer.get(), buoyancyCallback.get(),
     sky.get(), viewer->getMainView(), useTriton, useSilverLining));
   viewer->addEventHandler(new MenuHandler(viewer.get(), scene.get()));

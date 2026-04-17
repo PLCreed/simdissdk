@@ -497,7 +497,7 @@ int main(int argc, char** argv)
   for (int i = 1; i < ap.argc(); ++i)
   {
     if (!ap.isOption(i))
-      gogFiles.push_back(ap[i]);
+      gogFiles.emplace_back(ap[i]);
   }
 
   // Localized state container for the application
@@ -650,7 +650,7 @@ int main(int argc, char** argv)
 
 #ifdef HAVE_IMGUI
   ::GUI::OsgImGuiHandler* gui = new ::GUI::OsgImGuiHandler();
-  mainView->getEventHandlers().push_front(gui);
+  mainView->getEventHandlers().emplace_front(gui);
   gui->add(new ControlPanel(*mouseHandler, overlayNodes));
 #endif
 

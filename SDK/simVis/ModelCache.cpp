@@ -517,7 +517,7 @@ public:
 
     // Create a new request record
     CallbackVector& callbacks = requests_[uri];
-    callbacks.push_back(callback);
+    callbacks.emplace_back(callback);
     // Return early if there's already another active request
     if (callbacks.size() != 1)
       return;

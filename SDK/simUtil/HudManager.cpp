@@ -560,7 +560,7 @@ HudText* HudManager::createText(const std::string& text, double x, double y, boo
   HudText* hudText = new HudRowText(windowWidth_, windowHeight_);
   hudText->update(text, x, y, percentage, percentage, hAlign, vAlign, color, font, fontSize);
 
-  textVector_.push_back(hudText);
+  textVector_.emplace_back(hudText);
   group_->addChild(hudText);
   return hudText;
 }
@@ -571,7 +571,7 @@ HudText* HudManager::createText(const std::string& text, double x, double y, boo
 {
   HudText* hudText = new HudRowText(windowWidth_, windowHeight_);
   hudText->update(text, x, y, percentageX, percentageY, hAlign, vAlign, color, font, fontSize);
-  textVector_.push_back(hudText);
+  textVector_.emplace_back(hudText);
   group_->addChild(hudText);
   return hudText;
 }
@@ -585,7 +585,7 @@ HudColumnText* HudManager::createColumnText(const std::string& text, double x, d
   // HudColumnText currently only implements ALIGN_LEFT
   hudText->update(text, x, y, percentage, percentage, simUtil::ALIGN_LEFT, vAlign, color, font, fontSize);
 
-  textVector_.push_back(hudColumnText);
+  textVector_.emplace_back(hudColumnText);
   group_->addChild(hudColumnText);
   return hudColumnText;
 }
@@ -596,7 +596,7 @@ HudImage* HudManager::createImage(osg::Image* image, double x, double y, double 
 {
   HudImage* hudImage = new HudImage(windowWidth_, windowHeight_);
   hudImage->update(image, x, y, w, h, percentageX, percentageY, percentageW, percentageH, hAlign, vAlign);
-  imageVector_.push_back(hudImage);
+  imageVector_.emplace_back(hudImage);
   group_->addChild(hudImage);
   return hudImage;
 }

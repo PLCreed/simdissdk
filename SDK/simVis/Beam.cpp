@@ -1127,12 +1127,12 @@ void BeamNode::getVisibleEndPoints(std::vector<osg::Vec3d>& ecefVec) const
   simCore::Vec3 startEcef;
   if (0 != getPosition(&startEcef, simCore::COORD_SYS_ECEF))
     return;
-  ecefVec.push_back({ startEcef.x(), startEcef.y(), startEcef.z() });
+  ecefVec.emplace_back( startEcef.x(), startEcef.y(), startEcef.z() );
 
   // Convert end point into ECEF
   simCore::Vec3 endEcef;
   simCore::CoordinateConverter::convertGeodeticPosToEcef(endPosition, endEcef);
-  ecefVec.push_back({ endEcef.x(), endEcef.y(), endEcef.z() });
+  ecefVec.emplace_back( endEcef.x(), endEcef.y(), endEcef.z() );
 }
 
 unsigned int BeamNode::objectIndexTag() const

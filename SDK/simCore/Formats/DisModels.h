@@ -115,7 +115,7 @@ public:
 
     // A full DIS ID has 7 components. If a partial ID was given, pad it with 0s to get a full ID
     while (parts.size() < 7)
-      parts.push_back("0");
+      parts.emplace_back("0");
 
     // iterative search for best match to the entityType
     for (unsigned int ii = 0; ii <= wildcardLevel; ii++)

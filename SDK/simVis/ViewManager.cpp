@@ -430,7 +430,7 @@ void ViewManager::addCallback(Callback* value)
 {
   if (value)
   {
-    callbacks_.push_back(value);
+    callbacks_.emplace_back(value);
   }
 }
 
@@ -458,7 +458,7 @@ void ViewManager::addPostCameraEventHandler(PostCameraEventHandler* value)
 {
   if (value)
   {
-    postCameraEventHandlers_.push_back(value);
+    postCameraEventHandlers_.emplace_back(value);
   }
 }
 

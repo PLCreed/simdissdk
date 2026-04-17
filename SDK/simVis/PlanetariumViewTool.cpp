@@ -653,7 +653,7 @@ PlanetariumViewTool::PlanetariumViewTool(PlatformNode* host, simData::DataStore&
   family_.reset();
   // Add all initial textures
   for (int k = 0; k <= static_cast<int>(TextureUnit::UNIT3); ++k)
-    textures_.push_back(TextureData());
+    textures_.emplace_back();
 
   // the geofence will filter out visible objects
   fence_ = new HorizonGeoFence();

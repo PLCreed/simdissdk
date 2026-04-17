@@ -658,14 +658,14 @@ void Profile::init3DTexture_()
       verts_->push_back(osg::Vec3(thisStep * cosTheta0_, thisStep * sinTheta0_, maxSampledHeight)); // 3
       tcoords->push_back(osg::Vec2(thisTexStep, maxT));
       idx->addElement(vertCount);
-      topVerts.push_back(std::pair<int, int>(vertCount, 0));
+      topVerts.emplace_back(vertCount, 0);
       ++vertCount;
 
       // Bottom vertex
       verts_->push_back(osg::Vec3(thisStep * cosTheta0_, thisStep * sinTheta0_, minSampledHeight)); // 2
       tcoords->push_back(osg::Vec2(thisTexStep, minT));
       idx->addElement(vertCount);
-      botVerts.push_back(std::pair<int, int>(vertCount, 0));
+      botVerts.emplace_back(vertCount, 0);
       ++vertCount;
     }
 

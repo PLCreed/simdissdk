@@ -393,7 +393,7 @@ int main(int argc, char** argv)
 
 #ifdef HAVE_IMGUI
   GUI::OsgImGuiHandler* gui = new GUI::OsgImGuiHandler();
-  mainView->getEventHandlers().push_front(gui);
+  mainView->getEventHandlers().emplace_front(gui);
   ControlPanel* controlPanel = new ControlPanel(hudEditor, dataStore, app);
   gui->add(controlPanel);
 #endif

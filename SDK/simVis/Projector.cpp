@@ -157,7 +157,7 @@ static const float DEFAULT_ALPHA_VALUE = 0.1f;
 
       if (std::find(projectors_.begin(), projectors_.end(), node) == projectors_.end())
       {
-        projectors_.push_back(node);
+        projectors_.emplace_back(node);
         return projectors_.size();
       }
       else

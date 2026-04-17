@@ -180,7 +180,7 @@ Picker::~Picker()
 
 void Picker::addCallback(Callback* callback)
 {
-  callbacks_.push_back(callback);
+  callbacks_.emplace_back(callback);
 }
 
 void Picker::removeCallback(Callback* callback)

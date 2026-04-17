@@ -143,7 +143,7 @@ GogManipulator::GogManipulator(osgEarth::MapNode* mapNode)
     boxLine->setStipple1(0x3333);
     boxLine->setStipple2(0);
     boxLine->setShiftsPerSecond(0.);
-    boxLines_.push_back(boxLine);
+    boxLines_.emplace_back(boxLine);
     guideGroup_->addChild(boxLine);
   }
 

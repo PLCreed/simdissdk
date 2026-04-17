@@ -146,7 +146,7 @@ void ViewManagerLogDbAdapter::install(simVis::ViewManager* viewManager)
   }
   // Remember the manager
   viewManager->addCallback(installCallback_.get());
-  viewManagers_.push_back(viewManager);
+  viewManagers_.emplace_back(viewManager);
 }
 
 void ViewManagerLogDbAdapter::uninstall(simVis::ViewManager* viewManager)

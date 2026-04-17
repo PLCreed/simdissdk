@@ -123,7 +123,7 @@ void MemoryCategoryDataSlice::TimeValues::insert(double time, int value)
   // First do initial condition
   if (entries_.empty())
   {
-    entries_.push_back(TimeValuePair(time, value));
+    entries_.emplace_back(time, value);
     invalidateLastPosTime_();
     return;
   }
@@ -131,7 +131,7 @@ void MemoryCategoryDataSlice::TimeValues::insert(double time, int value)
   // Second so the common case of appending to the end
   if (entries_.back().time < time)
   {
-    entries_.push_back(TimeValuePair(time, value));
+    entries_.emplace_back(time, value);
     invalidateLastPosTime_();
     return;
   }
@@ -980,8 +980,8 @@ void MemoryCategoryDataSlice::allStrings(std::vector<std::pair<std::string, std:
 
     --j;
 
-    nameValueVec.push_back(std::make_pair(categoryNameManager_->nameIntToString(i->first),
-      categoryNameManager_->valueIntToString(j->value)));
+    nameValueVec.emplace_back(categoryNameManager_->nameIntToString(i->first),
+      categoryNameManager_->valueIntToString(j->value));
   }
 }
 
@@ -998,7 +998,7 @@ void MemoryCategoryDataSlice::allInts(std::vector<std::pair<int, int> > &nameVal
 
     --j;
 
-    nameValueIntVec.push_back(std::make_pair(i->first, j->value));
+    nameValueIntVec.emplace_back(i->first, j->value);
   }
 }
 

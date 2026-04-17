@@ -262,7 +262,7 @@ void ViewerApp::init_(osg::ArgumentParser& args)
 
 #ifdef HAVE_IMGUI
   GUI::OsgImGuiHandler* gui = new GUI::OsgImGuiHandler();
-  mainView->getEventHandlers().push_front(gui);
+  mainView->getEventHandlers().emplace_front(gui);
 
   gui->add(new TestPanel(*this));
 #endif

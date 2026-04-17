@@ -1257,7 +1257,7 @@ void ScenarioManager::addTool(ScenarioTool* tool)
       SIM_WARN << LC << "WARNING: adding a tool that is already installed!" << std::endl;
     }
 
-    scenarioTools_.push_back(tool);
+    scenarioTools_.emplace_back(tool);
     tool->onInstall(*this);
     root_->addChild(tool->getNode());
   }
@@ -1341,7 +1341,7 @@ void ScenarioManager::update(simData::DataStore* ds, bool force)
     // Note that entity classes decide how to process 'force' and record->updateSlice_->hasChanged()
     if (record->updateFromDataStore(force))
     {
-      updates.push_back(record->getEntityNode());
+      updates.emplace_back(record->getEntityNode());
       appliedUpdate = true;
     }
 
@@ -1430,7 +1430,7 @@ void ScenarioManager::getAllEntities(EntityVector& output) const
 
   for (EntityRepo::const_iterator i = entities_.begin(); i != entities_.end(); ++i)
   {
-    output.push_back(i->second->getEntityNode());
+    output.emplace_back(i->second->getEntityNode());
   }
 }
 

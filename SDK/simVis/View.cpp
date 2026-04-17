@@ -446,7 +446,7 @@ void FocusManager::reFocus()
 void FocusManager::addCallback(FocusManager::Callback* callback)
 {
   if (callback)
-    callbacks_.push_back(callback);
+    callbacks_.emplace_back(callback);
 }
 
 void FocusManager::removeCallback(FocusManager::Callback* callback)
@@ -864,7 +864,7 @@ void View::addInset(simVis::View* inset)
       inset->setUpViewAsInset_(this);
 
       // save it in our list.
-      insets_.push_back(inset);
+      insets_.emplace_back(inset);
 
       // initialize the extent
       inset->refreshExtents();
@@ -1994,7 +1994,7 @@ void simVis::View::setName(const std::string& name)
 void simVis::View::addCallback(simVis::View::Callback* callback)
 {
   if (callback)
-    callbacks_.push_back(callback);
+    callbacks_.emplace_back(callback);
 }
 
 void simVis::View::removeCallback(simVis::View::Callback* callback)

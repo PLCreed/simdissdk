@@ -826,7 +826,7 @@ osgEarth::Status VelocityParticleLayer::openImplementation()
 
 #if OSGEARTH_SOVERSION >= 142
   osgEarth::DataExtentList allExtents;
-  allExtents.push_back(osgEarth::DataExtent(geoExtent, 0, 0));
+  allExtents.emplace_back(geoExtent, 0, 0);
   setDataExtents(allExtents);
 #else
   dataExtents().clear();

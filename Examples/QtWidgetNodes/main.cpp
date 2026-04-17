@@ -168,7 +168,7 @@ private:
     hudXform->addChild(imageNode.get());
     hudCamera_->addChild(hudXform.get());
 
-    hudElements_.push_back(std::make_pair(hudXform, imageNode));
+    hudElements_.emplace_back(hudXform, imageNode);
   }
 
   void showLabel_()
@@ -201,7 +201,7 @@ private:
     hudXform->addChild(labelNode.get());
     hudCamera_->addChild(hudXform.get());
 
-    hudElements_.push_back(std::make_pair(hudXform, labelNode));
+    hudElements_.emplace_back(hudXform, labelNode);
   }
 
   void showCompositeWidget_()
@@ -245,7 +245,7 @@ private:
     hudXform->addChild(widgetNode.get());
     hudCamera_->addChild(hudXform.get());
 
-    hudElements_.push_back(std::make_pair(hudXform, widgetNode));
+    hudElements_.emplace_back(hudXform, widgetNode);
   }
 
 private:
