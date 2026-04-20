@@ -44,7 +44,7 @@ namespace simCore
       description(desc)
     {
     }
-    virtual ~TimeException() throw() = default;
+    virtual ~TimeException() = default;
 
     const char* what() const noexcept override
     {
