@@ -293,8 +293,6 @@ private:
 
   SettingsPtr settings_;
   simQt::Settings::ObserverPtr observer_;
-
-  class ButtonActions;
   std::vector<ButtonActions*> buttonActions_;
 
   /// Whether or not to use the entity icons, vs the names
