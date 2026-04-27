@@ -288,7 +288,7 @@ void GanttChartView::setCurrentTime(double newTime)
 }
 
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-void GanttChartView::dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight)
+void GanttChartView::dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight, const QVector<int>& roles)
 {
   viewport()->update();
 }
