@@ -287,10 +287,17 @@ void GanttChartView::setCurrentTime(double newTime)
   viewport()->update();
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+void GanttChartView::dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight)
+{
+  viewport()->update();
+}
+#else
 void GanttChartView::dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight, const QList<int>& roles)
 {
   viewport()->update();
 }
+#endif
 
 void GanttChartView::rowsInserted(const QModelIndex &parent, int start, int end)
 {

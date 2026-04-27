@@ -130,8 +130,14 @@ Q_SIGNALS:
   void timeValueAtPositionClicked(double timeValue);
 
 protected Q_SLOTS:
+
   /** Redraw when data changes */
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+  void dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight) override;
+#else
   void dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight, const QList<int>& roles = {}) override;
+#endif
+
   /** Redraw when data changes */
   void rowsInserted(const QModelIndex &parent, int start, int end) override;
   /** Redraw when data changes */
