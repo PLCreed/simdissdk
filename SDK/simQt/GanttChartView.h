@@ -133,7 +133,7 @@ protected Q_SLOTS:
 
   /** Redraw when data changes */
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-  void dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight, const QVector<int>& roles = QVector<int>()) override;
+  void dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight);
 #else
   void dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight, const QList<int>& roles = {}) override;
 #endif
