@@ -287,7 +287,7 @@ void GanttChartView::setCurrentTime(double newTime)
   viewport()->update();
 }
 
-void GanttChartView::dataChanged(const QModelIndex & topLeft, const QModelIndex & bottomRight)
+void GanttChartView::dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight, const QList<int>& roles)
 {
   viewport()->update();
 }

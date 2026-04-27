@@ -131,7 +131,7 @@ Q_SIGNALS:
 
 protected Q_SLOTS:
   /** Redraw when data changes */
-  virtual void dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight);
+  void dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight, const QList<int>& roles = {}) override;
   /** Redraw when data changes */
   void rowsInserted(const QModelIndex &parent, int start, int end) override;
   /** Redraw when data changes */
