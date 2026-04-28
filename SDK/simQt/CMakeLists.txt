@@ -189,7 +189,7 @@ set(SIMQT_SOURCES
     ${SIMQT_SRC}FileUtilities.cpp
     ${SIMQT_SRC}FontWidget.cpp
     ${SIMQT_SRC}GanttChartView.cpp
-    ${SIMQT_INC}KeySequenceEdit.cpp
+    ${SIMQT_SRC}KeySequenceEdit.cpp
     ${SIMQT_SRC}MonospaceItemDelegate.cpp
     ${SIMQT_SRC}MruList.cpp
     ${SIMQT_SRC}PersistentFileLogger.cpp
