@@ -131,12 +131,11 @@ Q_SIGNALS:
 
 protected Q_SLOTS:
 
-  /** Redraw when data changes */
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-  virtual void dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight);
-#else
-  void dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight, const QList<int>& roles = QList<int>()) override;
-#endif
+  /**
+   * Redraw when data changes. Qt 5.15 uses QVector for third argument. Qt6 override uses QList instead of QVector,
+   * but in Qt6 QVector is an alias for QList, so this signature covers Qt 5.15 and Qt6.
+   */
+  void dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight, const QVector<int>& roles = QVector<int>()) override;
 
   /** Redraw when data changes */
   void rowsInserted(const QModelIndex &parent, int start, int end) override;
