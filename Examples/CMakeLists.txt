@@ -36,7 +36,7 @@ add_subdirectory(SimpleServer)
 add_subdirectory(TimestampedLayer)
 add_subdirectory(VelocityLayerTest)
 
-if(TARGET SQLite::SQLite3)
+if(TARGET SQLite3::SQLite3 OR TARGET SQLite::SQLite3)
     add_subdirectory(DBReader)
     add_subdirectory(LoadEarthFile)
     add_subdirectory(Overhead)

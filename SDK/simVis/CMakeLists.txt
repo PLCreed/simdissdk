@@ -403,7 +403,7 @@ set(VIS_HEADERS ${VIS_HEADERS_CORE} ${VIS_HEADERS_RFPROP} ${VIS_HEADERS_GOG})
 set(VIS_SOURCES ${VIS_SOURCES_CORE} ${VIS_SOURCES_RFPROP} ${VIS_SOURCES_GOG} ${VIS_SHADER_FILES})
 
 # Add DB Format support to right MSVC folders and headers for installation
-if(TARGET SQLite::SQLite3)
+if(TARGET SQLite3::SQLite3 OR TARGET SQLite::SQLite3)
     source_group(Headers FILES ${VIS_HEADERS_DB})
     source_group(Headers\\DB FILES ${VIS_HEADERS_DB_PRIVATE})
     source_group("Source Files\\DB" FILES ${VIS_SOURCES_DB})
@@ -443,8 +443,12 @@ target_include_directories(simVis PUBLIC
 target_link_libraries(simVis PUBLIC simData simCore simNotify osgEarth::osgEarth)
 target_link_libraries(simVis PRIVATE OpenGL::GL ${OPENSCENEGRAPH_LIBRARIES})
 
-if(TARGET SQLite::SQLite3)
-    target_link_libraries(simVis PRIVATE SQLite::SQLite3)
+if(TARGET SQLite3::SQLite3 OR TARGET SQLite::SQLite3)
+    if(TARGET SQLite3::SQLite3)
+        target_link_libraries(simVis PRIVATE SQLite3::SQLite3)
+    else()
+        target_link_libraries(simVis PRIVATE SQLite::SQLite3)
+    endif()
     if(SDK_BIG_ENDIAN)
         target_compile_definitions(simVis PRIVATE SIM_BIG_ENDIAN)
     else()

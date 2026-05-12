@@ -188,7 +188,7 @@ if(NOT SQLite3_FOUND)
     # Support vcpkg SQLite3 package/target name
     find_package(unofficial-sqlite3 CONFIG QUIET)
     if(unofficial-sqlite3_FOUND)
-        add_target(SQLite::SQLite3 ALIAS unofficial::sqlite3::sqlite3)
+        add_target(SQLite3::SQLite3 ALIAS unofficial::sqlite3::sqlite3)
         set(SQLite3_FOUND TRUE)
         set(SQLite3_VCPKG ON)
     endif()
