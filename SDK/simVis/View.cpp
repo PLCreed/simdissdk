@@ -1605,14 +1605,6 @@ void View::enableOverheadMode(bool enableOverhead)
 
   overheadEnabled_ = enableOverhead;
 
-  // Turn on near frustum culling for normal mode, and off for overhead mode.
-  // Note that this does come with a slight performance hit, but solves the problem
-  // where entities outside the frustum SHOULD be drawn but are not in overhead.
-  if (!overheadEnabled_)
-    getCamera()->setCullingMode(getCamera()->getCullingMode() | osg::CullSettings::NEAR_PLANE_CULLING);
-  else
-    getCamera()->setCullingMode(getCamera()->getCullingMode() & (~osg::CullSettings::NEAR_PLANE_CULLING));
-
   // Fix navigation mode
   setNavigationMode(currentMode_);
 
