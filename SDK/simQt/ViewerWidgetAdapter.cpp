@@ -841,6 +841,8 @@ void ViewerWidgetAdapter::initializeSurfaceFormat_()
   surfaceFormat.setVersion(3, 3);
   surfaceFormat.setProfile(QSurfaceFormat::CoreProfile);
 #endif
+  // Need to specify depth, else Linux in particular might give a bad surface
+  surfaceFormat.setDepthBufferSize(24);
   surfaceFormat.setSwapInterval(1); // vsync
   surfaceFormat.setRenderableType(QSurfaceFormat::OpenGL);
   surfaceFormat = simQt::Gl3FormatGuesser::getSurfaceFormat(surfaceFormat);
