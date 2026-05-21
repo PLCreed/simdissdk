@@ -35,7 +35,7 @@
 
 namespace osg {
   class Image;
-  class Texture1D;
+  class Texture2D;
 }
 
 namespace simVis {
