@@ -117,7 +117,8 @@ private:
 
     /** Per-node 1D Texture used as a Lookup Table (LUT) for the gradient */
     osg::ref_ptr<osg::Image> lutImage;
-    osg::ref_ptr<osg::Texture1D> lutTexture;
+    /** Use a 2D texture due to linux/mesa shader issues */
+    osg::ref_ptr<osg::Texture2D> lutTexture;
 
     /** Dirty flag so we only upload uniforms that actually changed */
     bool isDirty = false;

@@ -22,7 +22,9 @@ in vec3 svheat_ModelPosition;
 uniform int svheat_NumSources;
 uniform vec3 svheat_Positions[4]; // Array size must match MAX_HEAT_POINTS in HeatMapSystem.h
 uniform vec3 svheat_Params[4];  // x = radius, y = intensity, z = falloff
-uniform sampler1D svheat_Gradient; // 256px 1D Lookup Table
+// this only requires a 1D sampler, but some linux implementations fail with: invalid operation at after renderbin::draw()
+// when using sampler1D
+uniform sampler2D svheat_Gradient; // 256x1px 2D Lookup Table
 
 void simvis_applyPointHeatMap(inout vec4 color) {
   // Prevent out-of-bounds loops
@@ -52,7 +54,8 @@ void simvis_applyPointHeatMap(inout vec4 color) {
   // Only sample the texture and blend if there is actual heat on this pixel
   if (totalHeat > 0.0) {
     totalHeat = clamp(totalHeat, 0.0, 1.0);
-    vec4 heatOverlay = texture(svheat_Gradient, totalHeat);
+    // using sampler2D, see above
+    vec4 heatOverlay = texture(svheat_Gradient, vec2(totalHeat, 0.5));
     color.rgb = mix(color.rgb, heatOverlay.rgb, heatOverlay.a);
   }
 }

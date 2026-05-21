@@ -22,7 +22,7 @@
  */
 #include <algorithm>
 #include <cassert>
-#include "osg/Texture1D"
+#include "osg/Texture2D"
 #include "osgEarth/VirtualProgram"
 #include "simVis/Shaders.h"
 #include "simVis/HeatMapSystem.h"
@@ -182,7 +182,7 @@ void HeatMapSystem::ensureUniformsExist_(osg::Node* targetNode)
   // Initialize the per-node 1D Lookup Texture
   cache.lutImage = new osg::Image;
   cache.lutImage->allocateImage(256, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE);
-  cache.lutTexture = new osg::Texture1D(cache.lutImage);
+  cache.lutTexture = new osg::Texture2D(cache.lutImage);
   cache.lutTexture->setFilter(osg::Texture::MIN_FILTER, osg::Texture::LINEAR);
   cache.lutTexture->setFilter(osg::Texture::MAG_FILTER, osg::Texture::LINEAR);
   cache.lutTexture->setWrap(osg::Texture::WRAP_S, osg::Texture::CLAMP_TO_EDGE);
@@ -198,9 +198,8 @@ void HeatMapSystem::ensureUniformsExist_(osg::Node* targetNode)
 
   // Attach the per-node 1D texture to the node's StateSet
   ss->setTextureAttributeAndModes(HEAT_LUT_TEXTURE_UNIT, cache.lutTexture.get(), osg::StateAttribute::ON);
-  osg::ref_ptr<osg::Uniform> gradientUniform = new osg::Uniform(osg::Uniform::SAMPLER_1D, UNIFORM_GRADIENT);
-  gradientUniform->set(HEAT_LUT_TEXTURE_UNIT);
-  ss->addUniform(gradientUniform.get());
+  // OSG automatically treats this as a sampler uniform because of the int value texture unit
+  ss->addUniform(new osg::Uniform(UNIFORM_GRADIENT, HEAT_LUT_TEXTURE_UNIT));
 
   uniformCache_[targetNode] = cache;
 
