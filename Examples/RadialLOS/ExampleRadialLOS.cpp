@@ -343,6 +343,10 @@ private:
 
 int main(int argc, char **argv)
 {
+  int rv = 0;
+  // Create an artificial scope for clean-up, so we can use _exit() at
+  // the end, to avoid osgEarth Linux crashes with HTTP static objects.
+  {
   // Set up the scene:
   simCore::checkVersionThrow();
   simExamples::configureSearchPaths();
@@ -388,6 +392,10 @@ int main(int argc, char **argv)
 
   // add some stock OSG handlers and go
   viewer->installDebugHandlers();
-  return viewer->run();
+  rv = viewer->run();
+  } // Close up scope for cleanup
+  // Avoid static initialization crashes
+  _exit(rv);
+  return rv;
 }
 
