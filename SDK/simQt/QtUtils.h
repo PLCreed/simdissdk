@@ -24,9 +24,12 @@
 #define SIMQT_QTUTILS_HH
 
 #include <QObject>
+#include <QPointer>
 #include <QRect>
 #include "simCore/Common/Export.h"
 
+class QTabBar;
+class QTabWidget;
 class QWidget;
 
 namespace simQt {
@@ -71,6 +74,15 @@ public:
   * @return the QMainWidget or earliest Model QDialog parent if found, otherwise returns the input widget
   */
   static QWidget* getMainWindowParent(QWidget* widget);
+
+  /**
+   * Given a tab widget, creates OverrideShortcuts (immune to Ambiguity errors) for selecting
+   * tabs using common hot keys: Ctrl+1 through Ctrl+9 for selecting a tab; Ctrl+Tab or Ctrl+PgDn
+   * for new tab; Ctrl+Shift+Tab (Ctrl+Backtab) or Ctrl+PgUp for previous tab.
+   * @param tabs Holds the tab widget, and impacted by the hot keys.
+   * @param parentScope Parent of the override shortcuts; shortcuts activate as children of this.
+   */
+  static void addTabShortcuts(QTabWidget& tabs, QWidget& parentScope);
 };
 
 }
