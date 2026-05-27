@@ -25,6 +25,7 @@
 #include <vector>
 #include <QKeySequence>
 #include <QObject>
+#include "simCore/Common/Export.h"
 
 class QKeyEvent;
 class QWidget;
@@ -42,7 +43,7 @@ namespace simQt {
  * connect(nextShortcut, &simQt::OverrideShortcut::activated, this, &MyWindow::nextTab);
  * </code>
  */
-class OverrideShortcut : public QObject
+class SDKQT_EXPORT OverrideShortcut : public QObject
 {
   Q_OBJECT;
 public:
